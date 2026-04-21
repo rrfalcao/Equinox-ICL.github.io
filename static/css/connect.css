@@ -1,5 +1,5 @@
 /* ================================================================
-   Connect — form + sidebar
+   Connect — narrative + form split
    ================================================================ */
 
 html {
@@ -11,55 +11,165 @@ html {
 
 body {
     margin: 0;
+    background-color: var(--green);
+    color: var(--yellow);
     overflow-y: scroll;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
 }
 
-.connect-container {
+/* ---- Layout ---- */
+
+.connect {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-3);
-    padding: var(--space-4) var(--space-3);
+    gap: var(--space-4);
     max-width: 1200px;
     margin: 0 auto;
+    padding: calc(var(--space-5) + 48px) var(--space-3) var(--space-5);
 }
 
-@media (min-width: 768px) {
-    .connect-container {
+@media (min-width: 900px) {
+    .connect {
         grid-template-columns: 1.1fr 0.9fr;
         gap: var(--space-5);
-        padding: var(--space-5) var(--space-4);
+        padding: calc(var(--space-5) + 48px) var(--space-4) var(--space-5);
+        align-items: start;
     }
 }
 
-.column {
-    min-width: 0;                 /* avoid overflow of grid children */
+/* ---- Narrative column ---- */
+
+.connect__narrative {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+@media (min-width: 900px) {
+    .connect__narrative {
+        position: sticky;
+        top: 12vh;
+    }
 }
 
-.backgroundImg {
+.connect__narrative .eyebrow { color: var(--rust); }
+.connect__narrative h1 {
+    color: var(--yellow);
+    font-size: clamp(36px, 5vw, 60px);
+    margin: 0;
+}
+.connect__lede {
+    color: var(--yellow);
+    font-size: 18px;
+    line-height: var(--leading-body);
+    margin: 0;
+    max-width: 52ch;
+}
+
+.connect__image {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+}
+.connect__image img {
     width: 100%;
     height: auto;
-    border-radius: var(--radius);
     display: block;
     object-fit: cover;
 }
-
-/* ---- Form fields ---- */
-
-.form-group {
-    margin-bottom: var(--space-3);
+.connect__image figcaption {
+    padding: var(--space-2) var(--space-3);
+    background-color: rgba(11, 38, 0, 0.95);
+    color: var(--rust);
 }
 
+.connect__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+.connect__block h2 {
+    margin: 0;
+}
+.connect__block p,
+.connect__list {
+    font-size: 16px;
+    line-height: var(--leading-body);
+    color: var(--yellow);
+    margin: 0;
+}
+.connect__list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-1);
+}
+.connect__list li {
+    padding-left: 28px;
+    position: relative;
+}
+.connect__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 18px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--rust), var(--yellow));
+    border-radius: 2px;
+}
+
+.connect__quote {
+    margin: 0;
+    padding: var(--space-3);
+    border-left: 2px solid var(--rust);
+    color: var(--yellow);
+    font-family: var(--font-display);
+    font-style: italic;
+    line-height: var(--leading-body);
+}
+.connect__quote p { margin: 0 0 var(--space-1); font-size: 18px; }
+.connect__quote footer {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+/* ---- Form column ---- */
+
+.connect__form-col {
+    min-width: 0;
+}
+
+.connect__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: 2px solid var(--rust);
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 207, 109, 0.03);
+    transition: border-color var(--dur-warm) var(--ease-warm);
+}
+.connect__form:focus-within {
+    border-color: var(--yellow);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 .form-group label {
-    display: block;
-    margin-bottom: var(--space-1);
     font-weight: 500;
     color: var(--yellow);
     font-size: 14px;
     letter-spacing: 0.02em;
 }
-
 .form-group .optional {
     color: var(--rust);
     font-weight: 400;
@@ -73,7 +183,7 @@ body {
     padding: 12px 14px;
     border: 1px solid var(--rust);
     border-radius: var(--radius-sm);
-    background-color: rgba(255, 207, 109, 0.04);
+    background-color: rgba(11, 38, 0, 0.3);
     color: var(--yellow);
     font-family: var(--font-body);
     font-size: 16px;
@@ -87,7 +197,7 @@ body {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255, 207, 109, 0.4);
+    color: rgba(255, 207, 109, 0.45);
 }
 
 .form-group input:hover,
@@ -99,36 +209,38 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--yellow);
-    border-width: 2px;
-    padding: 11px 13px;           /* preserve layout on border-width shift */
     box-shadow: 0 0 0 4px rgba(255, 207, 109, 0.18);
-    background-color: rgba(255, 207, 109, 0.08);
+    background-color: rgba(11, 38, 0, 0.55);
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
 }
 
-/* ---- Submit button — filament warm-up ---- */
+/* Submit button — filament warm-up with a checkmark that will morph
+   on successful submission (JS hook for Phase 3 / later). */
 
 .submit-btn {
+    position: relative;
     padding: 16px 28px;
     border: none;
     background-color: var(--rust);
     color: var(--yellow);
     border-radius: var(--radius);
     cursor: pointer;
-    width: 100%;
     font-family: var(--font-body);
     font-weight: 600;
+    font-size: 18px;
     letter-spacing: 0.01em;
+    min-height: 56px;
+    overflow: hidden;
     transition:
         background-color var(--dur-warm) var(--ease-warm),
+        color var(--dur-warm) var(--ease-warm),
         box-shadow var(--dur-warm) var(--ease-warm),
         transform var(--dur-warm) var(--ease-warm);
 }
-
 .submit-btn:hover,
 .submit-btn:focus-visible {
     background-color: var(--yellow);
@@ -138,7 +250,54 @@ body {
         0 8px 32px -8px rgba(255, 207, 109, 0.6);
     transform: translateY(-2px);
 }
+.submit-btn:active { transform: translateY(0); }
 
-.submit-btn:active {
-    transform: translateY(0);
+.submit-btn__check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-warm) var(--ease-warm),
+                transform var(--dur-warm) var(--ease-warm);
+}
+.submit-btn.is-sent .submit-btn__label {
+    opacity: 0;
+}
+.submit-btn.is-sent .submit-btn__check {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* ---- Footer (shared with index) ---- */
+
+.site-footer {
+    padding: var(--space-4) var(--space-3);
+    background-color: var(--green);
+    border-top: 1px solid rgba(198, 82, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: center;
+    text-align: center;
+}
+.site-footer__nav {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.site-footer__nav a {
+    color: var(--rust);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: color var(--dur-warm) var(--ease-warm);
+}
+.site-footer__nav a:hover,
+.site-footer__nav a:focus-visible {
+    color: var(--yellow);
 }

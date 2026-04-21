@@ -4,62 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect with e.quinox</title>
+    <meta name="description" content="Get in touch with e.quinox — partnership enquiries, Imperial student involvement, 2026 expedition applications, and support.">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        <!-- CSS Files -->
-        <link rel="stylesheet" href="static/auxcss/helper.css">
-        <link rel="stylesheet" href="static/auxcss/header.css">
-        <link rel="stylesheet" href="static/css/connect.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/auxcss/helper.css">
+    <link rel="stylesheet" href="static/auxcss/header.css">
+    <link rel="stylesheet" href="static/css/connect.css">
 
-        <!-- Icons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="static/favicon_io/site.webmanifest">
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon_io/site.webmanifest">
 </head>
-<body class="yellow greenbg">
-        <div data-include-html="static/auxhtml/header.html"></div>
-        <div class="connect-container">
-            <div class="column">
+
+<body class="greenbg">
+    <header data-include-html="static/auxhtml/header.html"></header>
+
+    <main class="connect">
+        <div class="connect__narrative">
+            <p class="eyebrow">Connect</p>
+            <h1 class="display">Let&rsquo;s make the next project together.</h1>
+            <p class="connect__lede">
+                Whether you&rsquo;re an Imperial student, an NGO partner, or a donor
+                — the committee reads every message.
+            </p>
+
+            <figure class="connect__image">
                 <picture>
-                  <source type="image/webp"
-                          srcset="static/images/solarpanel-800w.webp 800w, static/images/solarpanel-1600w.webp 1600w"
-                          sizes="(max-width: 768px) 100vw, 60vw">
-                  <img class="backgroundImg" src="static/images/solarpanel-1600w.jpg"
-                       alt="Solar panel installation in rural Rwanda"
-                       loading="lazy" decoding="async">
+                    <source type="image/webp"
+                            srcset="static/images/solarpanel-800w.webp 800w, static/images/solarpanel-1600w.webp 1600w"
+                            sizes="(max-width: 900px) 100vw, 50vw">
+                    <img src="static/images/solarpanel-1600w.jpg"
+                         alt="Solar panel installation in rural Rwanda"
+                         loading="lazy" decoding="async">
                 </picture>
-            </div>
-            <div class="column">    
-                <form action="https://api.staticforms.xyz/submit" method="post">
-                    <input type="hidden" name="accessKey" value="3be223fa-aa8e-42dc-82ba-1f130932580a">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" autocomplete="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone <span class="optional">(optional)</span></label>
-                        <input type="tel" id="phone" name="phone" autocomplete="tel">
-                    </div>
-                    <div class="form-group">
-                        <label for="details">Details</label>
-                        <textarea id="details" name="message" rows="5" required></textarea>
-                    </div>
-                    <input type="text" name="honeypot" tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-10000px;opacity:0;">
-                    <button class="submit-btn font24" type="submit">Send message</button>
-                    <input type="hidden" name="redirectTo" value="https://equinox-icl.github.io">
-                </form>
-            </div>
+                <figcaption class="caption">Rwanda · field installation</figcaption>
+            </figure>
+
+            <section class="connect__block">
+                <h2 class="eyebrow">What happens next</h2>
+                <p>
+                    A committee member replies within seven days, usually from the
+                    President or Outreach lead. For partnership and press enquiries
+                    we loop in the relevant team member before responding.
+                </p>
+            </section>
+
+            <section class="connect__block">
+                <h2 class="eyebrow">What to ask about</h2>
+                <ul class="connect__list">
+                    <li>Partnerships &mdash; NGOs, manufacturers, research labs.</li>
+                    <li>Imperial student involvement &mdash; joining the chapter.</li>
+                    <li>2026 expedition applications.</li>
+                    <li>Speaking invitations, press, and media.</li>
+                    <li>Donations and support &mdash; individuals and institutions.</li>
+                </ul>
+            </section>
+
+            <blockquote class="connect__quote">
+                <p>&ldquo;Every expedition starts with an email. Tell us what you&rsquo;re
+                working on &mdash; the rest takes care of itself.&rdquo;</p>
+                <footer>&mdash; Past committee member</footer>
+            </blockquote>
         </div>
-    <!-- JS Files -->
+
+        <div class="connect__form-col">
+            <form class="connect__form" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
+                <input type="hidden" name="accessKey" value="3be223fa-aa8e-42dc-82ba-1f130932580a">
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone <span class="optional">(optional)</span></label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="details">Details</label>
+                    <textarea id="details" name="message" rows="6" required
+                              placeholder="Tell us about you, your organisation, or your question…"></textarea>
+                </div>
+
+                <input type="text" name="honeypot" tabindex="-1" aria-hidden="true" autocomplete="off"
+                       style="position:absolute;left:-10000px;opacity:0;">
+
+                <button class="submit-btn" type="submit">
+                    <span class="submit-btn__label">Send message</span>
+                    <svg class="submit-btn__check" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 12l5 5L20 6" fill="none" stroke="currentColor"
+                              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <input type="hidden" name="redirectTo" value="https://equinox-icl.github.io">
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p class="eyebrow">e.quinox · Imperial College London</p>
+        <nav class="site-footer__nav" aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/about.html">About</a>
+            <a href="/connect.html">Connect</a>
+        </nav>
+    </footer>
+
+    <!-- JS -->
     <script src="static/js/include.js"></script>
     <script src="static/js/togglemenu.js"></script>
 </body>

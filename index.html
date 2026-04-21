@@ -1,40 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>e.quinox</title>
-    
-        <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="static/favicon_io/site.webmanifest">
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e.quinox — fifteen years bringing light to rural Rwanda</title>
+    <meta name="description" content="e.quinox is a student-led humanitarian society at Imperial College London. Since 2009 we have delivered electricity, portable power, and water-access projects to rural Rwandan communities.">
 
-        <link rel="stylesheet" href="static/auxcss/helper.css">
-        <link rel="stylesheet" href="static/auxcss/header.css">
-        <link rel="stylesheet" href="static/css/index.css">
-        <link rel="stylesheet" href="static/css/about.css">
-    </head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<body class="green yellowbg">
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="static/images/landing-1600w.webp" type="image/webp" fetchpriority="high">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/auxcss/helper.css">
+    <link rel="stylesheet" href="static/auxcss/header.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon_io/site.webmanifest">
+</head>
+
+<body class="greenbg">
     <header data-include-html="static/auxhtml/header.html"></header>
-    <main class="bodyDiv">
-        <section class="landingDiv" aria-label="Welcome to e.quinox">
-            <img src="/static/images/Logo/Logo Rust.svg" class="logo" alt="e.quinox — student humanitarian society at Imperial College London">
+
+    <!-- SVG wire thread — drawn by Phase 3 -->
+    <svg class="wire" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M50 0 C20 200, 80 400, 50 600 S20 900, 50 1000"
+              stroke="var(--yellow)" stroke-width="2" fill="none" stroke-linecap="round"
+              vector-effect="non-scaling-stroke" pathLength="1" />
+    </svg>
+
+    <main>
+        <!-- A · HERO -->
+        <section class="hero" id="top">
+            <picture class="hero__bg">
+                <source type="image/webp" media="(max-width: 800px)"
+                        srcset="static/images/landing-800w.webp">
+                <source type="image/webp" media="(max-width: 1600px)"
+                        srcset="static/images/landing-1600w.webp">
+                <source type="image/webp"
+                        srcset="static/images/landing-2400w.webp">
+                <img src="static/images/landing-1600w.jpg"
+                     alt="" role="presentation"
+                     fetchpriority="high" decoding="async">
+            </picture>
+            <div class="hero__vignette" aria-hidden="true"></div>
+            <div class="hero__inner">
+                <img class="hero__logo" src="static/images/Logo/Logo Rust.svg"
+                     alt="e.quinox — student humanitarian society at Imperial College London">
+                <div class="hero__copy">
+                    <h1 class="display">
+                        <span class="hero__line">Fifteen years</span>
+                        <span class="hero__line">bringing light</span>
+                        <span class="hero__line">to rural Rwanda.</span>
+                    </h1>
+                    <p class="eyebrow">Student-led · Engineer-built · Community-owned</p>
+                </div>
+                <a class="hero__scroll-cue" href="#manifesto" aria-label="Scroll down">
+                    <span></span>
+                </a>
+            </div>
         </section>
-        <section class="contentDiv greenbg" data-include-html="/about.html" aria-label="About e.quinox"></section>
+
+        <!-- B · MANIFESTO -->
+        <section class="manifesto" id="manifesto">
+            <div class="manifesto__quote">
+                <p class="eyebrow">Our mission</p>
+                <blockquote class="display">
+                    We uplift rural Rwandan communities through sustainable,
+                    self-sufficient, scalable engineering.
+                </blockquote>
+            </div>
+            <div class="manifesto__body">
+                <p class="reveal" data-reveal>
+                    e.quinox is a student-led humanitarian organisation founded at
+                    Imperial College London. We bridge the gap between NGOs and
+                    industrial practice, fostering collaboration in the fields
+                    of sustainable energy and international development.
+                </p>
+                <p class="reveal" data-reveal>
+                    Through first-hand work with the people of Rwanda, we understand
+                    the wants and needs of the locals and how we can work together
+                    to advance their lifestyle. This is how we have successfully
+                    developed and delivered lasting projects on the ground for
+                    over fifteen years.
+                </p>
+                <p class="reveal" data-reveal>
+                    Every project is engineered at Imperial, tested by students
+                    on expedition, and handed over to Rwandan partners who run
+                    and maintain it long after our teams fly home.
+                </p>
+            </div>
+        </section>
+
+        <!-- C · 15-YEAR ARC (scrollytelling stage populated by Phase 3) -->
+        <section class="arc" id="arc" aria-label="Fifteen-year project arc">
+            <div class="arc__stage">
+                <div class="arc__rail" aria-hidden="true">
+                    <span class="arc__rail-tick" data-year="2009"></span>
+                    <span class="arc__rail-tick" data-year="2013"></span>
+                    <span class="arc__rail-tick" data-year="2024"></span>
+                </div>
+
+                <article class="arc__slide" data-slide="0" data-year="2009">
+                    <div class="arc__image">
+                        <picture>
+                            <source type="image/webp"
+                                    srcset="static/images/2009-800w.webp 800w, static/images/2009-1600w.webp 1600w"
+                                    sizes="(max-width: 900px) 100vw, 55vw">
+                            <img src="static/images/2009-1600w.jpg"
+                                 alt="Energy Kiosk — Rwanda, 2009" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="arc__meta">
+                        <div class="arc__year display">2009</div>
+                        <p class="eyebrow">First expedition</p>
+                        <h2 class="arc__title display">Energy Kiosk</h2>
+                        <p class="arc__copy">
+                            e.quinox launched its first pilot Energy Kiosk in Rwanda,
+                            marking the organisation's first expedition on the ground.
+                            The kiosk was monitored remotely through a custom data-logging
+                            system and maintained by Rwandan partners — keeping it running
+                            long after the team returned to London.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="arc__slide" data-slide="1" data-year="2013">
+                    <div class="arc__image">
+                        <picture>
+                            <source type="image/webp" srcset="static/images/2013.jpg">
+                            <img src="static/images/2013.jpg"
+                                 alt="Home Lighting — Rwanda, 2013" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="arc__meta">
+                        <div class="arc__year display">2013</div>
+                        <p class="eyebrow">Power to the home</p>
+                        <h2 class="arc__title display">Home Lighting</h2>
+                        <p class="arc__copy">
+                            Four years later, e.quinox returned with portable battery
+                            boxes — giving households access to reliable light and power
+                            for the first time. Local entrepreneurs were trained to
+                            manufacture and distribute the systems: engineering solutions
+                            combined with community-led development.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="arc__slide" data-slide="2" data-year="2024">
+                    <div class="arc__image">
+                        <picture>
+                            <source type="image/webp"
+                                    srcset="static/images/2024-800w.webp 800w, static/images/2024-1600w.webp 1600w"
+                                    sizes="(max-width: 900px) 100vw, 55vw">
+                            <img src="static/images/2024-1600w.jpg"
+                                 alt="Rainwater harvesting — Rwanda, 2024" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="arc__meta">
+                        <div class="arc__year display">2024</div>
+                        <p class="eyebrow">From electricity to water</p>
+                        <h2 class="arc__title display">Rainwater Recon</h2>
+                        <p class="arc__copy">
+                            The 2024 team travelled to Rwanda to pilot a rainwater
+                            harvesting system for rural homes — scalable, accessible,
+                            transportable. They received guidance from Rwanda's Ministry
+                            of Infrastructure and the Dean of Engineering at the
+                            University of Rwanda.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- D · FEATURED 2024 -->
+        <section class="featured">
+            <div class="featured__image">
+                <picture>
+                    <source type="image/webp"
+                            srcset="static/images/2024-800w.webp 800w, static/images/2024-1600w.webp 1600w"
+                            sizes="(max-width: 900px) 100vw, 66vw">
+                    <img src="static/images/2024-1600w.jpg"
+                         alt="2024 expedition installing rainwater harvesting at a rural home in Rwanda"
+                         loading="lazy" decoding="async">
+                </picture>
+                <figcaption class="caption">Rwanda · 2024 · Rainwater Recon</figcaption>
+            </div>
+            <div class="featured__copy">
+                <p class="eyebrow">Featured expedition</p>
+                <h2 class="display">The pivot to water.</h2>
+                <p>
+                    2024 marked the first expedition where e.quinox moved beyond
+                    electricity. Working with the Ministry of Infrastructure and
+                    the University of Rwanda, the team brought rainwater harvesting
+                    to homes in rural communities — scalable, accessible, transportable.
+                </p>
+                <a class="button-warm" href="#arc">See the 15-year arc</a>
+            </div>
+        </section>
+
+        <!-- E · IMPACT STATS BAND -->
+        <section class="stats" aria-label="Impact at a glance">
+            <ul class="stats__grid">
+                <li class="stats__cell">
+                    <span class="stats__num display" data-count-to="15">0</span>
+                    <span class="stats__label eyebrow">Years on the ground</span>
+                </li>
+                <li class="stats__cell">
+                    <span class="stats__num display" data-count-to="3">0</span>
+                    <span class="stats__label eyebrow">Expeditions to Rwanda</span>
+                </li>
+                <li class="stats__cell">
+                    <span class="stats__num display" data-count-to="3">0</span>
+                    <span class="stats__label eyebrow">Spin-off companies founded</span>
+                </li>
+                <li class="stats__cell">
+                    <span class="stats__num display" data-count-to="1">0</span>
+                    <span class="stats__label eyebrow">Student chapter, Imperial College</span>
+                </li>
+            </ul>
+            <p class="stats__note">Precise impact figures refreshed each expedition — reach out for the latest.</p>
+        </section>
+
+        <!-- F · SPINOFF BENTO -->
+        <section class="bento" id="impact" aria-label="Spin-off companies">
+            <div class="bento__header">
+                <p class="eyebrow">Our impact</p>
+                <h2 class="display">Three companies started here.</h2>
+                <p class="bento__intro">
+                    Projects that began as Imperial student engineering have grown
+                    into operating businesses delivering energy and services across
+                    East Africa.
+                </p>
+            </div>
+
+            <article class="bento__cell bento__cell--lead" style="grid-area: bboxx;">
+                <div class="bento__logo">
+                    <img src="static/images/bboxx.png" alt="Bboxx logo" loading="lazy" decoding="async">
+                </div>
+                <div class="bento__body">
+                    <p class="eyebrow">Democratising energy</p>
+                    <h3 class="display">Bboxx</h3>
+                    <p>
+                        Born out of an e.quinox project, Bboxx designs and distributes
+                        off-grid solar systems across East Africa, providing reliable
+                        power to over a million homes.
+                    </p>
+                    <p class="bento__footnote">Listed on the London Stock Exchange.</p>
+                </div>
+            </article>
+
+            <article class="bento__cell" style="grid-area: mesh;">
+                <div class="bento__logo">
+                    <img src="static/images/mesh.png" alt="MeshPower logo" loading="lazy" decoding="async">
+                </div>
+                <div class="bento__body">
+                    <h3 class="display">MeshPower</h3>
+                    <p class="bento__tag">Solar power solutions</p>
+                </div>
+            </article>
+
+            <article class="bento__cell" style="grid-area: minazi;">
+                <div class="bento__logo">
+                    <img src="static/images/minazi.png" alt="Minazi Consulting logo" loading="lazy" decoding="async">
+                </div>
+                <div class="bento__body">
+                    <h3 class="display">Minazi Consulting</h3>
+                    <p class="bento__tag">Tackling gender inequality</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- G · CTA -->
+        <section class="cta" id="join">
+            <div class="cta__inner">
+                <article class="cta__card">
+                    <p class="eyebrow">2026 Expedition</p>
+                    <h2 class="display">Join the next chapter.</h2>
+                    <p>
+                        Imperial students: apply to join the 2026 team. Partners:
+                        find out how to collaborate on research, manufacturing,
+                        or field trials.
+                    </p>
+                    <a class="button-warm" href="connect.html">Get in touch</a>
+                </article>
+                <article class="cta__card cta__card--alt">
+                    <p class="eyebrow">Support a project</p>
+                    <h2 class="display">Power a village.</h2>
+                    <p>
+                        Direct donations fund equipment, training, and long-term
+                        maintenance of e.quinox projects on the ground.
+                    </p>
+                    <a class="button-warm button-warm--ghost" href="connect.html#donate">Donate</a>
+                </article>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <p class="eyebrow">e.quinox · Imperial College London</p>
+        <nav class="site-footer__nav" aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/about.html">About</a>
+            <a href="/connect.html">Connect</a>
+        </nav>
+    </footer>
+
+    <!-- JS -->
+    <script src="static/js/include.js"></script>
+    <script src="static/js/togglemenu.js"></script>
+    <script src="static/js/scroll.js" defer></script>
 </body>
-<!-- JS Files -->
-<script src="static/js/include.js"></script>
-<script src="static/js/togglemenu.js"></script>
-<script>
-    window.addEventListener("load", function() {
-        document.querySelector(".landingDiv").classList.add("loaded");
-    });
-</script>
 </html>

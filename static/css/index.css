@@ -1,45 +1,662 @@
-:root {
-    --headerHeight: 20px;
+/* ================================================================
+   Equinox ICL — Homepage (long-scroll)
+   Sections: hero · manifesto · arc · featured · stats · bento · cta
+   ================================================================ */
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    padding: 0;
+    background-color: var(--green);
+    color: var(--yellow);
     margin: 0;
 }
 
-.bodyDiv {
-    width: 100vw;
-    display: grid;
-    grid-template-rows: 100% 50%;
+/* Scroll snap is a nudge, not a lock */
+main {
+    scroll-snap-type: y proximity;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+}
+
+/* ---- Shared primitives ---- */
+
+.button-warm {
+    display: inline-block;
+    padding: 14px 26px;
+    margin-top: var(--space-3);
+    border-radius: var(--radius);
+    background-color: var(--rust);
+    color: var(--yellow);
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition:
+        background-color var(--dur-warm) var(--ease-warm),
+        color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm),
+        transform var(--dur-warm) var(--ease-warm);
+}
+.button-warm:hover,
+.button-warm:focus-visible {
+    background-color: var(--yellow);
+    color: var(--green);
+    box-shadow:
+        0 0 0 1px var(--yellow) inset,
+        0 8px 32px -8px rgba(255, 207, 109, 0.6);
+    transform: translateY(-2px);
+}
+.button-warm--ghost {
+    background-color: transparent;
+    color: var(--yellow);
+    box-shadow: 0 0 0 1px var(--rust) inset;
+}
+.button-warm--ghost:hover,
+.button-warm--ghost:focus-visible {
+    background-color: var(--yellow);
+    color: var(--green);
+}
+
+.caption {
+    margin-top: var(--space-1);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+/* Reveal-on-scroll primitive — used in manifesto body paragraphs */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity var(--dur-slow) var(--ease-warm),
+        transform var(--dur-slow) var(--ease-warm);
+}
+.reveal.is-lit {
+    opacity: 1;
+    transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+}
+
+/* ================================================================
+   A · HERO
+   ================================================================ */
+
+.hero {
     height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
 }
 
-.landingDiv {
-    width: 100vw;
-    height: calc(100vh - var(--headerHeight));
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+.hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    filter: brightness(0.55) saturate(0.75) contrast(1.05);
 }
 
-.landingDiv.loaded {
-    background-image: url("/static/images/landing.jpg");
-    background-attachment: fixed;
-    background-size: 100% 140%;
-    background-position: 0% 80%;
-    background-size: cover;
-    transition: background-image 0.5s ease-in-out; /* Smooth transition */
+/* Vignette that fades to green at the edges */
+.hero__vignette {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at center, transparent 35%, var(--green) 95%),
+        linear-gradient(180deg, rgba(11, 38, 0, 0.35), rgba(11, 38, 0, 0.8));
+    pointer-events: none;
 }
 
-.logo{
+.hero__inner {
+    position: relative;
+    text-align: center;
+    padding: 0 var(--space-3);
+    max-width: 980px;
+}
+
+.hero__logo {
+    width: clamp(220px, 40vw, 420px);
+    height: auto;
+    margin: 0 auto var(--space-4);
+    filter:
+        drop-shadow(0 0 24px rgba(255, 207, 109, 0.25))
+        drop-shadow(0 0 48px rgba(198, 82, 0, 0.35));
+    animation: lampOn 1.6s var(--ease-warm) both;
+}
+@keyframes lampOn {
+    from { opacity: 0; filter: drop-shadow(0 0 0 rgba(255, 207, 109, 0)); }
+    to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero__logo { animation: none; opacity: 1; }
+}
+
+.hero__copy h1 {
+    color: var(--yellow);
+    font-size: clamp(36px, 6.2vw, 64px);
+    margin: 0;
+    line-height: 1.08;
+}
+.hero__line {
     display: block;
-    margin: 0 auto;
-    width: 60%;
-    padding-top: 8vh;
+}
+
+.hero__copy .eyebrow {
+    margin-top: var(--space-3);
+    color: var(--rust);
+}
+
+.hero__scroll-cue {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 48px;
+    display: block;
+}
+.hero__scroll-cue span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--rust), var(--yellow));
+    border-radius: 2px;
+    animation: pulseGlow 2.4s var(--ease-warm) infinite;
+}
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; }
+    50%      { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero__scroll-cue span { animation: none; opacity: 1; }
+}
+
+/* ================================================================
+   B · MANIFESTO
+   ================================================================ */
+
+.manifesto {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-3);
+    background-color: var(--green);
+    color: var(--yellow);
+}
+@media (min-width: 900px) {
+    .manifesto {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+        padding: var(--space-5) var(--space-4);
+        align-items: start;
+    }
+}
+
+.manifesto__quote {
+    position: sticky;
+    top: 12vh;
+    align-self: start;
+    max-width: 520px;
+    justify-self: start;
+}
+.manifesto__quote .eyebrow { margin-bottom: var(--space-2); }
+.manifesto__quote blockquote {
+    margin: 0;
+    color: var(--yellow);
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.1;
+    border-left: 2px solid var(--rust);
+    padding-left: var(--space-3);
+}
+
+.manifesto__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: var(--measure);
+    font-size: 18px;
+    line-height: var(--leading-body);
+}
+.manifesto__body p { margin: 0; }
+
+/* ================================================================
+   C · ARC (15-year scrollytelling stage)
+   The outer section is 3× viewport tall so the sticky inner stage has
+   runway for three "scroll snaps" — one per slide. Phase 3 JS pins the
+   slides and counts the year numeral.
+   ================================================================ */
+
+.arc {
+    height: 300vh;
+    position: relative;
+    background-color: var(--green);
+}
+
+.arc__stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: var(--space-4) var(--space-3);
+}
+@media (min-width: 900px) {
+    .arc__stage {
+        grid-template-columns: 1.15fr 0.85fr;
+        padding: var(--space-4);
+        gap: var(--space-5);
+    }
+}
+
+.arc__rail {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    z-index: 2;
+}
+.arc__rail-tick {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--rust);
+    transition: background-color var(--dur-warm) var(--ease-warm),
+                box-shadow var(--dur-warm) var(--ease-warm);
+}
+.arc__rail-tick.is-active {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    box-shadow: 0 0 12px rgba(255, 207, 109, 0.6);
+}
+
+.arc__slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    opacity: 0;
+    transition: opacity var(--dur-slow) var(--ease-warm);
+    pointer-events: none;
+}
+@media (min-width: 900px) {
+    .arc__slide {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: var(--space-5);
+        padding: var(--space-4) var(--space-5);
+        align-items: center;
+    }
+}
+.arc__slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.arc__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+}
+.arc__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arc__meta {
+    max-width: 520px;
+}
+.arc__year {
+    font-size: clamp(72px, 10vw, 160px);
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+.arc__title {
+    color: var(--yellow);
+    font-size: clamp(32px, 4vw, 48px);
+    margin: 0 0 var(--space-2);
+}
+.arc__copy {
+    line-height: var(--leading-body);
+    font-size: 17px;
+    margin: 0;
+}
+
+/* ================================================================
+   D · FEATURED EXPEDITION
+   ================================================================ */
+
+.featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-3);
+    background-color: var(--green);
+    margin-top: -10vh;
+    position: relative;
     z-index: 1;
 }
-.contentDiv{
-    z-index:2;
+@media (min-width: 900px) {
+    .featured {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-5);
+        padding: var(--space-5) var(--space-4);
+        align-items: center;
+    }
+}
+.featured__image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+}
+.featured__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.featured__image figcaption {
+    padding: var(--space-2) var(--space-3);
+    background-color: rgba(11, 38, 0, 0.9);
+    color: var(--rust);
+}
+.featured__copy h2 {
+    color: var(--yellow);
+    font-size: clamp(32px, 4.2vw, 52px);
+    margin: var(--space-2) 0 var(--space-3);
+}
+.featured__copy p {
+    font-size: 18px;
+    line-height: var(--leading-body);
+    margin: 0 0 var(--space-3);
 }
 
-hr.solid {
-    border-top: 5px dashed #bbb;
-  }
+/* ================================================================
+   E · STATS BAND
+   ================================================================ */
+
+.stats {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-5) var(--space-3);
+    background-color: var(--green);
+    border-top: 1px solid rgba(198, 82, 0, 0.25);
+    border-bottom: 1px solid rgba(198, 82, 0, 0.25);
+}
+.stats__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 1100px;
+}
+@media (min-width: 900px) {
+    .stats__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.stats__cell {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+.stats__num {
+    display: block;
+    color: var(--yellow);
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+.stats__label {
+    color: var(--rust);
+}
+.stats__note {
+    margin-top: var(--space-4);
+    color: var(--rust);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 60ch;
+}
+
+/* ================================================================
+   F · BENTO (spinoff companies)
+   ================================================================ */
+
+.bento {
+    padding: var(--space-5) var(--space-3);
+    background-color: var(--green);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+.bento__header {
+    max-width: 800px;
+    margin-bottom: var(--space-3);
+}
+.bento__header h2 {
+    color: var(--yellow);
+    font-size: clamp(32px, 4vw, 52px);
+    margin: var(--space-1) 0 var(--space-2);
+}
+.bento__intro {
+    font-size: 18px;
+    line-height: var(--leading-body);
+    color: var(--yellow);
+    max-width: var(--measure);
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    .bento {
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: auto 1.2fr 0.8fr;
+        grid-template-areas:
+            "header header header"
+            "bboxx  mesh   mesh"
+            "bboxx  minazi minazi";
+        gap: var(--space-3);
+        padding: var(--space-5) var(--space-4);
+    }
+    .bento__header { grid-area: header; }
+}
+
+.bento__cell {
+    background-color: rgba(255, 207, 109, 0.05);
+    border: 2px solid var(--rust);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition:
+        border-color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm),
+        transform var(--dur-warm) var(--ease-warm),
+        background-color var(--dur-warm) var(--ease-warm);
+}
+.bento__cell:hover,
+.bento__cell:focus-within {
+    border-color: var(--yellow);
+    background-color: rgba(255, 207, 109, 0.10);
+    box-shadow: 0 20px 60px -20px rgba(150, 50, 0, 0.45);
+    transform: translateY(-4px);
+}
+.bento__cell--lead {
+    justify-content: space-between;
+}
+.bento__logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.bento__logo img {
+    max-height: 100%;
+    width: auto;
+    filter: saturate(0.85);
+}
+.bento__body h3 {
+    color: var(--yellow);
+    font-size: clamp(22px, 2.4vw, 36px);
+    margin: var(--space-1) 0;
+}
+.bento__body p {
+    margin: 0;
+    line-height: var(--leading-body);
+    color: var(--yellow);
+}
+.bento__tag {
+    color: var(--rust);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.bento__footnote {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-top: auto !important;
+}
+
+/* ================================================================
+   G · CTA
+   ================================================================ */
+
+.cta {
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+    padding: var(--space-5) var(--space-3);
+    background-color: var(--green);
+}
+.cta__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 1100px;
+}
+@media (min-width: 900px) {
+    .cta__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+    }
+}
+.cta__card {
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 207, 109, 0.04);
+    border: 2px solid var(--rust);
+    transition:
+        border-color var(--dur-warm) var(--ease-warm),
+        background-color var(--dur-warm) var(--ease-warm),
+        transform var(--dur-warm) var(--ease-warm);
+}
+.cta__card:hover {
+    border-color: var(--yellow);
+    background-color: rgba(255, 207, 109, 0.08);
+    transform: translateY(-2px);
+}
+.cta__card h2 {
+    color: var(--yellow);
+    font-size: clamp(28px, 3.6vw, 44px);
+    margin: var(--space-1) 0 var(--space-2);
+}
+.cta__card p {
+    margin: 0 0 var(--space-2);
+    line-height: var(--leading-body);
+}
+
+/* ================================================================
+   Footer
+   ================================================================ */
+
+.site-footer {
+    padding: var(--space-4) var(--space-3);
+    background-color: var(--green);
+    border-top: 1px solid rgba(198, 82, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: center;
+    text-align: center;
+}
+.site-footer__nav {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.site-footer__nav a {
+    color: var(--rust);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: color var(--dur-warm) var(--ease-warm);
+}
+.site-footer__nav a:hover,
+.site-footer__nav a:focus-visible {
+    color: var(--yellow);
+}
+
+/* ================================================================
+   Wire thread — the decorative SVG path, drawn by Phase 3 JS
+   ================================================================ */
+
+.wire {
+    position: fixed;
+    left: calc(50% - 50px);
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;       /* kept invisible until Phase 3 wires it up */
+}
+@media (max-width: 768px) {
+    .wire {
+        left: 8px;
+        width: 20px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .wire { opacity: 0 !important; }
+}

@@ -1,98 +1,153 @@
 /* ================================================================
-   Header + navigation — filament-warm micro-interactions
+   Header — brand / nav / socials, filament-warm interactions
    ================================================================ */
 
 .header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 12px 30px;
-    z-index: 3;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 14px 24px;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-2);
     box-sizing: border-box;
-    height: fit-content;
+    background: linear-gradient(180deg,
+                rgba(11, 38, 0, 0.72) 0%,
+                rgba(11, 38, 0, 0) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
-.header .nav-buttons {
+/* Brand */
+.header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    height: 44px;
+}
+.header__mark {
+    height: 28px;
+    width: auto;
+    display: block;
+    transition: filter var(--dur-warm) var(--ease-warm);
+}
+.header__brand:hover .header__mark,
+.header__brand:focus-visible .header__mark {
+    filter: drop-shadow(0 0 12px rgba(255, 207, 109, 0.45));
+}
+
+/* Nav */
+.nav-buttons {
     display: flex;
     gap: var(--space-1);
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
-
-.header .nav-buttons a {
-    padding: 10px 16px;                  /* min 44×44 touch target */
+.nav-buttons a {
+    padding: 10px 14px;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     background: none;
-    position: relative;
     border-radius: var(--radius-sm);
     color: var(--rust);
+    position: relative;
     transition:
         color var(--dur-warm) var(--ease-warm),
-        text-shadow var(--dur-warm) var(--ease-warm),
-        background-color var(--dur-warm) var(--ease-warm);
+        text-shadow var(--dur-warm) var(--ease-warm);
 }
-
-/* Filament warm-up on hover + keyboard focus */
-.header .nav-buttons a:hover,
-.header .nav-buttons a:focus-visible {
+.nav-buttons a:hover,
+.nav-buttons a:focus-visible {
     color: var(--yellow);
     text-shadow: 0 0 12px rgba(255, 207, 109, 0.55);
 }
-
-/* Active page indicator (set by togglemenu.js) */
-.header .nav-buttons a[aria-current="page"] {
+.nav-buttons a[aria-current="page"] {
     color: var(--yellow);
 }
-.header .nav-buttons a[aria-current="page"]::after {
+.nav-buttons a[aria-current="page"]::after {
     content: "";
     position: absolute;
-    left: 16px;
-    right: 16px;
-    bottom: 4px;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
     height: 2px;
     background: linear-gradient(90deg, var(--rust), var(--yellow));
     border-radius: 2px;
 }
 
 /* One-time slide-in on load */
-.header .nav-buttons a {
-    transform: translateX(100%);
+.nav-buttons a {
+    transform: translateX(20px);
     opacity: 0;
     animation: slideIn 0.5s var(--ease-warm) forwards;
 }
-.header .nav-buttons a:nth-child(1) { animation-delay: 0.1s; }
-.header .nav-buttons a:nth-child(2) { animation-delay: 0.2s; }
-.header .nav-buttons a:nth-child(3) { animation-delay: 0.3s; }
-.header .nav-buttons a:nth-child(4) { animation-delay: 0.4s; }
-
+.nav-buttons a:nth-child(1) { animation-delay: 0.05s; }
+.nav-buttons a:nth-child(2) { animation-delay: 0.1s; }
+.nav-buttons a:nth-child(3) { animation-delay: 0.15s; }
+.nav-buttons a:nth-child(4) { animation-delay: 0.2s; }
 @keyframes slideIn {
     to { opacity: 1; transform: translateX(0); }
 }
-
-/* Reduce motion: no slide-in */
 @media (prefers-reduced-motion: reduce) {
-    .header .nav-buttons a {
+    .nav-buttons a {
         animation: none;
         transform: none;
         opacity: 1;
     }
 }
 
-.bar {
-    height: 3px;
-    width: 100%;
-    border-radius: 5px;
-    background: linear-gradient(90deg, var(--rust), var(--yellow));
+/* Socials */
+.header__socials {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.header__social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--rust);
+    text-decoration: none;
+    transition:
+        color var(--dur-warm) var(--ease-warm),
+        background-color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm);
+}
+.header__social:hover,
+.header__social:focus-visible {
+    color: var(--yellow);
+    background-color: rgba(255, 207, 109, 0.08);
+    box-shadow: 0 0 16px -4px rgba(255, 207, 109, 0.5);
 }
 
-/* Hide scrollbars on all elements */
+/* Underline bar at the bottom of the header */
+.bar {
+    display: none;   /* not used in the new header layout */
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .header {
+        padding: 10px 12px;
+        grid-template-columns: auto 1fr auto;
+    }
+    .nav-buttons a { padding: 8px 10px; font-size: 14px; }
+    .header__mark { height: 22px; }
+    .header__social { width: 40px; height: 40px; }
+}
+
+/* Hide scrollbars */
 * {
-    scrollbar-width: none;           /* Firefox */
-    -ms-overflow-style: none;        /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 *::-webkit-scrollbar { display: none; }

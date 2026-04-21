@@ -33,10 +33,17 @@ process() {
   local src_w
   src_w=$(magick identify -format "%w" "$src")
 
+  # Pick which widths actually apply. Always include the source width
+  # (floored to nearest 100) so small images still get a WebP derivative.
+  local widths_to_emit=()
   for w in "${WIDTHS[@]}"; do
-    # Never upscale
-    (( w > src_w )) && continue
+    (( w <= src_w )) && widths_to_emit+=("$w")
+  done
+  if [[ ${#widths_to_emit[@]} -eq 0 ]]; then
+    widths_to_emit=("$src_w")
+  fi
 
+  for w in "${widths_to_emit[@]}"; do
     local webp_out="$IMG_DIR/${stem}-${w}w.webp"
     local jpg_out="$IMG_DIR/${stem}-${w}w.jpg"
 

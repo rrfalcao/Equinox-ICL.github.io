@@ -2,24 +2,46 @@
   {
     "title": "Energy Kiosk",
     "year": 2009,
-    "image": "static/images/2009.jpg",
-    "description": "In 2009, e.quinox launched its first pilot Energy Kiosk in Rwanda, marking the organisation’s very first expedition on the ground. The trip was an opportunity to test a new technical solution and explore how a sustainable business model could bring reliable electricity to rural communities.",
-    "description2": "The kiosk was monitored remotely through a custom data-logging system and maintained by Rwandan partners, ensuring it could keep running long after the team returned to London. This pioneering project gave e.quinox its first real-world proof of concept and a platform to grow future initiatives."
+    "tag": "First expedition",
+    "imageStem": "static/images/2009",
+    "imageWidths": [800, 1600],
+    "imageAlt": "e.quinox Energy Kiosk — Rwanda, 2009",
+    "description": "In 2009, e.quinox launched its first pilot Energy Kiosk in Rwanda, marking the organisation's very first expedition on the ground. The trip was an opportunity to test a new technical solution and explore how a sustainable business model could bring reliable electricity to rural communities.",
+    "description2": "The kiosk was monitored remotely through a custom data-logging system and maintained by Rwandan partners, ensuring it could keep running long after the team returned to London. This pioneering project gave e.quinox its first real-world proof of concept and a platform to grow future initiatives.",
+    "outcomes": [
+      "First e.quinox installation on the ground",
+      "Remote monitoring via a custom data-logging system",
+      "Community ownership and maintenance model established"
+    ]
   },
   {
     "title": "Home Lighting",
     "year": 2013,
-    "image": "static/images/2013.jpg",
+    "tag": "Power to the home",
+    "imageStem": "static/images/2013",
+    "imageWidths": [700],
+    "imageAlt": "Portable battery boxes distributed in Rwandan homes — 2013",
     "description": "In 2013, e.quinox returned to Rwanda to expand their work through a new home lighting initiative. The team worked with local communities to deliver portable battery boxes, giving households access to reliable light and power for the first time.",
-    "description2": "Alongside this, they trained and collaborated with local entrepreneurs to manufacture and distribute the systems. The expedition strengthened e.quinox’s approach of combining engineering solutions with community-led development, creating a foundation for future projects."
-    
+    "description2": "Alongside this, they trained and collaborated with local entrepreneurs to manufacture and distribute the systems. The expedition strengthened e.quinox's approach of combining engineering solutions with community-led development, creating a foundation for future projects.",
+    "outcomes": [
+      "Portable battery boxes deployed to homes",
+      "Local entrepreneurs trained to manufacture and distribute",
+      "Community-led distribution network established"
+    ]
   },
   {
-    "title": "Recon",
+    "title": "Rainwater Recon",
     "year": 2024,
-    "image": "static/images/2024.png",
-    "description": "In 2024, a team went to Rwanda to introduce an initiative aiming to improve the quality and quantity of water access. This project brought rainwater harvesting to homes - offering a scalable, accessible and transportable solution to improve water access across rural Rwanda.",
-    "description2": " They received guidance from Rwanda's Ministry of Infrastructure, as well as the opportunity to collaborate with the Dean of Engineering at the University of Rwanda. This allowed e.quinox to receive invaluable feedback that will influence their design and engineering choices going forward."
-  
+    "tag": "From electricity to water",
+    "imageStem": "static/images/2024",
+    "imageWidths": [800, 1600],
+    "imageAlt": "2024 expedition installing rainwater harvesting at a rural home in Rwanda",
+    "description": "In 2024, a team went to Rwanda to introduce an initiative aiming to improve the quality and quantity of water access. This project brought rainwater harvesting to homes — offering a scalable, accessible and transportable solution to improve water access across rural Rwanda.",
+    "description2": "They received guidance from Rwanda's Ministry of Infrastructure, as well as the opportunity to collaborate with the Dean of Engineering at the University of Rwanda. This allowed e.quinox to receive invaluable feedback that will influence their design and engineering choices going forward.",
+    "outcomes": [
+      "First water-access project for e.quinox",
+      "Partnership with Rwanda's Ministry of Infrastructure",
+      "Collaboration with the University of Rwanda"
+    ]
   }
-]        
+]
