@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e.quinox projects</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <!-- CSS Files -->
-    <link rel="stylesheet" href="static/auxcss/header.css">
     <link rel="stylesheet" href="static/auxcss/helper.css">
+    <link rel="stylesheet" href="static/auxcss/header.css">
     <link rel="stylesheet" href="static/css/projects.css">
 
     <!-- Icons -->
@@ -15,9 +20,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="static/favicon_io/site.webmanifest">
-
-    <!-- Auxiliary HTML -->
-    <div data-include-html="static/auxhtml/font.html"></div>
 </head>
 <body class="yellow greenbg">
     <div data-include-html="static/auxhtml/header.html"></div>
@@ -26,15 +28,7 @@
     </div>
     <!-- JS Files -->
     <script src="static/js/include.js"></script>
+    <script src="static/js/togglemenu.js"></script>
     <script src="static/js/generateProjects.js"></script>
-    <script>
-        setTimeout(() => {
-            if (window.location.pathname.includes("/projects")) {
-                var header = document.querySelector(".header2")
-                header.classList.remove("rust")
-                header.classList.add("darkrust")
-            }
-        }, 1000)
-    </script>
 </body>
 </html>

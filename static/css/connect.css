@@ -1,87 +1,144 @@
-html {    
+/* ================================================================
+   Connect — form + sidebar
+   ================================================================ */
+
+html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
+
 body {
-    overflow-y: scroll; /* Enable vertical scrolling if necessary */
-    overscroll-behavior: contain; /* Prevent overscroll behavior */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin: 0;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.connect-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-3);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .connect-container {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: var(--space-5);
+        padding: var(--space-5) var(--space-4);
+    }
 }
 
 .column {
-    width: 90%;
-    padding: 2% 5%;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Optional: Center horizontally */
-    vertical-align: middle;
-    height: fit-content;
-    position: relative;
-    margin: auto;
+    min-width: 0;                 /* avoid overflow of grid children */
 }
 
 .backgroundImg {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    border-radius: var(--radius);
+    display: block;
+    object-fit: cover;
 }
 
+/* ---- Form fields ---- */
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-3);
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: var(--space-1);
+    font-weight: 500;
+    color: var(--yellow);
+    font-size: 14px;
+    letter-spacing: 0.02em;
 }
 
-.form-group input, .form-group textarea {
+.form-group .optional {
+    color: var(--rust);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.form-group input,
+.form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px 14px;
+    border: 1px solid var(--rust);
+    border-radius: var(--radius-sm);
+    background-color: rgba(255, 207, 109, 0.04);
+    color: var(--yellow);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
     box-sizing: border-box;
+    transition:
+        border-color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm),
+        background-color var(--dur-warm) var(--ease-warm);
 }
 
-button {
-    padding: 10px 20px;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 207, 109, 0.4);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: var(--yellow);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--yellow);
+    border-width: 2px;
+    padding: 11px 13px;           /* preserve layout on border-width shift */
+    box-shadow: 0 0 0 4px rgba(255, 207, 109, 0.18);
+    background-color: rgba(255, 207, 109, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ---- Submit button — filament warm-up ---- */
+
+.submit-btn {
+    padding: 16px 28px;
     border: none;
-    background-color: rgb(32, 31, 31);
-    color: white;
-    border-radius: 5px;
+    background-color: var(--rust);
+    color: var(--yellow);
+    border-radius: var(--radius);
     cursor: pointer;
     width: 100%;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition:
+        background-color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm),
+        transform var(--dur-warm) var(--ease-warm);
 }
 
-button:hover {
-    background-color: #183108;
+.submit-btn:hover,
+.submit-btn:focus-visible {
+    background-color: var(--yellow);
+    color: var(--green);
+    box-shadow:
+        0 0 0 1px var(--yellow) inset,
+        0 8px 32px -8px rgba(255, 207, 109, 0.6);
+    transform: translateY(-2px);
 }
 
-.connect-container {
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    height: 100%;
-    vertical-align: middle;
-    border-radius: 10px;
-    vertical-align: middle;
-    margin: 20px;
-    justify-content: space-between;
-}
-
-@media screen and (min-aspect-ratio: 11/9) {
-    .connect-container {
-        display: grid;
-        grid-template-columns: 60% 40%;
-    }
-}
-
-@media screen and (max-aspect-ratio: 11/9){
-    .connect-ontainer {
-        display: grid;
-        grid-template-rows: auto auto;
-    }
+.submit-btn:active {
+    transform: translateY(0);
 }

@@ -1,66 +1,166 @@
-.yellow {
-   color: #ffcf6d;
+/* ================================================================
+   Equinox ICL — Design Tokens
+   Single source of truth for colour, type, spacing, radius, motion.
+   ================================================================ */
+
+:root {
+    /* Palette */
+    --green: #0b2600;
+    --yellow: #ffcf6d;
+    --yellow-hover: #cca64c;
+    --rust: #c65200;
+    --darkrust: #963200;
+
+    /* Semantic aliases */
+    --bg: var(--green);
+    --surface: var(--yellow);
+    --ink: var(--yellow);
+    --ink-dark: var(--green);
+    --accent: var(--rust);
+    --accent-warm: var(--yellow);
+
+    /* Typography */
+    --font-body: 'Poppins', system-ui, -apple-system, sans-serif;
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --leading-body: 1.65;
+    --leading-display: 1.05;
+    --tracking-tight: -0.02em;
+    --tracking-eyebrow: 0.12em;
+
+    /* Spacing scale (8pt rhythm) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 48px;
+    --space-5: 96px;
+
+    /* Misc */
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --measure: 62ch;
+
+    /* Motion */
+    --ease-warm: cubic-bezier(.2, .7, .2, 1);
+    --dur-warm: 240ms;
+    --dur-slow: 480ms;
 }
 
-.yellowHover:hover {
-    color: #cca64c;
-}
-
-.yellowbg {
-    background-color: #ffcf6d;
-}
-
-.green {
-    color: #0b2600;
-}
-
-.greenbg {
-    background-color: #0b2600;
-}
-
-.rust {
-    color: #c65200;
-}
-.darkrust {
-    color: #963200
-}
-.rustbg {
-    background-color: #c65200;
-}
+/* ================================================================
+   Fonts — loaded from Google Fonts in auxhtml/font.html
+   Phase 3 self-hosts Poppins & Fraunces in static/fonts/
+   ================================================================ */
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-optical-sizing: auto;
-    font-style: normal
+    font-style: normal;
+    background-color: var(--bg);
+    color: var(--ink);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-.weight400 {
-    font-weight: 400;
+img {
+    image-rendering: -webkit-optimize-contrast;
+    max-width: 100%;
+    height: auto;
 }
 
-.weight300 {
+/* ================================================================
+   Utility classes (retained as aliases so existing markup works)
+   ================================================================ */
+
+.yellow       { color: var(--yellow); }
+.yellowHover:hover { color: var(--yellow-hover); }
+.yellowbg     { background-color: var(--yellow); }
+.green        { color: var(--green); }
+.greenbg      { background-color: var(--green); }
+.rust         { color: var(--rust); }
+.darkrust     { color: var(--darkrust); }
+.rustbg       { background-color: var(--rust); }
+
+.weight400 { font-weight: 400; }
+.weight300 { font-weight: 300; }
+
+.font40 { font-size: 40px; }
+.font28 { font-size: 28px; }
+.font24 { font-size: 24px; }
+.font20 { font-size: 20px; }
+.font16 { font-size: 16px; }
+.font14 { font-size: 14px; }
+
+/* Display type */
+.display,
+.font-display {
+    font-family: var(--font-display);
     font-weight: 300;
+    font-variation-settings: 'SOFT' 50, 'opsz' 144;
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-display);
 }
 
-.font40 {
-    font-size: 40px;
-}
-.font28 {
-    font-size: 28px;
-}
-
-.font24 {
-    font-size: 24px;
-}
-
-.font20 {
-    font-size: 20px;
+/* Eyebrow labels (e.g. “STUDENT-LED · IMPERIAL CHAPTER”) */
+.eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--rust);
 }
 
-.font16 {
-    font-size: 16px;
+/* Spinoff project name — used in about.html’s impact cards */
+.projectName {
+    font-weight: 600;
+    color: var(--yellow);
+    margin: var(--space-1) 0;
 }
 
-.font14 {
-    font-size: 14px;
+/* ================================================================
+   Accessibility non-negotiables
+   ================================================================ */
+
+:focus-visible {
+    outline: 3px solid var(--rust);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover { color: var(--yellow); }
+
+/* Minimum 44×44 touch target on nav links — set on the actual selector in header.css */
+
+/* ================================================================
+   Filament-warm micro-interactions — single vocabulary reused across
+   nav, buttons, project cards, and form inputs.
+   ================================================================ */
+
+.warm {
+    transition:
+        color var(--dur-warm) var(--ease-warm),
+        background-color var(--dur-warm) var(--ease-warm),
+        border-color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm),
+        text-shadow var(--dur-warm) var(--ease-warm),
+        transform var(--dur-warm) var(--ease-warm),
+        filter var(--dur-warm) var(--ease-warm);
+}
+
+/* Reduce motion: strip all transitions + animations wholesale */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
 }

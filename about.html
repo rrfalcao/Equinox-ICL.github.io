@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About e.quinox</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <!-- CSS Files -->
-  <link rel="stylesheet" href="static/auxcss/header.css">
   <link rel="stylesheet" href="static/auxcss/helper.css">
+  <link rel="stylesheet" href="static/auxcss/header.css">
   <link rel="stylesheet" href="static/css/about.css">
 
   <!-- Icons -->
@@ -15,9 +20,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="static/favicon_io/site.webmanifest">
-
-  <!-- Auxiliary HTML -->
-  <div data-include-html="static/auxhtml/font.html"></div>
 </head>
 
 <body class="green yellowbg">
@@ -31,7 +33,7 @@
         <p class="topPara font24"> 
           e.quinox is a student-led humanitarian organisation with the objective of uplifting rural Rwandan communities through sustainable, self-sufficient and scalable solutions.
         </p>
-        <p class="bottomPara font20" style="color:yellowgreen">
+        <p class="bottomPara font20 yellow">
         We bridge the gap between NGOs and industrial practice, fostering collaboration in the fields of sustainable energy and international development. 
         </p>
         <p class="bottomPara font16">
@@ -39,7 +41,14 @@
         </p>
       </article>
       <figure class="image">
-        <img class="about-image" src="static/images/about.jpg" alt="e.quinox team in Rwanda"> 
+        <picture>
+          <source type="image/webp"
+                  srcset="static/images/about-800w.webp 800w, static/images/about-1600w.webp 1600w"
+                  sizes="(max-width: 768px) 100vw, 50vw">
+          <img class="about-image" src="static/images/about-1600w.jpg"
+               alt="e.quinox team on the ground in rural Rwanda"
+               loading="lazy" decoding="async">
+        </picture>
       </figure>
     </section>
 
@@ -59,7 +68,14 @@
             They received guidance from Rwanda's Ministry of Infrastructure, as well as the opportunity to collaborate with the Dean of Engineering at the University of Rwanda. This allowed e.quinox to receive invaluable feedback that will influence their design and engineering choices going forward. </p>
           </div>
           <figure>
-            <img class="expeditionImg" src="static/images/2024.png" alt="e.quinox team in Rwanda">
+            <picture>
+              <source type="image/webp"
+                      srcset="static/images/2024-800w.webp 800w, static/images/2024-1600w.webp 1600w"
+                      sizes="(max-width: 768px) 100vw, 50vw">
+              <img class="expeditionImg" src="static/images/2024-1600w.jpg"
+                   alt="2024 expedition — rainwater harvesting installation, rural Rwanda"
+                   loading="lazy" decoding="async">
+            </picture>
           </figure>
         </article>
 
@@ -83,23 +99,23 @@
           <figure>
             <img class="projectImg" src="static/images/bboxx.png" alt="Bboxx logo">
           </figure>
-          <p style="color: lightseagreen">Bboxx</p>
-          <p style="color: lightseagreen" class="projectDesc">Democratising Energy</p>
+          <p class="projectName">Bboxx</p>
+          <p class="projectDesc">Democratising Energy</p>
         </article>
 
         <article class="yellow project">
           <figure>
             <img class="projectImg" src="static/images/mesh.png" alt="MeshPower logo">
           </figure>
-          <p style="color: rgb(96, 192, 33)">MeshPower</p>
-          <p style="color: rgb(96, 192, 33)" class="projectDesc">Solar Power Solutions</p>
+          <p class="projectName">MeshPower</p>
+          <p class="projectDesc">Solar Power Solutions</p>
         </article>
         <article class="yellow project">
           <figure>
             <img class="projectImg" src="static/images/minazi.png" alt="Minazi Consulting logo">
           </figure>
-          <p style="color: #44dd99">Minazi Consulting</p>
-          <p style="color: #44dd99" class="projectDesc">Tackling gender inequality</p>
+          <p class="projectName">Minazi Consulting</p>
+          <p class="projectDesc">Tackling gender inequality</p>
         </article>
 
       </section>

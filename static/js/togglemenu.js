@@ -1,19 +1,19 @@
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function highlightMenu() {
-    const menu = document.getElementById("headerList");
+function highlightMenu() {
+    const menu = document.getElementById('headerList');
+    if (!menu) return;
+    const path = window.location.pathname;
     for (const child of menu.children) {
-        if(window.location.pathname == "/" &&  child.name == "home"){
-            child.classList.add("rust")
-            break
-        }
-        if (window.location.pathname.includes(child.name)){
-            child.classList.add("rust")
+        const name = child.getAttribute('name');
+        if (!name) continue;
+        const isHome = path === '/' && name === 'home';
+        const isMatch = name !== 'home' && path.includes(name);
+        if (isHome || isMatch) {
+            child.classList.remove('rust');
+            child.classList.add('darkrust');
+            child.setAttribute('aria-current', 'page');
             break;
         }
     }
-    
 }
-window.onload = highlightMenu;
+
+document.addEventListener('includes:loaded', highlightMenu);

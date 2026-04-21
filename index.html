@@ -10,45 +10,31 @@
         <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="static/favicon_io/site.webmanifest">
     
-        <link rel="stylesheet" href="static/css/index.css">
-        <link rel="stylesheet" href="static/auxcss/header.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="static/auxcss/helper.css">
-        <line rel="stylesheet" href="static/css/about.css">
-    
-        <div data-include-html="static/auxhtml/font.html"></div>
+        <link rel="stylesheet" href="static/auxcss/header.css">
+        <link rel="stylesheet" href="static/css/index.css">
+        <link rel="stylesheet" href="static/css/about.css">
     </head>
 
 <body class="green yellowbg">
-    <div class="bodyDiv">
-        <div class="landingDiv">
-            <div data-include-html="static/auxhtml/header.html"></div>
-            <img src="/static/images/Logo/Logo Rust.svg" class = "logo">
-        </div>
-        <div class="contentDiv greenbg" data-include-html="/about.html"></div>
-    </div>
-
+    <header data-include-html="static/auxhtml/header.html"></header>
+    <main class="bodyDiv">
+        <section class="landingDiv" aria-label="Welcome to e.quinox">
+            <img src="/static/images/Logo/Logo Rust.svg" class="logo" alt="e.quinox — student humanitarian society at Imperial College London">
+        </section>
+        <section class="contentDiv greenbg" data-include-html="/about.html" aria-label="About e.quinox"></section>
+    </main>
 </body>
 <!-- JS Files -->
 <script src="static/js/include.js"></script>
+<script src="static/js/togglemenu.js"></script>
 <script>
     window.addEventListener("load", function() {
         document.querySelector(".landingDiv").classList.add("loaded");
-    });
-    setTimeout(() => {
-            if (window.location.pathname == "/" || window.location.pathname.includes("/index")) {
-                var header = document.querySelector(".header1")
-                header.classList.remove("rust")
-                header.classList.add("darkrust")
-            }
-        }, 1000)
-
-    window.addEventListener("scroll", () => {
-        requestAnimationFrame(() => {
-            let scrollPosition = window.scrollY; 
-            document.querySelector(".logo").style.transform = `translateY(-${scrollPosition * 0.2}px)`;
-            document.querySelector(".landingDiv").style.transform = `translateY(${scrollPosition * 0.98}px)`;
-            document.querySelector(".header").style.transform = `translateY(${scrollPosition * 0.02}px)`;
-        });
     });
 </script>
 </html>

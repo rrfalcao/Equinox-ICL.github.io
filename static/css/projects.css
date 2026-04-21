@@ -1,39 +1,61 @@
-html {    
+html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    font-family: Arial, sans-serif;
 }
 body {
     margin: 0 auto;
     overflow-y: scroll;
     overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .gridContainer {
-    padding-top: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    flex-direction: column;
+    gap: var(--space-3);
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     box-sizing: border-box;
-    padding: 2%;
+    padding: var(--space-4) var(--space-3);
+    list-style: none;
 }
 
 .gridItem {
-    padding: 3%;
+    padding: var(--space-4);
     display: grid;
     grid-template-columns: 70% 30%;
-    border: 3px solid #c65200;
-    border-radius: 15px;
+    gap: var(--space-3);
+    border: 2px solid var(--rust);
+    border-radius: var(--radius-lg);
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    transition:
+        border-color var(--dur-warm) var(--ease-warm),
+        box-shadow var(--dur-warm) var(--ease-warm),
+        transform var(--dur-warm) var(--ease-warm);
+}
+
+.gridItem:hover {
+    border-color: var(--yellow);
+    box-shadow: 0 20px 60px -20px rgba(150, 50, 0, 0.45);
+    transform: translateY(-2px);
+}
+
+.descBox .title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--yellow);
+    margin: 0 0 var(--space-1);
+}
+
+.descBox .description {
+    color: var(--yellow);
+    line-height: var(--leading-body);
+    margin: 0 0 var(--space-2);
 }
 
 .gridItem img {

@@ -1,23 +1,23 @@
 :root {
-    --headerHeight: "20px";
+    --headerHeight: 20px;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    padding : 0;
+    padding: 0;
     margin: 0;
 }
 
 .bodyDiv {
     width: 100vw;
     display: grid;
-    grid-template-rows: 100% 50%;;
+    grid-template-rows: 100% 50%;
     height: 100vh;
 }
 
 .landingDiv {
     width: 100vw;
-    height: calc(100vh-var(--headerHeight));
+    height: calc(100vh - var(--headerHeight));
 }
 
 .landingDiv.loaded {
@@ -30,13 +30,10 @@ body {
 }
 
 .logo{
-    margin-left: auto;
-    position: relative;
-    top: 30%;
-    transform: translateY("-50%");
-    left: 20%;
+    display: block;
+    margin: 0 auto;
     width: 60%;
-    margin-right: auto;
+    padding-top: 8vh;
     z-index: 1;
 }
 .contentDiv{

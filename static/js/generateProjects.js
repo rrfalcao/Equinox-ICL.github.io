@@ -15,7 +15,8 @@ function generateMainContent(projects) {
         const gridItem = document.createElement('li');
         gridItem.className = 'gridItem';
 
-        const descBox = document.createElement('descBox');
+        const descBox = document.createElement('div');
+        descBox.className = 'descBox';
 
         const name = document.createElement('p');
         name.className = 'font28 title';
