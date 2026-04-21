@@ -302,7 +302,10 @@ section {
     gap: var(--space-3);
     padding: var(--space-4);
     opacity: 0;
-    transition: opacity var(--dur-slow) var(--ease-warm);
+    transform: translateY(12px);
+    transition:
+        opacity var(--dur-slow) var(--ease-warm),
+        transform var(--dur-slow) var(--ease-warm);
     pointer-events: none;
 }
 @media (min-width: 900px) {
@@ -315,7 +318,19 @@ section {
 }
 .arc__slide.is-active {
     opacity: 1;
+    transform: translateY(0);
     pointer-events: auto;
+}
+.arc__slide.is-active .arc__year {
+    animation: arcYearPop 520ms var(--ease-warm) both;
+}
+@keyframes arcYearPop {
+    0%   { transform: translateY(16px) scale(0.96); opacity: 0; }
+    60%  { transform: translateY(-2px) scale(1.02); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .arc__slide.is-active .arc__year { animation: none; }
 }
 
 .arc__image {
@@ -638,6 +653,81 @@ section {
 }
 
 /* ================================================================
+   Spotlight cursor — scoped "lamp" on hero + bento.
+   Gated by hover capability + reduced-motion in JS, but the overlay
+   is also kept disabled via CSS unless .is-lit is present.
+   ================================================================ */
+
+[data-spotlight] {
+    position: relative;
+    isolation: isolate;
+    --mx: 50%;
+    --my: 50%;
+}
+
+[data-spotlight]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(11, 38, 0, 0.78);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity var(--dur-slow) var(--ease-warm);
+    mask-image: radial-gradient(
+        circle 280px at var(--mx) var(--my),
+        transparent 0%,
+        transparent 30%,
+        rgba(0, 0, 0, 0.6) 65%,
+        #000 100%);
+    -webkit-mask-image: radial-gradient(
+        circle 280px at var(--mx) var(--my),
+        transparent 0%,
+        transparent 30%,
+        rgba(0, 0, 0, 0.6) 65%,
+        #000 100%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    [data-spotlight].is-lit::before {
+        opacity: 1;
+    }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .hero[data-spotlight].is-lit .hero__bg img {
+        filter: brightness(0.38) saturate(0.6);
+        transition: filter var(--dur-slow) var(--ease-warm);
+    }
+    /* Bento logos desaturate at rest when spotlight engaged */
+    .bento[data-spotlight].is-lit .bento__cell {
+        filter: saturate(0.65) brightness(0.85);
+        transition: filter var(--dur-slow) var(--ease-warm);
+    }
+    .bento[data-spotlight].is-lit .bento__cell:hover {
+        filter: saturate(1) brightness(1);
+    }
+}
+
+/* Touch devices: slow diagonal drift so phones get the effect too */
+@media (hover: none), (pointer: coarse) {
+    [data-spotlight]::before {
+        opacity: 1;
+        animation: spotlightDrift 12s linear infinite alternate;
+    }
+}
+@keyframes spotlightDrift {
+    0%   { --mx: 20%; --my: 35%; }
+    50%  { --mx: 60%; --my: 60%; }
+    100% { --mx: 80%; --my: 40%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    [data-spotlight]::before {
+        opacity: 0 !important;
+        animation: none !important;
+    }
+}
+
+/* ================================================================
    Wire thread — the decorative SVG path, drawn by Phase 3 JS
    ================================================================ */
 
@@ -649,12 +739,23 @@ section {
     height: 100vh;
     z-index: 1;
     pointer-events: none;
-    opacity: 0;       /* kept invisible until Phase 3 wires it up */
+    opacity: 0;
+    transition: filter 900ms var(--ease-warm);
+}
+.wire path {
+    stroke: var(--yellow);
+    transition: stroke 300ms var(--ease-warm);
+}
+.wire.is-glowing {
+    filter: drop-shadow(0 0 12px rgba(255, 207, 109, 0.7));
 }
 @media (max-width: 768px) {
     .wire {
         left: 8px;
         width: 20px;
+    }
+    .wire path {
+        stroke-width: 1;
     }
 }
 @media (prefers-reduced-motion: reduce) {
