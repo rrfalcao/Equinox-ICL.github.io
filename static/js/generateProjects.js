@@ -32,9 +32,10 @@
 
         const intro = document.createElement('header');
         intro.className = 'projects-intro';
+        intro.setAttribute('data-reveal', '');
         intro.innerHTML = `
             <p class="eyebrow">The archive</p>
-            <h1 class="display">Fifteen years of projects.</h1>
+            <h1 class="display">Projects since 2009.</h1>
             <p class="projects-intro__copy">
               Every e.quinox expedition is engineered at Imperial, tested by
               students in the field, and handed over to Rwandan partners who
@@ -43,15 +44,47 @@
         `;
         frag.appendChild(intro);
 
-        projects.forEach((p, i) => frag.appendChild(buildChapter(p, i)));
+        // Split into live + archived. Live render in JSON order; archived
+        // render under their own subheader at the bottom.
+        const live = projects.filter(p => !p.archived);
+        const archived = projects.filter(p => p.archived);
+
+        live.forEach((p, i) => frag.appendChild(buildChapter(p, i)));
+
+        if (archived.length) {
+            const divider = document.createElement('section');
+            divider.className = 'projects-archive';
+            divider.innerHTML = `
+                <header class="projects-archive__head" data-reveal>
+                    <p class="eyebrow">Archive</p>
+                    <h2 class="display">Earlier work.</h2>
+                    <p class="projects-archive__copy">
+                      Past prototypes from previous committees - shipped, learned
+                      from, then handed back. Filed here for the record.
+                    </p>
+                </header>
+            `;
+            archived.forEach((p, i) => divider.appendChild(buildChapter(p, i, true)));
+            frag.appendChild(divider);
+        }
 
         mount.replaceChildren(frag);
+
+        // Tell scroll.js about the freshly-mounted reveal targets.
+        if (typeof window._equinoxObserveReveals === 'function') {
+            window._equinoxObserveReveals(mount);
+        }
+        if (typeof window._equinoxIndexStagger === 'function') {
+            window._equinoxIndexStagger(mount);
+        }
     }
 
-    function buildChapter(p, index) {
+    function buildChapter(p, index, isArchived = false) {
         const chapter = document.createElement('article');
         chapter.className = 'chapter' + (index % 2 ? ' chapter--flip' : '');
         chapter.dataset.year = p.year;
+        chapter.setAttribute('data-reveal', '');
+        if (isArchived) chapter.dataset.archived = 'true';
 
         const sticky = document.createElement('div');
         sticky.className = 'chapter__image';

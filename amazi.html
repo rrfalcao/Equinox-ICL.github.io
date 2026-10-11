@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Amazi · household rainwater harvesting in rural Rwanda</title>
+    <meta name="description" content="Project Amazi is e.quinox's deployable, modular household rainwater harvester for rural Rwanda: 3.2x cheaper to install and 3.8x cheaper to run than a pumped communal tap, meeting over 40% of household water needs nine months a year in every province.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Preload LCP hero -->
+    <link rel="preload" as="image" href="static/images/amazi/tanks-in-place-1600w.webp" type="image/webp" fetchpriority="high" media="(min-width: 801px)">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/auxcss/helper.css">
+    <link rel="stylesheet" href="static/auxcss/header.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon_io/site.webmanifest">
+</head>
+
+<body class="greenbg">
+    <header data-include-html="static/auxhtml/header.html"></header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero hero--amazi" id="top">
+            <picture class="hero__bg">
+                <source type="image/webp" media="(max-width: 800px)" srcset="static/images/amazi/tanks-in-place-800w.webp">
+                <source type="image/webp" media="(max-width: 1600px)" srcset="static/images/amazi/tanks-in-place-1600w.webp">
+                <source type="image/webp" srcset="static/images/amazi/tanks-in-place-2400w.webp">
+                <img src="static/images/amazi/tanks-in-place-1600w.jpg" alt="" role="presentation" fetchpriority="high" decoding="async">
+            </picture>
+            <div class="hero__vignette" aria-hidden="true"></div>
+            <div class="hero__inner">
+                <div class="hero__copy">
+                    <p class="eyebrow">Project Amazi · 2026</p>
+                    <h1 class="display">
+                        <span class="hero__line">A deployable</span>
+                        <span class="hero__line">rainwater harvester</span>
+                        <span class="hero__line">for rural Rwanda.</span>
+                    </h1>
+                    <p class="hero__sub">
+                        Four years of research in Gakenke District, a first system installed
+                        in Minazi Sector, and a business case for Rwanda&rsquo;s water sector.
+                        Engineered at Imperial. Built in Rwanda.
+                    </p>
+                    <div class="actions">
+                        <a class="button-warm" href="#system">See the system</a>
+                        <a class="button-warm button-warm--ghost" href="/connect.html">Partner with us</a>
+                    </div>
+                </div>
+            </div>
+            <a class="hero__scroll-cue" href="#problem" aria-label="Scroll down"><span></span></a>
+        </section>
+
+        <nav class="chapters" aria-label="On this page">
+            <ol>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#bottlenecks">Bottlenecks</a></li>
+                <li><a href="#system">System</a></li>
+                <li><a href="#economics">Cost</a></li>
+                <li><a href="#yield">Yield</a></li>
+                <li><a href="#quality">Quality</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ol>
+        </nav>
+
+        <!-- 1 · PROBLEM -->
+        <section class="section" id="problem" aria-labelledby="problem-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">01 · The problem</p>
+                    <h2 class="display" id="problem-h">Non-potable water access is life&rsquo;s biggest limit in rural Rwanda.</h2>
+                    <p class="head__lede">
+                        That is what communities in Gakenke District told us, again and again,
+                        across four years of interviews and wide-scale surveys.
+                    </p>
+                </header>
+
+                <div class="problem-grid" data-reveal data-stagger>
+                    <article class="card card--wide">
+                        <p class="eyebrow">Daily water use · Minazi Sector</p>
+                        <p class="num num--water">3&ndash;20<small>litres per person per day</small></p>
+                        <p>Below basic access at the low end, and far short of the 50&nbsp;L that
+                            intermediate access, the level that supports good hygiene, calls for.</p>
+                        <div class="lscale" data-reveal aria-label="Minazi daily use of 3 to 20 litres per person, against roughly 20 litres for basic access and 50 litres for intermediate access">
+                            <div class="lscale__track">
+                                <span class="lscale__range grow" style="left:5.000%;width:28.333%"></span>
+                                <span class="lscale__mark" style="left:33.333%"><em>Basic</em></span>
+                                <span class="lscale__mark lscale__mark--goal" style="left:83.333%"><em>Intermediate · 50&nbsp;L</em></span>
+                            </div>
+                            <div class="lscale__ticks"><span style="left:0.000%">0</span><span style="left:16.667%">10</span><span style="left:33.333%">20</span><span style="left:50.000%">30</span><span style="left:66.667%">40</span><span style="left:83.333%">50</span><span style="left:100.000%">60</span></div>
+                            <p class="lscale__unit">litres per person per day</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--wide">
+                        <p class="eyebrow">How rural households use water</p>
+                        <div class="donut-row">
+                            <svg viewBox="-60 -60 120 120" role="img" aria-label="10% of household water is used for potable purposes, 90% for non-potable">
+                                <circle r="46" fill="none" stroke="rgba(255,207,109,0.08)" stroke-width="15"/>
+                                <circle r="46" fill="none" stroke="#9fcbe0" stroke-width="15" stroke-dasharray="258.12 289.03" stroke-dashoffset="-29.90" transform="rotate(-90)"/>
+                                <circle r="46" fill="none" stroke="#ffcf6d" stroke-width="15" stroke-dasharray="26.90 289.03" stroke-dashoffset="-1" transform="rotate(-90)"/>
+                                <text y="2" text-anchor="middle" style="font-family:var(--font-display);font-size:28px;font-weight:300;fill:#9fcbe0">90%</text>
+                                <text y="18" text-anchor="middle" style="font-family:var(--font-body);font-size:8px;letter-spacing:.12em;fill:rgba(255,207,109,.7)">NON-POTABLE</text>
+                            </svg>
+                            <div>
+                                <p style="color: var(--yellow);">Most household water doesn&rsquo;t need to be drinkable. Rain can supply it.</p>
+                                <ul class="split">
+                                    <li><b>10%</b> potable: drinking, cooking, dishwashing</li>
+                                    <li><b class="w">90%</b> non-potable: livestock, sanitation, hygiene</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <p class="eyebrow">Landslides · Gakenke District</p>
+                        <ul class="cost-list">
+                            <li><b>7</b><span>deaths and 34.4&nbsp;ha of crops lost in 2022</span></li>
+                            <li><b>77</b><span>houses destroyed in 2023</span></li>
+                            <li><b>308</b><span>people left homeless in 2023</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <p class="eyebrow">The human cost</p>
+                        <ul class="cost-list">
+                            <li><b>1.5h</b><span>a day walking to collect water</span></li>
+                            <li><b>4 wk</b><span>of work lost per adult each year to hygiene-related illness</span></li>
+                            <li><b>Girls</b><span>miss the most school, because they fetch the water</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <p class="eyebrow">The national cost</p>
+                        <ul class="cost-list">
+                            <li><b>~2.4%</b><span>of Rwanda&rsquo;s GDP lost each year to water stress</span></li>
+                            <li><b>7%</b><span>drop in agricultural productivity, hitting food supply and income</span></li>
+                        </ul>
+                    </article>
+                </div>
+                <p class="source" data-reveal>Sources: e.quinox surveys and interviews in Gakenke, 2022 to 2025; WHO (2020) <em>Domestic water quantity, service level and health</em>; Dusabeyezu &amp; Nsanzumukiza (2024); e.quinox 2026 partnership brief.</p>
+            </div>
+        </section>
+
+        <!-- 2 · BOTTLENECKS -->
+        <section class="section section--tight" id="bottlenecks" aria-labelledby="bottlenecks-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">02 · Why it isn&rsquo;t solved</p>
+                    <h2 class="display" id="bottlenecks-h">Rainwater harvesting is encouraged in Rwanda, but rarely built.</h2>
+                    <p class="head__lede">
+                        Rain is abundant and the benefits of harvesting it are well understood.
+                        Yet adoption is largely confined to public buildings.
+                    </p>
+                </header>
+
+                <ul class="policy" data-reveal data-stagger>
+                    <li><b>2017</b><span>Rwanda Water Board publishes a rainwater harvesting strategy. It is never adopted into policy.</span></li>
+                    <li><b>&lt;1%</b><span>of the water supply budget goes to rainwater harvesting in MININFRA&rsquo;s 2023 water and sanitation policy.</span></li>
+                    <li><b>2</b><span>rainwater harvesting projects funded nationally, by FONERWA and the Ministry of Environment.</span></li>
+                </ul>
+
+                <div class="grid grid--2 bottlenecks" data-reveal data-stagger>
+                    <div class="bottleneck">
+                        <p class="eyebrow">Bottleneck 1</p>
+                        <h3 class="display">Funding</h3>
+                        <p>There are no subsidies, so the whole cost lands on the families who need water most.</p>
+                        <p class="bottleneck__answer">Amazi is 3.2&times; cheaper to install than a pumped tap connection. <a href="#economics">See the cost</a></p>
+                    </div>
+                    <div class="bottleneck">
+                        <p class="eyebrow">Bottleneck 2</p>
+                        <h3 class="display">Deployment</h3>
+                        <p>Existing tanks are large and heavy. Villages away from the main roads are hard, or impossible, to reach.</p>
+                        <p class="bottleneck__answer">Amazi breaks down into parts one person can carry, cutting delivery costs by over 90%. <a href="#system">See the system</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 · SYSTEM -->
+        <section class="section" id="system" aria-labelledby="system-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">03 · The system</p>
+                    <h2 class="display" id="system-h">A modular harvester that grows with the household.</h2>
+                    <p class="head__lede">
+                        Each 700&nbsp;L tank connects in parallel with the next, so families add
+                        capacity as their needs and means allow. Every part is chosen for clean
+                        water, security and easy maintenance.
+                    </p>
+                </header>
+
+                <div class="system">
+                    <div class="card diagram-card" data-reveal>
+                        <svg class="diagram" viewBox="0 0 520 390" role="img" aria-labelledby="dg-t">
+                            <title id="dg-t">Cross-section of an Amazi system: rain falls on a metal roof, runs through the gutter and downpipe, past a first-flush diverter and a mesh inlet filter, into two 700 litre tanks joined in parallel on a raised foundation, with a tap at jerrycan height and an overflow to a gravel pit.</title>
+                            <defs>
+                                <linearGradient id="dg-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fcbe0" stop-opacity=".35"/><stop offset="1" stop-color="#4f8fab" stop-opacity=".75"/></linearGradient>
+                                <pattern id="dg-mesh" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 0H3M0 0V3" stroke="#ffcf6d" stroke-width=".5"/></pattern>
+                            </defs>
+                            <g class="rain" stroke="#9fcbe0" stroke-width="1.4" stroke-linecap="round" opacity=".7">
+                                <line x1="40" y1="20" x2="34" y2="40"/><line x1="76" y1="10" x2="70" y2="30"/><line x1="112" y1="24" x2="106" y2="44"/><line x1="148" y1="8" x2="142" y2="28"/><line x1="58" y1="54" x2="52" y2="74"/><line x1="130" y1="50" x2="124" y2="70"/><line x1="170" y1="40" x2="164" y2="60"/>
+                            </g>
+                            <!-- house -->
+                            <rect x="22" y="132" width="150" height="228" fill="rgba(255,207,109,.05)" stroke="rgba(255,207,109,.35)"/>
+                            <rect x="60" y="250" width="34" height="110" fill="none" stroke="rgba(255,207,109,.25)"/>
+                            <rect x="112" y="180" width="38" height="34" fill="none" stroke="rgba(255,207,109,.25)"/>
+                            <polygon points="8,128 196,104 196,112 8,136" fill="rgba(255,207,109,.18)" stroke="#ffcf6d" stroke-width="1.4"/>
+                            <!-- gutter + downpipe -->
+                            <path d="M188 112 h14 v8 h-14z" fill="none" stroke="#ffcf6d" stroke-width="1.6"/>
+                            <path d="M196 120 V152 H300 V160" fill="none" stroke="#ffcf6d" stroke-width="3" stroke-linejoin="round"/>
+                            <!-- first flush diverter -->
+                            <rect x="232" y="152" width="16" height="96" rx="3" fill="url(#dg-water)" stroke="#ffcf6d" stroke-width="1.4"/>
+                            <path d="M236 248 h8 v6 h-8z" fill="#c65200"/>
+                            <!-- inlet filter -->
+                            <rect x="288" y="158" width="24" height="12" fill="url(#dg-mesh)" stroke="#ffcf6d" stroke-width="1.2"/>
+                            <!-- tanks -->
+                            <rect x="262" y="172" width="80" height="128" rx="6" fill="rgba(255,207,109,.04)" stroke="#ffcf6d" stroke-width="1.8"/>
+                            <rect x="372" y="172" width="80" height="128" rx="6" fill="rgba(255,207,109,.04)" stroke="#ffcf6d" stroke-width="1.8"/>
+                            <rect x="264" y="214" width="76" height="84" rx="4" fill="url(#dg-water)"/>
+                            <rect x="374" y="214" width="76" height="84" rx="4" fill="url(#dg-water)"/>
+                            <rect x="258" y="166" width="88" height="8" rx="2" fill="#c65200"/>
+                            <rect x="368" y="166" width="88" height="8" rx="2" fill="#c65200"/>
+                            <path d="M332 166 v-8 M442 166 v-8" stroke="#ffcf6d" stroke-width="1.4"/>
+                            <circle cx="332" cy="155" r="3" fill="none" stroke="#ffcf6d" stroke-width="1.2"/>
+                            <circle cx="442" cy="155" r="3" fill="none" stroke="#ffcf6d" stroke-width="1.2"/>
+                            <text x="324" y="286" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#0b2600">700 L</text>
+                            <text x="412" y="286" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#0b2600">+700 L</text>
+                            <!-- quiet inlet -->
+                            <path d="M300 172 V284 q0 8 8 8 q6 0 6 -6" fill="none" stroke="#ffcf6d" stroke-width="1.4" stroke-dasharray="3 3"/>
+                            <!-- parallel link -->
+                            <path d="M342 290 H372" stroke="#ffcf6d" stroke-width="3"/>
+                            <!-- foundation -->
+                            <rect x="252" y="300" width="210" height="9" fill="rgba(255,207,109,.2)" stroke="#ffcf6d" stroke-width="1.2"/>
+                            <path d="M262 309 V360 M342 309 V360 M372 309 V360 M452 309 V360" stroke="#ffcf6d" stroke-width="2"/>
+                            <!-- tap + jerrycan -->
+                            <path d="M262 292 H236 v8" fill="none" stroke="#ffcf6d" stroke-width="2.4"/>
+                            <rect x="226" y="320" width="28" height="40" rx="3" fill="none" stroke="#ffcf6d" stroke-width="1.4"/>
+                            <rect x="236" y="314" width="8" height="6" fill="#ffcf6d"/>
+                            <text x="240" y="345" text-anchor="middle" style="font-size:9px;fill:#ffcf6d">20 L</text>
+                            <!-- overflow -->
+                            <path d="M452 186 H488 V352" fill="none" stroke="#ffcf6d" stroke-width="2"/>
+                            <path d="M470 360 q18 -22 36 0" fill="rgba(198,82,0,.25)" stroke="#c65200"/>
+                            <g fill="#c65200"><circle cx="480" cy="355" r="2.4"/><circle cx="488" cy="350" r="2.4"/><circle cx="496" cy="355" r="2.4"/><circle cx="486" cy="357" r="2"/></g>
+                            <line x1="6" y1="360" x2="514" y2="360" stroke="#c65200" stroke-width="1.4"/>
+                            <!-- markers -->
+                            <g class="marker" data-part="1"><circle cx="120" cy="96" r="12"/><text x="120" y="96">1</text></g>
+                            <g class="marker" data-part="2"><circle cx="214" cy="218" r="12"/><text x="214" y="218">2</text></g>
+                            <g class="marker" data-part="3"><circle cx="300" cy="138" r="12"/><text x="300" y="138">3</text></g>
+                            <g class="marker" data-part="4"><circle cx="280" cy="236" r="12"/><text x="280" y="236">4</text></g>
+                            <g class="marker" data-part="5"><circle cx="357" cy="270" r="12"/><text x="357" y="270">5</text></g>
+                            <g class="marker" data-part="6"><circle cx="442" cy="134" r="12"/><text x="442" y="134">6</text></g>
+                            <g class="marker" data-part="7"><circle cx="206" cy="292" r="12"/><text x="206" y="292">7</text></g>
+                            <g class="marker" data-part="8"><circle cx="506" cy="300" r="12"/><text x="506" y="300">8</text></g>
+                            <g class="marker" data-part="9"><circle cx="412" cy="334" r="12"/><text x="412" y="334">9</text></g>
+                        </svg>
+                    </div>
+                    <ol class="parts" data-reveal data-stagger aria-label="System components">
+                        <li data-part="1"><div><h4>Roof and guttering</h4><p>Metal-sheet roofs feed a gutter and downpipe. Guttering sets the yield, so it is budgeted, not an afterthought.</p></div></li>
+                        <li data-part="2"><div><h4>First-flush diverter</h4><p>Emptied after each dry period, so the dirtiest water goes to irrigation, not the tank.</p></div></li>
+                        <li data-part="3"><div><h4>Inlet filter</h4><p>Stainless-steel mosquito mesh: unreactive, durable, and simple to inspect, clean and replace.</p></div></li>
+                        <li data-part="4"><div><h4>Quiet inlet</h4><p>Water enters gently, without stirring up sediment that has settled.</p></div></li>
+                        <li data-part="5"><div><h4>Tanks in parallel</h4><p>Joined by wire-reinforced, tamper-proof pipe into one theft-proof system that fills faster and overflows less.</p></div></li>
+                        <li data-part="6"><div><h4>Vents and lockable lids</h4><p>Meshed air vent on every tank. Lid clasps take a padlock, and lids lift off for cleaning.</p></div></li>
+                        <li data-part="7"><div><h4>Tap at jerrycan height</h4><p>Fills a 20&nbsp;L jerrycan directly.</p></div></li>
+                        <li data-part="8"><div><h4>Gravel overflow</h4><p>Excess water drains into gravel, so there is no standing water.</p></div></li>
+                        <li data-part="9"><div><h4>Flexible foundation</h4><p>Cement, metal or wood, to suit each site.</p></div></li>
+                    </ol>
+                </div>
+
+                <div class="deploy" data-reveal data-stagger>
+                    <article class="card deploy__stat">
+                        <p class="eyebrow">Built to reach every village</p>
+                        <p class="num num--water">&minus;90%</p>
+                        <p>Delivery costs 10,000&nbsp;RWF per household, against 100,000&nbsp;RWF for existing
+                            1,000&nbsp;L tanks. Components travel by moto and public transport, and can move with
+                            a family if they are relocated.</p>
+                    </article>
+                    <figure class="photo">
+                        <img src="static/images/amazi/delivery-moto-01-768w.webp" alt="A moto driver carrying stacked Amazi tanks and fittings" loading="lazy" decoding="async">
+                        <figcaption>Delivered by moto</figcaption>
+                    </figure>
+                    <figure class="photo">
+                        <img src="static/images/amazi/hand-carryable-1024w.webp" alt="Tanks, lids, pipes and fittings laid out on a veranda" loading="lazy" decoding="async">
+                        <figcaption>Every part carried by hand</figcaption>
+                    </figure>
+                    <figure class="photo">
+                        <img src="static/images/amazi/minimal-tools-769w.webp" alt="The small set of hand tools used to install an Amazi system" loading="lazy" decoding="async">
+                        <figcaption>Installed with minimal tools</figcaption>
+                    </figure>
+                    <figure class="photo">
+                        <img src="static/images/amazi/local-technicians-768w.webp" alt="A local technician fitting a tank lid" loading="lazy" decoding="async">
+                        <figcaption>Assembled by local technicians</figcaption>
+                    </figure>
+                    <article class="card deploy__stat">
+                        <p class="eyebrow">Sourced in Rwanda</p>
+                        <h3 class="display">Bought locally, maintained locally.</h3>
+                        <p>Tanks are bought in Kigali. Pipes and guttering are made in Rwanda or imported from
+                            neighbouring countries, and Rwandan manufacturers are exploring custom orders.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 · ECONOMICS -->
+        <section class="section section--tight" id="economics" aria-labelledby="econ-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">04 · The cost</p>
+                    <h2 class="display" id="econ-h">Cheaper to install and cheaper to run than a pumped tap.</h2>
+                    <p class="head__lede">
+                        A private Amazi supply for one household in Gakenke, compared with a
+                        communal pumped tap connection from WASAC.
+                    </p>
+                </header>
+
+                <div class="econ-head" data-reveal data-stagger>
+                    <div class="card">
+                        <p class="num" data-count-to="3.2" data-count-decimals="1" data-count-suffix="&times;">3.2&times;</p>
+                        <p><strong>cheaper to install</strong>680,000&nbsp;RWF against 2.2M&nbsp;RWF per household</p>
+                    </div>
+                    <div class="card">
+                        <p class="num num--water" data-count-to="3.8" data-count-decimals="1" data-count-suffix="&times;">3.8&times;</p>
+                        <p><strong>cheaper to run</strong>monthly operating cost per household</p>
+                    </div>
+                </div>
+
+                <figure class="card chart-card" data-reveal style="margin: 0 0 clamp(14px, 1.6vw, 20px);">
+                    <figcaption>
+                        <h3 class="display">Installation cost per household</h3>
+                        <ul class="legend" aria-hidden="true">
+                            <li><i style="background:#ffcf6d"></i>Tanks</li>
+                            <li><i style="background:#9fcbe0"></i>Accessories</li>
+                            <li><i style="background:#4f8fab"></i>Guttering</li>
+                            <li><i style="background:#c65200"></i>Foundation</li>
+                            <li><i style="background:#ff9a52"></i>Delivery</li>
+                        </ul>
+                    </figcaption>
+                    <div class="hbars" data-reveal>
+                    <div class="hbar"><div class="hbar__label"><b>Amazi 700&nbsp;L</b><span>household harvester</span></div><div class="hbar__track"><span class="seg" style="width:8.182%;background:#ffcf6d" title="Tanks: 180,000 RWF"></span><span class="seg" style="width:13.636%;background:#9fcbe0" title="Accessories: 300,000 RWF"></span><span class="seg" style="width:5.909%;background:#4f8fab" title="Guttering: 130,000 RWF"></span><span class="seg" style="width:2.727%;background:#c65200" title="Foundation: 60,000 RWF"></span><span class="seg" style="width:0.455%;background:#ff9a52" title="Delivery: 10,000 RWF"></span><em>680,000</em></div></div>
+                    <div class="hbar"><div class="hbar__label"><b>Existing 1,000&nbsp;L</b><span>household harvester</span></div><div class="hbar__track"><span class="seg" style="width:7.273%;background:#ffcf6d" title="Tanks: 160,000 RWF"></span><span class="seg" style="width:5.909%;background:#9fcbe0" title="Accessories: 130,000 RWF"></span><span class="seg" style="width:5.909%;background:#4f8fab" title="Guttering: 130,000 RWF"></span><span class="seg" style="width:7.273%;background:#c65200" title="Foundation: 160,000 RWF"></span><span class="seg" style="width:4.545%;background:#ff9a52" title="Delivery: 100,000 RWF"></span><em>680,000</em></div></div>
+                    <div class="hbar"><div class="hbar__label"><b>WASAC</b><span>communal pumped tap</span></div><div class="hbar__track"><span class="seg" style="width:100%;background:rgba(255,207,109,0.18);box-shadow:inset 0 0 0 1px rgba(255,207,109,0.35)" title="WASAC communal tap: 2,200,000 RWF"></span><em class="in">2,200,000 RWF</em></div></div>
+                    </div>
+                    <p style="margin-top: var(--space-3);">
+                        Amazi costs the same as today&rsquo;s harvesters, but spends it differently.
+                        Delivery falls from 100,000 to 10,000&nbsp;RWF and foundations from 160,000 to
+                        60,000, while more goes on the filters and fittings that keep water clean.
+                    </p>
+                </figure>
+
+                <div class="grid grid--2" data-reveal data-stagger>
+                    <div class="card">
+                        <p class="eyebrow">Breakdown (RWF)</p>
+                        <div class="table-scroll">
+                            <table class="cost-table">
+                                <thead><tr><th scope="col">Component</th><th scope="col">Amazi 700&nbsp;L</th><th scope="col">Existing 1,000&nbsp;L</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Tanks</td><td>180,000</td><td>160,000</td></tr>
+                                    <tr><td>Delivery</td><td class="down">10,000</td><td>100,000</td></tr>
+                                    <tr><td>Foundation materials</td><td class="down">60,000</td><td>160,000</td></tr>
+                                    <tr><td>Accessories</td><td class="up">300,000</td><td>130,000</td></tr>
+                                    <tr><td>Guttering</td><td>130,000</td><td>130,000</td></tr>
+                                </tbody>
+                                <tfoot><tr><td>Total</td><td>680,000</td><td>680,000</td></tr></tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <figure class="card chart-card" style="margin: 0;">
+                        <figcaption><p class="eyebrow" style="margin:0;">Monthly operating cost (RWF)</p></figcaption>
+                        <div class="hbars hbars--opex" data-reveal>
+                            <div class="hbar"><div class="hbar__label"><b>WASAC tap</b><span>watchman and pump electricity</span></div><div class="hbar__track"><span class="seg" style="width:100%;background:rgba(255,207,109,0.18);box-shadow:inset 0 0 0 1px rgba(255,207,109,0.35)"></span></div></div>
+                            <div class="hbar"><div class="hbar__label"><b>Amazi</b><span>maintenance</span></div><div class="hbar__track"><span class="seg" style="width:26.3%;background:#9fcbe0"></span><em>3.8&times; less</em></div></div>
+                        </div>
+                        <p style="margin-top: var(--space-3); font-size: 15px;">No pumps, no electricity and no watchman. Running costs are mostly cleaning and occasional parts, which families and local technicians can handle themselves.</p>
+                    </figure>
+                </div>
+                <p class="source" data-reveal>Not accounting for economies of scale, visitor pricing, or under-reporting of WASAC costs. The average Rwandan household is 4 people. Sources: e.quinox procurement data, 2024 and 2026; WASAC Gakenke, 2024.</p>
+            </div>
+        </section>
+
+        <!-- 5 · YIELD -->
+        <section class="section" id="yield" aria-labelledby="yield-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">05 · The yield</p>
+                    <h2 class="display" id="yield-h">Over 40% of household water needs, nine months a year, in every province.</h2>
+                    <p class="head__lede">
+                        Modelled on 1991 to 2020 monthly rainfall for each province, at 50&nbsp;L per
+                        person per day and a conservative 50% capture rate. Metal-sheet roofs typically
+                        capture 85 to 90%.
+                    </p>
+                </header>
+
+                <figure class="card chart-card" data-reveal style="margin: 0 0 clamp(14px, 1.6vw, 20px);">
+                    <figcaption>
+                        <h3 class="display">Share of water needs met by rain, by month</h3>
+                        <p class="eyebrow" style="margin:0;">% of intermediate-access demand · 50% capture</p>
+                    </figcaption>
+                    <div class="yield-wrap">
+                        <svg class="chart yield-chart" viewBox="0 0 600 330" role="img" aria-labelledby="yield-desc" data-yield>
+                        <desc id="yield-desc">Line chart of the share of household water needs met by rainwater each month, for Rwanda&rsquo;s five provinces. All provinces stay above 40% from September to May and drop to between 4% and 24% in June, July and August.</desc>
+                        <rect x="264.2" y="18" width="149.5" height="274" fill="rgba(198,82,0,0.09)"/>
+                        <text x="338.9" y="34" text-anchor="middle" class="season">Long dry season</text>
+                        <g class="grid"><line x1="40" x2="588" y1="292.0" y2="292.0"/><line x1="40" x2="588" y1="237.2" y2="237.2"/><line x1="40" x2="588" y1="127.6" y2="127.6"/><line x1="40" x2="588" y1="72.8" y2="72.8"/><line x1="40" x2="588" y1="18.0" y2="18.0"/></g>
+                        <g class="axis"><text x="32" y="296.0" text-anchor="end">0</text><text x="32" y="241.2" text-anchor="end">20</text><text x="32" y="186.4" text-anchor="end">40</text><text x="32" y="131.6" text-anchor="end">60</text><text x="32" y="76.8" text-anchor="end">80</text><text x="32" y="22.0" text-anchor="end">100</text></g>
+                        <line x1="40" x2="588" y1="182.4" y2="182.4" stroke="#ff8f4a" stroke-width="1.4" stroke-dasharray="5 4"/>
+                        <text x="588.0" y="175.4" text-anchor="end" class="thresh">40% of needs</text>
+                        <polygon points="40.0,86.5 89.8,115.3 139.6,75.5 189.5,70.1 239.3,104.3 289.1,234.5 338.9,260.5 388.7,226.2 438.5,133.1 488.4,66.0 538.2,48.1 588.0,92.0 588.0,152.3 538.2,112.5 488.4,149.5 438.5,178.3 388.7,250.9 338.9,279.7 289.1,260.5 239.3,155.0 189.5,108.4 139.6,124.9 89.8,174.2 40.0,168.7" fill="rgba(159,203,224,0.08)"/>
+                        <g class="series" data-name="Western" data-color="#9fcbe0" data-values="75,64.5,79,78,68.5,21,11.5,24,58,82.5,89,73"><path d="M40.0,86.5 L89.8,115.3 L139.6,75.5 L189.5,78.3 L239.3,104.3 L289.1,234.5 L338.9,260.5 L388.7,226.2 L438.5,133.1 L488.4,66.0 L538.2,48.1 L588.0,92.0" stroke="#9fcbe0" data-svg-draw="1600"/><g class="late"><circle cx="40.0" cy="86.5" r="2.6" fill="#9fcbe0"/><circle cx="89.8" cy="115.3" r="2.6" fill="#9fcbe0"/><circle cx="139.6" cy="75.5" r="2.6" fill="#9fcbe0"/><circle cx="189.5" cy="78.3" r="2.6" fill="#9fcbe0"/><circle cx="239.3" cy="104.3" r="2.6" fill="#9fcbe0"/><circle cx="289.1" cy="234.5" r="2.6" fill="#9fcbe0"/><circle cx="338.9" cy="260.5" r="2.6" fill="#9fcbe0"/><circle cx="388.7" cy="226.2" r="2.6" fill="#9fcbe0"/><circle cx="438.5" cy="133.1" r="2.6" fill="#9fcbe0"/><circle cx="488.4" cy="66.0" r="2.6" fill="#9fcbe0"/><circle cx="538.2" cy="48.1" r="2.6" fill="#9fcbe0"/><circle cx="588.0" cy="92.0" r="2.6" fill="#9fcbe0"/></g></g>
+                        <g class="series" data-name="Southern" data-color="#b6d77a" data-values="67.5,60.5,74,81,64,16,6,17,49,67.5,84,64"><path d="M40.0,107.0 L89.8,126.2 L139.6,89.2 L189.5,70.1 L239.3,116.6 L289.1,248.2 L338.9,275.6 L388.7,245.4 L438.5,157.7 L488.4,107.0 L538.2,61.8 L588.0,116.6" stroke="#b6d77a" data-svg-draw="1600"/><g class="late"><circle cx="40.0" cy="107.0" r="2.6" fill="#b6d77a"/><circle cx="89.8" cy="126.2" r="2.6" fill="#b6d77a"/><circle cx="139.6" cy="89.2" r="2.6" fill="#b6d77a"/><circle cx="189.5" cy="70.1" r="2.6" fill="#b6d77a"/><circle cx="239.3" cy="116.6" r="2.6" fill="#b6d77a"/><circle cx="289.1" cy="248.2" r="2.6" fill="#b6d77a"/><circle cx="338.9" cy="275.6" r="2.6" fill="#b6d77a"/><circle cx="388.7" cy="245.4" r="2.6" fill="#b6d77a"/><circle cx="438.5" cy="157.7" r="2.6" fill="#b6d77a"/><circle cx="488.4" cy="107.0" r="2.6" fill="#b6d77a"/><circle cx="538.2" cy="61.8" r="2.6" fill="#b6d77a"/><circle cx="588.0" cy="116.6" r="2.6" fill="#b6d77a"/></g></g>
+                        <g class="series" data-name="Northern" data-color="#ffcf6d" data-values="49,48.5,67,76,63,19,11,23,55,73,78,55"><path d="M40.0,157.7 L89.8,159.1 L139.6,108.4 L189.5,83.8 L239.3,119.4 L289.1,239.9 L338.9,261.9 L388.7,229.0 L438.5,141.3 L488.4,92.0 L538.2,78.3 L588.0,141.3" stroke="#ffcf6d" data-svg-draw="1600"/><g class="late"><circle cx="40.0" cy="157.7" r="2.6" fill="#ffcf6d"/><circle cx="89.8" cy="159.1" r="2.6" fill="#ffcf6d"/><circle cx="139.6" cy="108.4" r="2.6" fill="#ffcf6d"/><circle cx="189.5" cy="83.8" r="2.6" fill="#ffcf6d"/><circle cx="239.3" cy="119.4" r="2.6" fill="#ffcf6d"/><circle cx="289.1" cy="239.9" r="2.6" fill="#ffcf6d"/><circle cx="338.9" cy="261.9" r="2.6" fill="#ffcf6d"/><circle cx="388.7" cy="229.0" r="2.6" fill="#ffcf6d"/><circle cx="438.5" cy="141.3" r="2.6" fill="#ffcf6d"/><circle cx="488.4" cy="92.0" r="2.6" fill="#ffcf6d"/><circle cx="538.2" cy="78.3" r="2.6" fill="#ffcf6d"/><circle cx="588.0" cy="141.3" r="2.6" fill="#ffcf6d"/></g></g>
+                        <g class="series" data-name="Kigali" data-color="#f3ead2" data-values="46,45.5,62,73,52.5,12.5,4.5,15,45.5,59,70,51.5"><path d="M40.0,166.0 L89.8,167.3 L139.6,122.1 L189.5,92.0 L239.3,148.2 L289.1,257.8 L338.9,279.7 L388.7,250.9 L438.5,167.3 L488.4,130.3 L538.2,100.2 L588.0,150.9" stroke="#f3ead2" data-svg-draw="1600"/><g class="late"><circle cx="40.0" cy="166.0" r="2.6" fill="#f3ead2"/><circle cx="89.8" cy="167.3" r="2.6" fill="#f3ead2"/><circle cx="139.6" cy="122.1" r="2.6" fill="#f3ead2"/><circle cx="189.5" cy="92.0" r="2.6" fill="#f3ead2"/><circle cx="239.3" cy="148.2" r="2.6" fill="#f3ead2"/><circle cx="289.1" cy="257.8" r="2.6" fill="#f3ead2"/><circle cx="338.9" cy="279.7" r="2.6" fill="#f3ead2"/><circle cx="388.7" cy="250.9" r="2.6" fill="#f3ead2"/><circle cx="438.5" cy="167.3" r="2.6" fill="#f3ead2"/><circle cx="488.4" cy="130.3" r="2.6" fill="#f3ead2"/><circle cx="538.2" cy="100.2" r="2.6" fill="#f3ead2"/><circle cx="588.0" cy="150.9" r="2.6" fill="#f3ead2"/></g></g>
+                        <g class="series" data-name="Eastern" data-color="#ff8f4a" data-values="45,43,61,67,50,11.5,4.5,15,41.5,52,65.5,51"><path d="M40.0,168.7 L89.8,174.2 L139.6,124.9 L189.5,108.4 L239.3,155.0 L289.1,260.5 L338.9,279.7 L388.7,250.9 L438.5,178.3 L488.4,149.5 L538.2,112.5 L588.0,152.3" stroke="#ff8f4a" data-svg-draw="1600"/><g class="late"><circle cx="40.0" cy="168.7" r="2.6" fill="#ff8f4a"/><circle cx="89.8" cy="174.2" r="2.6" fill="#ff8f4a"/><circle cx="139.6" cy="124.9" r="2.6" fill="#ff8f4a"/><circle cx="189.5" cy="108.4" r="2.6" fill="#ff8f4a"/><circle cx="239.3" cy="155.0" r="2.6" fill="#ff8f4a"/><circle cx="289.1" cy="260.5" r="2.6" fill="#ff8f4a"/><circle cx="338.9" cy="279.7" r="2.6" fill="#ff8f4a"/><circle cx="388.7" cy="250.9" r="2.6" fill="#ff8f4a"/><circle cx="438.5" cy="178.3" r="2.6" fill="#ff8f4a"/><circle cx="488.4" cy="149.5" r="2.6" fill="#ff8f4a"/><circle cx="538.2" cy="112.5" r="2.6" fill="#ff8f4a"/><circle cx="588.0" cy="152.3" r="2.6" fill="#ff8f4a"/></g></g>
+                        <g class="axis months"><text x="40.0" y="314" text-anchor="middle"><tspan class="m-long">Jan</tspan><tspan class="m-short">J</tspan></text><text x="89.8" y="314" text-anchor="middle"><tspan class="m-long">Feb</tspan><tspan class="m-short">F</tspan></text><text x="139.6" y="314" text-anchor="middle"><tspan class="m-long">Mar</tspan><tspan class="m-short">M</tspan></text><text x="189.5" y="314" text-anchor="middle"><tspan class="m-long">Apr</tspan><tspan class="m-short">A</tspan></text><text x="239.3" y="314" text-anchor="middle"><tspan class="m-long">May</tspan><tspan class="m-short">M</tspan></text><text x="289.1" y="314" text-anchor="middle"><tspan class="m-long">Jun</tspan><tspan class="m-short">J</tspan></text><text x="338.9" y="314" text-anchor="middle"><tspan class="m-long">Jul</tspan><tspan class="m-short">J</tspan></text><text x="388.7" y="314" text-anchor="middle"><tspan class="m-long">Aug</tspan><tspan class="m-short">A</tspan></text><text x="438.5" y="314" text-anchor="middle"><tspan class="m-long">Sep</tspan><tspan class="m-short">S</tspan></text><text x="488.4" y="314" text-anchor="middle"><tspan class="m-long">Oct</tspan><tspan class="m-short">O</tspan></text><text x="538.2" y="314" text-anchor="middle"><tspan class="m-long">Nov</tspan><tspan class="m-short">N</tspan></text><text x="588.0" y="314" text-anchor="middle"><tspan class="m-long">Dec</tspan><tspan class="m-short">D</tspan></text></g>
+                        <line class="cursor" x1="0" x2="0" y1="18" y2="292"/>
+                        <rect class="hit" x="20" y="18" width="588" height="304" fill="transparent"/>
+                        </svg>
+                        <div class="yield-readout" aria-live="polite">
+                            <h4 data-yield-title>Year average</h4>
+                            <ul data-yield-list></ul>
+                            <p data-yield-note>Hover or tap the chart to read a month. Only June to August, the long dry season, fall below 40%.</p>
+                        </div>
+                    </div>
+                </figure>
+
+                <div class="card" data-reveal>
+                    <div class="map-wrap">
+                        <div class="map"><svg viewBox="0 0 400 354" role="img" aria-label="Map of Rwanda&rsquo;s five provinces showing average share of water needs met by rainwater: Western 60%, Southern 54%, Northern 51.5%, Kigali 44.5%, Eastern 42%. Gakenke District, the pilot site, is outlined in the Northern Province.">
+                        <path class="prov" data-prov="Western" d="M157.8,137.0 L154.2,135.0 L153.1,133.1 L152.8,129.7 L153.6,129.3 L154.2,125.9 L153.9,122.4 L152.9,120.6 L153.4,117.4 L152.9,113.0 L153.9,109.8 L152.2,109.6 L151.3,108.4 L145.8,110.0 L143.9,109.7 L140.9,108.1 L138.8,105.5 L137.7,106.8 L136.8,105.1 L134.8,106.4 L129.1,104.1 L127.4,104.3 L118.0,93.4 L102.3,93.9 L101.0,94.5 L99.7,99.2 L96.5,101.2 L96.0,103.6 L91.4,111.3 L83.4,116.8 L81.2,122.4 L78.7,124.3 L79.0,130.0 L61.7,153.6 L58.0,161.8 L56.4,174.1 L63.8,197.2 L65.6,211.1 L64.0,216.2 L54.3,236.3 L52.7,238.6 L50.1,240.2 L32.6,243.5 L29.2,252.2 L25.0,254.6 L25.9,257.0 L25.3,258.5 L23.1,259.2 L15.3,258.3 L11.9,260.6 L7.9,266.2 L7.0,271.5 L7.7,273.5 L11.7,278.0 L11.9,281.0 L11.1,283.9 L8.4,284.6 L6.7,286.2 L6.0,288.7 L8.9,292.3 L12.0,294.3 L13.2,298.8 L12.8,301.3 L13.8,303.4 L13.3,306.2 L14.4,310.4 L12.4,312.3 L13.0,313.5 L15.2,314.2 L16.7,317.1 L20.4,317.4 L21.5,319.5 L24.5,319.7 L26.0,321.6 L28.5,319.8 L31.5,320.8 L36.3,324.5 L40.1,329.3 L40.1,326.1 L43.2,322.8 L41.8,321.1 L42.8,318.8 L41.5,318.3 L43.0,317.9 L43.3,316.7 L41.9,316.0 L41.4,314.3 L42.8,311.8 L44.0,311.4 L42.6,309.6 L42.1,306.4 L43.5,305.1 L44.2,302.2 L46.2,302.5 L47.9,300.9 L49.9,300.3 L50.6,301.2 L54.5,301.3 L56.7,303.8 L59.2,302.6 L58.9,301.5 L60.8,300.1 L61.1,301.0 L63.3,300.9 L63.3,301.9 L65.2,303.4 L65.5,304.8 L67.9,303.8 L68.3,304.3 L67.6,304.7 L68.8,305.2 L71.1,304.8 L74.1,306.8 L74.2,307.9 L75.4,306.7 L76.8,307.3 L77.2,306.5 L77.9,307.0 L79.4,306.0 L80.0,307.0 L82.9,305.4 L83.2,306.5 L86.0,306.8 L88.2,309.5 L92.3,310.7 L93.2,312.6 L94.4,312.0 L96.1,315.1 L95.0,317.6 L98.8,316.4 L100.3,310.5 L102.4,307.8 L99.5,301.0 L98.1,301.3 L97.6,300.5 L98.0,299.0 L97.0,298.3 L98.1,297.1 L98.4,294.1 L96.3,293.7 L96.8,290.3 L93.1,290.0 L94.1,286.2 L93.1,283.5 L90.8,281.4 L88.0,281.5 L82.7,279.3 L83.6,278.1 L82.9,277.5 L85.7,271.7 L89.3,271.4 L90.1,270.2 L91.4,270.5 L94.3,269.4 L94.9,265.7 L92.9,263.5 L93.8,261.5 L94.7,261.6 L95.3,259.9 L96.3,259.6 L97.8,256.1 L94.7,252.2 L94.2,249.4 L93.3,248.7 L94.8,247.7 L97.9,243.2 L104.7,242.8 L105.2,244.4 L105.9,244.3 L109.0,240.3 L110.2,240.6 L112.6,238.4 L116.4,240.1 L119.7,238.5 L121.8,239.7 L122.8,237.2 L125.6,235.1 L126.4,233.4 L127.4,233.8 L129.3,232.2 L130.3,232.6 L130.7,231.4 L131.3,232.0 L131.3,230.7 L133.4,230.0 L135.5,227.7 L136.7,227.8 L136.1,227.1 L137.0,227.0 L137.3,225.6 L138.6,225.6 L139.2,226.7 L141.4,226.3 L142.2,225.1 L143.8,226.0 L144.1,224.4 L147.8,223.3 L148.5,221.1 L147.4,219.6 L147.8,217.7 L145.6,216.2 L148.6,210.0 L150.2,209.3 L149.0,207.5 L149.8,207.9 L149.6,206.2 L151.0,205.3 L150.3,204.6 L153.0,202.6 L152.7,201.3 L153.7,200.3 L152.9,199.3 L154.1,196.9 L152.5,194.7 L152.8,192.7 L152.0,191.7 L153.0,190.7 L152.1,189.0 L153.6,186.6 L150.8,183.7 L150.9,182.9 L151.5,182.4 L154.9,183.5 L157.0,183.0 L159.1,182.1 L160.6,179.8 L160.1,177.7 L158.4,176.9 L158.2,175.7 L158.8,175.0 L158.3,172.2 L160.5,170.4 L159.9,168.8 L160.9,167.7 L159.7,165.4 L159.6,162.0 L158.7,161.1 L158.9,155.3 L160.4,153.7 L159.7,152.7 L160.4,150.3 L159.7,149.3 L160.6,145.8 L158.4,140.5 L158.9,138.4Z" fill="#9fcbe0" fill-opacity="0.82"><title>Western: 60% of needs met on average</title></path>
+                        <path class="prov" data-prov="Southern" d="M219.4,170.9 L218.4,169.5 L218.1,170.2 L215.7,169.9 L215.8,169.2 L214.5,168.5 L215.1,167.5 L213.0,166.7 L211.8,165.5 L211.8,164.2 L210.2,164.2 L208.9,162.3 L207.2,162.7 L205.7,160.3 L202.7,161.3 L199.9,159.7 L194.7,163.4 L192.5,160.3 L184.9,159.1 L184.0,158.2 L184.8,156.8 L184.5,155.0 L180.5,151.2 L179.3,151.4 L178.9,147.7 L177.8,145.7 L174.9,144.1 L174.1,142.5 L174.8,140.0 L171.1,139.5 L169.0,140.9 L166.3,139.3 L165.9,137.5 L164.6,136.7 L159.6,136.3 L157.8,137.0 L158.9,138.4 L158.4,140.5 L160.6,145.8 L159.7,149.3 L160.4,150.3 L159.7,152.7 L160.4,153.7 L158.9,155.3 L158.7,161.1 L159.6,162.0 L159.7,165.4 L160.9,167.7 L159.9,168.8 L160.5,170.4 L158.3,172.2 L158.8,175.0 L158.2,175.7 L158.4,176.9 L160.1,177.7 L160.6,179.8 L159.1,182.1 L157.0,183.0 L154.9,183.5 L151.5,182.4 L150.9,182.9 L150.8,183.7 L153.6,186.6 L152.1,189.0 L153.0,190.7 L152.0,191.7 L152.8,192.7 L152.5,194.7 L154.1,196.9 L152.9,199.3 L153.7,200.3 L152.7,201.3 L153.0,202.6 L150.3,204.6 L151.0,205.3 L149.6,206.2 L149.8,207.9 L149.0,207.5 L150.2,209.3 L148.6,210.0 L145.6,216.2 L147.8,217.7 L147.4,219.6 L148.5,221.1 L147.8,223.3 L144.1,224.4 L143.8,226.0 L142.2,225.1 L141.4,226.3 L139.2,226.7 L138.6,225.6 L137.3,225.6 L137.0,227.0 L136.1,227.1 L136.7,227.8 L135.5,227.7 L133.4,230.0 L131.3,230.7 L131.3,232.0 L130.7,231.4 L130.3,232.6 L129.3,232.2 L127.4,233.8 L126.4,233.4 L125.6,235.1 L122.8,237.2 L121.8,239.7 L119.7,238.5 L116.4,240.1 L112.6,238.4 L110.2,240.6 L109.0,240.3 L105.9,244.3 L105.2,244.4 L104.7,242.8 L97.9,243.2 L94.8,247.7 L93.3,248.7 L94.2,249.4 L94.7,252.2 L97.8,256.1 L96.3,259.6 L95.3,259.9 L94.7,261.6 L93.8,261.5 L92.9,263.5 L94.9,265.7 L94.3,269.4 L91.4,270.5 L90.1,270.2 L89.3,271.4 L85.7,271.7 L82.9,277.5 L83.6,278.1 L82.7,279.3 L88.0,281.5 L90.8,281.4 L93.8,284.2 L94.0,287.7 L93.1,290.0 L96.8,290.3 L96.3,293.7 L98.4,294.1 L98.1,297.1 L97.0,298.3 L98.0,299.0 L97.6,300.5 L98.1,301.3 L99.5,301.0 L102.4,307.8 L100.3,310.5 L98.8,316.4 L95.0,317.6 L94.9,319.0 L96.2,319.2 L98.0,321.4 L99.9,326.7 L95.8,329.7 L97.3,330.9 L96.7,333.1 L99.1,333.9 L98.6,335.5 L100.3,338.4 L99.4,340.8 L101.3,343.6 L101.8,345.4 L101.3,346.0 L102.4,346.0 L103.0,347.6 L104.2,347.2 L104.3,345.9 L106.5,343.5 L107.6,343.2 L108.6,344.1 L115.7,339.5 L120.5,340.1 L122.8,341.3 L124.9,340.3 L131.7,345.7 L133.7,345.1 L135.6,345.7 L135.6,343.4 L141.6,342.2 L144.3,340.5 L144.9,341.5 L147.7,341.2 L149.7,341.9 L152.3,340.7 L154.0,337.9 L155.9,337.5 L158.1,337.6 L162.8,339.9 L163.7,341.2 L166.5,342.1 L167.2,343.7 L168.5,343.0 L170.1,343.4 L174.2,341.3 L175.8,342.0 L177.7,338.9 L178.8,333.6 L179.9,333.1 L182.2,333.5 L183.7,331.6 L184.9,331.3 L186.6,332.7 L187.5,335.1 L189.9,336.0 L195.1,332.8 L199.4,332.7 L200.1,331.6 L199.8,330.8 L201.8,330.6 L202.5,329.8 L202.3,328.0 L207.2,321.4 L209.6,313.9 L209.2,312.8 L210.6,309.8 L209.1,308.1 L209.7,299.8 L207.7,293.8 L210.3,289.3 L210.2,286.6 L211.9,282.5 L216.6,279.9 L216.4,277.3 L217.2,275.4 L215.6,270.6 L215.5,266.5 L213.6,260.5 L212.0,258.0 L214.6,254.0 L214.3,250.5 L216.3,248.0 L215.4,242.8 L217.7,239.8 L217.7,237.8 L219.8,233.8 L219.7,231.4 L220.9,229.1 L220.6,226.0 L219.8,225.3 L219.6,217.1 L220.6,215.0 L221.6,215.2 L223.4,214.0 L226.7,208.8 L225.6,205.3 L226.5,201.6 L225.8,201.9 L225.6,200.9 L223.7,201.4 L223.2,200.2 L222.8,200.8 L222.2,200.2 L221.7,200.6 L220.5,198.5 L219.7,198.6 L220.4,197.9 L219.7,196.1 L222.3,193.2 L224.4,192.9 L223.8,191.3 L225.3,191.1 L225.7,189.9 L224.8,190.0 L224.5,188.9 L222.6,187.7 L223.0,187.2 L221.8,187.0 L222.2,186.0 L221.4,186.2 L222.4,185.2 L222.0,184.4 L223.2,184.3 L222.4,182.1 L223.5,181.7 L223.4,179.0 L222.5,179.3 L221.9,177.1 L222.5,176.2 L221.4,176.1 L220.4,174.8 L220.9,174.1 L220.0,174.0 L220.6,173.3Z" fill="#b6d77a" fill-opacity="0.82"><title>Southern: 54% of needs met on average</title></path>
+                        <path class="prov" data-prov="Northern" d="M270.0,158.1 L271.5,157.3 L272.4,154.8 L275.3,155.2 L274.4,152.7 L275.0,148.5 L271.5,142.3 L271.3,137.6 L269.8,134.5 L272.9,131.9 L268.9,125.4 L266.1,124.1 L265.4,120.9 L264.0,120.8 L262.4,116.5 L259.7,116.1 L255.3,108.2 L253.7,100.4 L254.6,98.8 L256.7,98.1 L257.3,95.8 L252.6,95.9 L250.3,97.8 L249.4,97.3 L249.1,95.4 L250.5,94.9 L249.8,92.7 L248.3,91.2 L248.8,90.5 L248.3,88.8 L246.8,88.3 L244.7,82.4 L243.4,81.5 L243.1,80.2 L241.7,79.8 L241.5,78.0 L240.4,77.0 L240.6,75.6 L238.5,75.7 L238.5,73.8 L237.2,71.7 L232.7,72.9 L233.8,77.2 L233.4,79.0 L230.8,78.4 L227.3,76.0 L225.3,76.9 L222.9,79.7 L222.0,82.3 L206.4,88.8 L204.4,84.4 L202.5,82.9 L201.9,78.7 L201.0,77.6 L201.4,75.6 L200.6,74.2 L200.3,64.8 L195.8,64.8 L194.1,61.5 L192.5,60.5 L192.8,58.0 L189.2,55.8 L188.4,56.3 L188.3,59.4 L186.5,59.9 L184.0,63.7 L184.1,68.0 L183.0,66.5 L182.5,67.3 L180.1,66.7 L179.3,64.8 L176.9,63.3 L171.5,61.8 L167.9,62.8 L164.3,66.0 L161.6,69.8 L158.1,71.9 L155.6,70.6 L145.2,70.7 L144.2,71.7 L141.9,70.7 L138.5,71.2 L136.1,73.5 L132.5,74.9 L131.1,77.9 L131.4,78.7 L126.8,81.3 L118.0,93.4 L127.4,104.3 L129.1,104.1 L134.8,106.4 L136.8,105.1 L137.7,106.8 L138.8,105.5 L140.9,108.1 L143.9,109.7 L145.8,110.0 L151.3,108.4 L152.2,109.6 L153.9,109.8 L152.9,113.0 L153.4,117.4 L152.9,120.6 L153.9,122.4 L154.2,125.9 L153.6,129.3 L152.8,129.7 L153.4,134.0 L156.0,135.4 L156.6,136.8 L159.6,136.3 L164.6,136.7 L165.9,137.5 L166.3,139.3 L169.0,140.9 L171.1,139.5 L174.8,140.0 L174.1,142.5 L175.2,144.5 L177.8,145.7 L178.9,147.7 L178.8,150.7 L179.3,151.4 L180.5,151.2 L184.5,155.0 L184.8,156.8 L184.0,158.2 L184.9,159.1 L187.8,159.2 L189.1,160.2 L192.5,160.3 L194.7,163.4 L199.9,159.7 L202.7,161.3 L205.7,160.3 L207.2,162.7 L208.9,162.3 L210.2,164.2 L211.8,164.2 L211.8,165.5 L213.0,166.7 L215.1,167.5 L214.5,168.5 L215.8,169.2 L215.7,169.9 L218.1,170.2 L218.4,169.5 L219.4,170.9 L221.3,169.9 L218.6,166.7 L218.5,164.5 L218.8,163.1 L220.8,162.1 L221.1,158.4 L225.7,156.3 L228.4,161.8 L231.5,159.6 L232.5,158.0 L233.5,157.9 L233.5,156.5 L234.9,154.9 L240.8,153.3 L241.7,151.8 L244.5,153.3 L245.4,153.1 L247.2,151.1 L247.6,147.5 L249.1,145.5 L249.9,145.7 L250.9,148.0 L253.6,147.5 L255.5,148.7 L264.4,157.3Z" fill="#ffcf6d" fill-opacity="0.82"><title>Northern: 51.5% of needs met on average</title></path>
+                        <path class="prov" data-prov="Kigali" d="M270.0,158.1 L264.4,157.3 L255.5,148.7 L253.6,147.5 L250.9,148.0 L249.9,145.7 L249.1,145.5 L247.6,147.5 L247.2,151.1 L245.4,153.1 L244.5,153.3 L241.7,151.8 L240.8,153.3 L234.9,154.9 L233.5,156.5 L233.5,157.9 L232.5,158.0 L231.5,159.6 L228.4,161.8 L225.7,156.3 L221.1,158.4 L220.8,162.1 L218.8,163.1 L218.5,164.5 L218.6,166.7 L221.3,169.9 L219.4,170.9 L220.6,173.3 L220.0,174.0 L220.9,174.1 L220.3,174.5 L221.4,176.1 L222.5,176.2 L221.9,177.1 L222.5,179.3 L223.4,179.0 L223.5,181.7 L222.4,182.1 L223.2,184.3 L222.0,184.4 L222.4,185.2 L221.4,186.2 L222.2,186.0 L221.8,187.0 L223.0,187.2 L222.6,187.7 L224.5,188.9 L224.8,190.0 L225.7,189.9 L225.3,191.1 L223.8,191.3 L224.4,192.9 L222.3,193.2 L219.7,196.1 L220.4,197.9 L219.7,198.6 L220.5,198.5 L221.7,200.6 L222.2,200.2 L222.8,200.8 L223.2,200.2 L223.7,201.4 L225.6,200.9 L225.8,201.9 L227.5,200.5 L228.1,200.8 L228.0,199.7 L230.3,200.6 L230.1,198.8 L233.2,197.8 L233.8,198.1 L233.1,199.8 L235.3,201.1 L236.6,199.8 L237.4,200.7 L237.8,199.4 L238.4,199.8 L240.0,198.8 L240.2,199.7 L240.9,199.1 L241.1,199.8 L242.2,198.1 L242.6,198.9 L243.8,198.2 L244.4,199.0 L245.3,197.9 L245.5,198.9 L245.6,198.2 L246.7,198.1 L246.3,196.9 L247.1,197.6 L248.0,195.9 L248.4,196.6 L248.9,196.2 L248.9,195.0 L250.8,195.3 L251.9,194.0 L252.8,194.3 L252.9,193.4 L253.7,193.1 L254.3,194.0 L255.7,192.9 L256.1,194.2 L257.2,193.9 L258.9,195.7 L259.5,199.0 L260.7,198.4 L261.0,200.1 L262.1,200.4 L261.8,201.6 L262.4,202.7 L265.0,201.3 L264.8,199.1 L266.3,195.7 L266.6,189.8 L267.9,184.3 L267.1,182.9 L267.2,180.3 L271.2,178.2 L273.3,178.6 L275.5,175.0 L274.3,170.0 L274.7,168.5 L271.9,167.4 L271.9,163.8 L273.3,161.8 L269.9,160.3Z" fill="#f3ead2" fill-opacity="0.82"><title>Kigali: 44.5% of needs met on average</title></path>
+                        <path class="prov" data-prov="Eastern" d="M226.5,201.6 L225.6,205.3 L226.7,208.8 L226.2,210.0 L224.9,210.7 L223.4,214.0 L220.1,215.4 L219.6,217.1 L219.8,225.3 L220.6,226.0 L220.9,229.1 L219.7,231.4 L219.8,233.8 L217.7,237.8 L217.7,239.8 L215.4,242.8 L216.3,248.0 L215.0,249.8 L222.3,253.0 L226.5,253.1 L229.1,254.4 L231.5,256.3 L234.9,262.6 L241.2,268.2 L246.0,270.4 L249.1,270.8 L254.1,268.8 L257.7,269.3 L260.2,265.6 L260.7,261.5 L263.5,260.3 L263.8,258.2 L265.7,257.9 L268.8,256.0 L271.0,258.6 L276.1,259.1 L294.0,255.3 L293.9,253.4 L295.3,249.6 L297.5,247.2 L300.6,246.5 L303.1,249.7 L303.9,249.4 L304.8,250.1 L306.2,250.3 L308.6,248.2 L310.5,248.3 L311.0,249.5 L310.1,253.1 L312.3,254.4 L312.5,257.3 L315.4,257.4 L316.0,259.4 L316.9,259.4 L319.6,261.7 L320.1,264.0 L324.7,264.7 L326.3,266.2 L327.6,265.8 L331.2,267.4 L333.9,266.4 L335.6,264.5 L338.8,263.6 L339.9,264.3 L341.6,263.7 L344.7,264.5 L345.4,265.6 L347.9,266.3 L354.0,260.4 L354.3,258.0 L355.3,256.7 L359.3,255.2 L362.3,256.8 L364.9,259.8 L368.2,260.4 L368.8,262.1 L371.4,261.8 L372.0,259.8 L373.6,259.2 L374.5,257.4 L378.3,257.1 L380.2,255.4 L382.0,252.9 L382.3,250.3 L385.0,248.8 L385.9,247.3 L384.8,247.0 L385.2,239.7 L383.1,233.4 L383.1,230.9 L383.9,230.1 L383.4,226.7 L385.1,223.0 L386.5,221.7 L386.7,217.1 L388.1,214.1 L389.5,213.2 L389.1,210.5 L391.5,207.1 L391.5,205.3 L392.7,205.3 L393.8,203.3 L393.8,201.0 L391.2,197.6 L389.8,197.1 L389.5,194.6 L387.2,193.6 L380.2,182.3 L378.4,178.4 L378.2,176.3 L376.0,175.1 L373.8,175.8 L373.7,177.3 L372.1,177.2 L373.0,174.7 L374.5,173.8 L375.0,172.0 L376.3,171.9 L378.6,167.4 L378.4,164.6 L380.9,162.3 L380.9,161.1 L382.4,160.7 L381.0,158.9 L381.3,158.0 L378.7,157.2 L378.6,156.3 L380.7,154.4 L379.5,145.8 L381.0,141.0 L379.4,137.8 L377.6,136.8 L378.3,135.1 L380.4,134.6 L379.4,133.2 L380.1,129.3 L379.5,127.4 L381.4,123.7 L382.4,124.0 L382.1,121.1 L382.6,120.9 L364.9,96.4 L363.5,84.3 L364.3,82.9 L363.4,81.5 L363.9,79.9 L363.0,76.6 L360.3,74.5 L356.1,74.2 L355.0,72.5 L352.0,73.0 L351.0,72.0 L350.9,70.8 L349.8,71.1 L348.6,69.8 L342.4,69.9 L340.5,68.0 L341.3,66.9 L339.3,64.6 L339.8,63.3 L335.7,63.5 L332.8,61.3 L331.1,61.2 L330.7,59.0 L328.4,55.3 L329.2,52.5 L329.8,52.3 L328.8,49.2 L327.8,48.5 L327.8,44.8 L322.6,37.4 L319.8,29.7 L318.2,28.1 L316.3,27.4 L313.5,27.6 L312.3,26.6 L312.1,21.9 L313.5,20.3 L310.1,19.2 L308.7,13.9 L309.0,12.5 L312.9,7.8 L312.3,7.0 L311.6,7.5 L311.8,6.9 L308.3,6.0 L307.5,6.6 L306.4,6.1 L304.5,9.2 L299.4,8.6 L297.3,10.1 L294.6,8.6 L293.7,9.5 L294.0,10.3 L291.1,8.5 L290.3,9.3 L289.8,8.9 L289.2,13.6 L287.7,14.5 L287.1,17.0 L288.4,22.1 L286.5,22.0 L281.3,24.6 L279.5,27.2 L278.5,33.1 L275.8,34.7 L275.3,37.0 L271.1,39.0 L269.1,42.9 L263.3,48.4 L262.9,49.6 L260.5,49.1 L260.5,50.5 L259.2,50.6 L258.5,48.6 L255.4,49.1 L256.0,54.5 L254.6,55.4 L253.6,57.7 L253.7,60.8 L255.3,63.2 L250.4,63.8 L248.9,65.9 L247.4,66.1 L246.2,70.2 L245.3,70.2 L242.5,67.9 L241.5,68.8 L238.6,68.0 L236.3,69.4 L236.2,71.6 L237.2,71.7 L238.5,73.8 L238.5,75.7 L240.6,75.6 L240.4,77.0 L241.5,78.0 L241.7,79.8 L243.1,80.2 L243.4,81.5 L244.7,82.4 L246.8,88.3 L248.3,88.8 L248.8,90.5 L248.3,91.2 L249.8,92.7 L250.5,94.9 L249.1,95.4 L249.4,97.3 L250.3,97.8 L252.6,95.9 L257.3,95.8 L256.7,98.1 L254.6,98.8 L253.7,100.4 L255.3,108.2 L259.7,116.1 L262.4,116.5 L264.0,120.8 L265.4,120.9 L266.1,124.1 L268.9,125.4 L272.9,131.9 L269.8,134.5 L271.3,137.6 L271.5,142.3 L275.0,148.5 L274.4,152.7 L275.3,155.2 L272.4,154.8 L271.5,157.3 L270.0,158.1 L269.9,160.3 L273.3,161.8 L271.9,163.8 L271.9,167.4 L274.7,168.5 L274.3,170.0 L275.5,175.0 L273.3,178.6 L271.2,178.2 L267.2,180.3 L267.1,182.9 L267.9,184.3 L266.6,189.8 L266.3,195.7 L264.8,199.1 L265.0,201.3 L262.4,202.7 L261.8,201.6 L262.1,200.4 L261.0,200.1 L260.7,198.4 L259.5,199.0 L258.9,195.7 L257.2,193.9 L256.1,194.2 L255.7,192.9 L254.3,194.0 L253.7,193.1 L252.9,193.4 L252.8,194.3 L251.9,194.0 L250.8,195.3 L248.9,195.0 L248.9,196.2 L248.4,196.6 L248.0,195.9 L247.1,197.6 L246.3,196.9 L246.7,198.1 L245.6,198.2 L245.5,198.9 L245.3,197.9 L244.4,199.0 L243.8,198.2 L242.6,198.9 L242.2,198.1 L241.1,199.8 L240.9,199.1 L240.2,199.7 L240.0,198.8 L238.4,199.8 L237.8,199.4 L237.4,200.7 L236.6,199.8 L235.3,201.1 L233.1,199.8 L233.8,198.1 L231.8,197.9 L231.4,198.9 L230.1,198.8 L230.3,200.6 L228.0,199.7 L228.1,200.8 L227.5,200.5Z" fill="#ff8f4a" fill-opacity="0.82"><title>Eastern: 42% of needs met on average</title></path>
+                        <path class="gakenke" d="M188.0,159.5 L189.1,160.2 L190.0,159.8 L192.5,160.3 L193.9,161.8 L194.0,163.0 L194.7,163.4 L196.6,162.4 L197.0,161.5 L198.4,161.1 L199.9,159.7 L202.4,161.3 L204.0,161.3 L204.6,160.8 L204.4,158.7 L205.8,157.0 L205.2,155.4 L206.1,150.7 L209.9,149.4 L208.1,147.1 L207.8,144.2 L204.9,139.6 L203.9,135.4 L204.3,134.8 L203.1,131.7 L199.0,125.6 L198.5,123.5 L199.8,122.1 L200.1,120.7 L198.9,119.8 L196.9,113.7 L195.8,112.6 L194.9,107.4 L192.7,107.4 L191.8,105.4 L192.4,104.4 L191.8,103.6 L189.0,103.9 L187.1,104.9 L185.6,104.4 L184.1,105.2 L182.1,105.4 L181.2,104.8 L180.8,103.5 L179.8,103.6 L179.1,102.6 L177.4,101.7 L176.4,104.0 L175.5,104.8 L175.8,107.9 L175.2,108.5 L172.4,108.2 L171.0,106.8 L169.4,106.4 L166.4,103.7 L163.8,103.8 L162.6,103.3 L161.7,104.1 L161.6,106.0 L160.6,106.4 L161.2,107.5 L159.7,107.3 L160.7,109.9 L159.4,109.8 L159.4,111.0 L159.0,110.6 L155.7,110.6 L154.7,109.3 L153.4,110.8 L153.5,111.9 L152.9,113.0 L153.4,117.4 L152.9,120.6 L153.9,122.4 L154.2,125.9 L153.6,129.3 L152.8,130.1 L153.2,130.4 L153.4,134.0 L154.2,135.0 L156.0,135.4 L156.8,137.0 L159.6,136.3 L164.6,136.7 L165.9,137.5 L166.3,139.3 L169.0,140.9 L171.1,139.5 L172.9,140.1 L174.8,140.0 L174.1,142.6 L175.2,144.5 L176.4,144.6 L177.8,145.7 L178.9,147.7 L178.8,150.7 L179.3,151.4 L180.5,151.2 L183.1,154.2 L184.5,155.0 L184.8,156.8 L184.2,158.5 L185.6,159.3Z"/>
+                        <text x="92" y="222" text-anchor="middle" style="font-size:22px;font-family:var(--font-display);font-weight:400;fill:#0b2600">60%</text>
+                        <text x="92" y="236" text-anchor="middle" style="font-size:9.5px;font-weight:600;letter-spacing:.1em;fill:#0b2600">WESTERN</text>
+                        <text x="170" y="270" text-anchor="middle" style="font-size:22px;font-family:var(--font-display);font-weight:400;fill:#0b2600">54%</text>
+                        <text x="170" y="284" text-anchor="middle" style="font-size:9.5px;font-weight:600;letter-spacing:.1em;fill:#0b2600">SOUTHERN</text>
+                        <text x="226" y="126" text-anchor="middle" style="font-size:22px;font-family:var(--font-display);font-weight:400;fill:#0b2600">51.5%</text>
+                        <text x="226" y="140" text-anchor="middle" style="font-size:9.5px;font-weight:600;letter-spacing:.1em;fill:#0b2600">NORTHERN</text>
+                        <text x="356" y="312" text-anchor="middle" style="font-size:22px;font-family:var(--font-display);font-weight:400;fill:#f3ead2">44.5%</text>
+                        <text x="356" y="326" text-anchor="middle" style="font-size:9.5px;font-weight:600;letter-spacing:.1em;fill:#f3ead2">KIGALI</text>
+                        <text x="316" y="166" text-anchor="middle" style="font-size:22px;font-family:var(--font-display);font-weight:400;fill:#0b2600">42%</text>
+                        <text x="316" y="180" text-anchor="middle" style="font-size:9.5px;font-weight:600;letter-spacing:.1em;fill:#0b2600">EASTERN</text>
+                        <line x1="240.5" y1="184.4" x2="340" y2="292" stroke="#f3ead2" stroke-width="1"/><circle cx="240.5" cy="184.4" r="2.5" fill="#0b2600"/>
+                        <g style="pointer-events:none"><circle cx="180.4" cy="129.8" r="4.5" fill="#0b2600" stroke="#ffcf6d" stroke-width="2"/><line x1="180.4" y1="129.8" x2="110.4" y2="51.8" stroke="#ffcf6d" stroke-width="1"/><text x="106.4" y="37.8" text-anchor="middle" style="font-size:11px;font-weight:600;fill:#ffcf6d">Gakenke</text><text x="106.4" y="49.8" text-anchor="middle" style="font-size:9.5px;fill:rgba(255,207,109,.75)">first Amazi system</text></g>
+                        </svg></div>
+                        <div>
+                            <p class="eyebrow">Where it works</p>
+                            <h3 class="display">Every province, including the driest.</h3>
+                            <p>The Eastern Province gets the least rain, yet still averages 42% of needs met,
+                                and it is home to over a quarter of Rwanda&rsquo;s people. Our first system is in
+                                Gakenke, in the Northern Province.</p>
+                            <div class="table-scroll"><table class="prov-table">
+                                <thead><tr><th scope="col">Province</th><th scope="col">Needs met<br>(year avg)</th><th scope="col">Share of<br>population</th><th scope="col">Rain per<br>month</th></tr></thead>
+                                <tbody><tr data-prov="Western"><td><i style="background:#9fcbe0"></i>Western</td><td>60%</td><td>21.9%</td><td>117&nbsp;mm</td></tr><tr data-prov="Southern"><td><i style="background:#b6d77a"></i>Southern</td><td>54%</td><td>22.7%</td><td>105&nbsp;mm</td></tr><tr data-prov="Northern"><td><i style="background:#ffcf6d"></i>Northern</td><td>51.5%</td><td>15.4%</td><td>100&nbsp;mm</td></tr><tr data-prov="Kigali"><td><i style="background:#f3ead2"></i>Kigali</td><td>44.5%</td><td>13.2%</td><td>87&nbsp;mm</td></tr><tr data-prov="Eastern"><td><i style="background:#ff8f4a"></i>Eastern</td><td>42%</td><td>26.9%</td><td>82&nbsp;mm</td></tr></tbody>
+                            </table></div>
+                            <p class="source">Population: Fifth Rwanda Population and Housing Census, 2022. Rainfall: Climate Change Knowledge Portal, 1991 to 2021.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6 · QUALITY -->
+        <section class="section section--tight" id="quality" aria-labelledby="quality-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">06 · Water quality</p>
+                    <h2 class="display" id="quality-h">Fit for every use except drinking.</h2>
+                    <p class="head__lede">
+                        Samples were tested in the University of Rwanda&rsquo;s chemistry labs and compared
+                        with Rwanda&rsquo;s rural drinking-water quality framework.
+                    </p>
+                </header>
+
+                <div class="card" data-reveal style="margin-bottom: clamp(14px, 1.6vw, 20px);">
+                    <div class="table-scroll">
+                        <table class="quality">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Parameter</th>
+                                    <th scope="col" class="hl">Amazi rainwater<br>after first flush</th>
+                                    <th scope="col">Tank uncleaned<br>for 7 months</th>
+                                    <th scope="col">WASAC tap<br>Kigali</th>
+                                    <th scope="col">Standard<br>treated water</th>
+                                    <th scope="col">Standard<br>natural water</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Turbidity<small>FNU</small></th><td class="hl">1.81<span class="pill pill--ok">within</span></td><td>2.89</td><td>0.46</td><td class="std">&le; 5</td><td class="std">&le; 25</td></tr>
+                                <tr><th scope="row">pH</th><td class="hl">5.83<span class="pill pill--watch">low</span></td><td>5.56</td><td>7.30</td><td class="std">6.5 to 8.5</td><td class="std">5.5 to 9.5</td></tr>
+                                <tr><th scope="row">Total dissolved solids<small>mg/L</small></th><td class="hl">14.32<span class="pill pill--ok">within</span></td><td>7.73</td><td>46.1</td><td class="std">&le; 700</td><td class="std">&le; 1,500</td></tr>
+                                <tr><th scope="row">Conductivity<small>&micro;S/cm</small></th><td class="hl">30.7<span class="pill pill--ok">within</span></td><td>16.47</td><td>94.7</td><td class="std">&le; 1,500</td><td class="std">&le; 2,500</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid grid--2" data-reveal data-stagger>
+                    <div class="card">
+                        <p class="eyebrow">Untreated rainwater is suitable for</p>
+                        <ul class="uses">
+                            <li>Bathing</li>
+                            <li>Livestock</li>
+                            <li>Kitchen gardens</li>
+                            <li>Washing homes and clothes</li>
+                            <li class="no">Drinking</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <p class="eyebrow">Still being studied</p>
+                        <p>Rainwater is naturally soft and slightly acidic. Its pH sits below the treated-water
+                            range but inside the natural-water range, and we are still investigating what
+                            its low pH and conductivity mean in practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 · BEYOND -->
+        <section class="section" id="beyond" aria-labelledby="beyond-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">07 · Beyond water</p>
+                    <h2 class="display" id="beyond-h">What a tank on every home could change.</h2>
+                    <p class="head__lede">Knock-on effects the business case identifies, still to be quantified.</p>
+                </header>
+
+                <div class="grid grid--2" data-reveal data-stagger>
+                    <div class="card span-2">
+                        <ul class="chain">
+                            <li><span>More water for livestock</span><span class="to">&rarr;</span><span>more milk and meat</span><span class="to">&rarr;</span><span>more income, less malnutrition</span></li>
+                            <li><span>Irrigated kitchen gardens</span><span class="to">&rarr;</span><span>varied, balanced diets</span><span class="to">&rarr;</span><span>less stunting</span></li>
+                            <li><span>More water retained</span><span class="to">&rarr;</span><span>less soil erosion</span><span class="to">&rarr;</span><span>more productive farms</span></li>
+                            <li><span>More water retained</span><span class="to">&rarr;</span><span>fewer landslides and floods</span><span class="to">&rarr;</span><span>fewer lives and homes lost</span></li>
+                            <li><span>Water inside the home</span><span class="to">&rarr;</span><span>less time and energy poverty</span><span class="to">&rarr;</span><span>a more productive economy</span></li>
+                        </ul>
+                    </div>
+                        <div class="card">
+                            <p class="eyebrow">For the network</p>
+                            <h3 class="display">Less load on WASAC.</h3>
+                            <p>Lower demand means lower pressure, fewer leaks, slower wear and less pumping
+                                energy. Stored water also cushions families when piped supply is intermittent.</p>
+                            <ul class="tags"><li>NST2</li><li>NDC 3.0</li></ul>
+                        </div>
+                        <div class="card">
+                            <p class="eyebrow">For the climate</p>
+                            <h3 class="display">A buffer against harder rain.</h3>
+                            <p>Rainfall is growing more intense and less predictable, raising landslide risk in
+                                the Northern and Western provinces. Household storage cuts peak runoff, and the
+                                system moves with families relocated from high-risk zones.</p>
+                            <ul class="tags"><li>NDC 3.0</li><li>Vision 2050</li><li>NST2</li></ul>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8 · TIMELINE -->
+        <section class="section timeline-section" id="timeline" aria-labelledby="timeline-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">08 · The timeline</p>
+                    <h2 class="display" id="timeline-h">From surveys to a first system, and on to scale.</h2>
+                </header>
+                <ol class="timeline" data-reveal data-stagger>
+                    <li class="is-done">
+                        <span class="when">2022</span>
+                        <h4>Surveys begin</h4>
+                        <p>First visit to Gakenke. Communities name non-potable water access as their biggest limit.</p>
+                    </li>
+                    <li class="is-done">
+                        <span class="when">2024</span>
+                        <h4>Return and feasibility</h4>
+                        <p>Wide-scale surveys and a feasibility study in Minazi Sector. Over 100 families and leaders met across both visits.</p>
+                    </li>
+                    <li class="is-done">
+                        <span class="when">2025</span>
+                        <h4>Design and build</h4>
+                        <p>The modular 700&nbsp;L system is designed at Imperial and its Rwandan supply chain mapped.</p>
+                    </li>
+                    <li class="is-now">
+                        <span class="badge">Now</span>
+                        <span class="when">2026</span>
+                        <h4>First system and business case</h4>
+                        <p>Installed in Minazi to test deployability, supply chain and yield. Business case presented in April.</p>
+                    </li>
+                    <li class="is-next">
+                        <span class="when">Next</span>
+                        <h4>Scale</h4>
+                        <p>A multi-household pilot, and a place for rainwater harvesting in Rwanda&rsquo;s water masterplans.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 9 · PARTNERS -->
+        <section class="section" id="partners" aria-labelledby="partners-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">09 · The partnership</p>
+                    <h2 class="display" id="partners-h">Who we work with, and who the case is for.</h2>
+                </header>
+
+                <div class="partners" data-reveal data-stagger>
+                    <div class="card">
+                        <p class="eyebrow">Working with</p>
+                        <ul class="partner-list">
+                            <li><span class="lg"><img src="static/images/partners/imperial-alpha-600w.webp" alt="" loading="lazy"></span><div><b>Imperial College London</b><span>Engineering, design and the 2026 business case.</span></div></li>
+                            <li><span class="lg"><img src="static/images/partners/ur-green-800w.webp" alt="" loading="lazy"></span><div><b>University of Rwanda</b><span>Our partner since 2009. Water-quality testing in the Chemistry Department.</span></div></li>
+                            <li><span class="lg"><img src="static/images/partners/rw-coa.svg" alt="" loading="lazy"></span><div><b>MININFRA</b><span>Ministry of Infrastructure. We agreed to build the business case for rainwater harvesting in policy.</span></div></li>
+                            <li><span class="lg"><img src="static/images/partners/wasac-448w.webp" alt="" loading="lazy"></span><div><b>WASAC Gakenke</b><span>Shared 2024 data on the cost of pumped supply.</span></div></li>
+                        </ul>
+                        <p class="source" style="margin-top: var(--space-3);">Business case lead: Riccardo Casonato, Imperial College London.</p>
+                    </div>
+                    <div class="card">
+                        <p class="eyebrow">Who needs to be at the table</p>
+                        <p>Organisations the business case identifies for bringing rainwater harvesting into
+                            Rwanda&rsquo;s water supply.</p>
+                        <ul class="chips">
+                            <li><b>RWB</b>Rwanda Water Board</li>
+                            <li><b>WASAC</b>Water and Sanitation Corporation</li>
+                            <li><b>MININFRA</b>Infrastructure</li>
+                            <li><b>MoE</b>Environment</li>
+                            <li><b>REMA</b>Environment Management Authority</li>
+                            <li><b>MINAGRI</b>Agriculture</li>
+                            <li><b>FONERWA</b>Rwanda Green Fund</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid--3" data-reveal data-stagger style="margin-top: clamp(14px, 1.6vw, 20px);">
+                    <figure class="photo"><img src="static/images/research/ur-collab-04-1024w.webp" alt="A community gathering in Gakenke with e.quinox team members" loading="lazy" decoding="async"><figcaption>Community meetings, Gakenke</figcaption></figure>
+                    <figure class="photo"><img src="static/images/research/ur-collab-01-1024w.webp" alt="Team members and local partners working over a map on the ground" loading="lazy" decoding="async"><figcaption>Fieldwork with local partners</figcaption></figure>
+                    <figure class="photo"><img src="static/images/amazi/community-ownership-768w.webp" alt="Community members gathered around Amazi tanks on a hillside" loading="lazy" decoding="async"><figcaption>Community ownership</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta" id="join" aria-labelledby="join-h">
+            <div class="wrap">
+                <header class="head head--center" data-reveal>
+                    <p class="eyebrow">Get involved</p>
+                    <h2 class="display" id="join-h">Help us bring Amazi to scale.</h2>
+                    <p class="head__lede">The first system is in. The next step is a pilot across more households, and that takes partners.</p>
+                </header>
+                <div class="grid grid--3" data-reveal data-stagger>
+                    <article class="card card--glass">
+                        <p class="eyebrow">Partners &amp; funders</p>
+                        <h3 class="display">Collaborate with us.</h3>
+                        <p>Sponsors, NGOs, research groups and funding bodies: help take Amazi from one system to many.</p>
+                        <a class="button-warm" href="connect.html">Get in touch</a>
+                    </article>
+                    <article class="card card--glass">
+                        <p class="eyebrow">Support a household</p>
+                        <h3 class="display">Fund a system.</h3>
+                        <p>680,000&nbsp;RWF covers the tanks, guttering, fittings, foundation and delivery for one household&rsquo;s 700&nbsp;L system.</p>
+                        <a class="button-warm button-warm--ghost" href="connect.html">Donate</a>
+                    </article>
+                    <article class="card card--glass">
+                        <p class="eyebrow">Imperial students</p>
+                        <h3 class="display">Join the team.</h3>
+                        <p>Engineers, researchers and organisers from any department. The committee recruits every year.</p>
+                        <a class="button-warm button-warm--ghost" href="about.html">How we work</a>
+                    </article>
+                </div>
+                <p class="cta__contact">
+                    <a href="mailto:equinox@imperial.ac.uk">equinox@imperial.ac.uk</a>
+                    &nbsp;·&nbsp;
+                    <a href="tel:+447897476428">+44 7897 476 428</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="eyebrow">e.quinox · Imperial College London</p>
+        <nav class="site-footer__nav" aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/amazi.html">Project Amazi</a>
+            <a href="/projects.html">Archives</a>
+            <a href="/about.html">About</a>
+            <a href="/connect.html">Connect</a>
+        </nav>
+    </footer>
+
+    <!-- JS -->
+    <script src="static/js/include.js"></script>
+    <script src="static/js/togglemenu.js"></script>
+    <script src="static/js/scroll.js" defer></script>
+    <script src="static/js/amazi.js" defer></script>
+</body>
+</html>

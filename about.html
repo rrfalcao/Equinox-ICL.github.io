@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About e.quinox — the Imperial student chapter</title>
+    <title>About e.quinox - the Imperial student chapter</title>
     <meta name="description" content="e.quinox is run by Imperial College London students. Meet the committee, learn how we organise, and find out how to join.">
 
     <!-- Fonts -->
@@ -29,17 +29,17 @@
     <main class="about">
         <!-- Intro -->
         <section class="about__intro">
-            <div class="about__intro-copy">
+            <div class="about__intro-copy" data-reveal>
                 <p class="eyebrow">About</p>
                 <h1 class="display">The student chapter behind every expedition.</h1>
                 <p class="lede">
                     e.quinox is a student-led humanitarian society based at
-                    Imperial College London. Every project begins here &mdash; designed
+                    Imperial College London. Every project begins here - designed
                     and built by engineers on the committee, then delivered
                     on expedition in partnership with Rwandan communities.
                 </p>
             </div>
-            <figure class="about__intro-image">
+            <figure class="about__intro-image" data-reveal>
                 <picture>
                     <source type="image/webp"
                             srcset="static/images/about-800w.webp 800w, static/images/about-1600w.webp 1600w"
@@ -54,16 +54,16 @@
 
         <!-- How we work -->
         <section class="about__section">
-            <header class="about__section-head">
+            <header class="about__section-head" data-reveal>
                 <p class="eyebrow">How we work</p>
                 <h2 class="display">Designed at Imperial. Built in Rwanda.</h2>
             </header>
-            <div class="about__columns">
+            <div class="about__columns" data-reveal data-stagger>
                 <article>
                     <h3>Engineering at Imperial</h3>
                     <p>
                         The committee prototypes each project throughout the
-                        academic year at Imperial &mdash; solar, electronics, water
+                        academic year at Imperial - solar, electronics, water
                         systems, embedded monitoring. Students get hands-on
                         experience solving problems whose answers will be used.
                     </p>
@@ -73,7 +73,7 @@
                     <p>
                         Every summer a team takes the design to Rwanda for
                         pilot installation and field feedback. Real sites,
-                        real partners, real constraints &mdash; the only way to
+                        real partners, real constraints - the only way to
                         ship engineering that lasts.
                     </p>
                 </article>
@@ -90,7 +90,7 @@
 
         <!-- Committee / team -->
         <section class="about__section">
-            <header class="about__section-head">
+            <header class="about__section-head" data-reveal>
                 <p class="eyebrow">The committee</p>
                 <h2 class="display">Students who ship.</h2>
                 <p class="about__sub">
@@ -100,19 +100,60 @@
                     <a href="/connect.html">Get in touch</a>.
                 </p>
             </header>
-            <p class="about__placeholder">
-                Individual committee photos and bios will land here as the
-                team confirms their 2025&ndash;2026 lineup.
-            </p>
+
+            <div class="about__columns" data-reveal data-stagger>
+                <article class="team-card">
+                    <figure class="team-photo">
+                        <picture>
+                            <source type="image/webp"
+                                    srcset="static/images/team/riccardo-casonato-800w.webp">
+                            <img src="static/images/team/riccardo-casonato.jpg"
+                                 alt="Riccardo Casonato delivering a lecture on Project Amazi"
+                                 loading="lazy" decoding="async">
+                        </picture>
+                    </figure>
+                    <p class="eyebrow">Project Amazi &middot; research lead</p>
+                    <h3>Riccardo Casonato</h3>
+                    <p>
+                        Civil &amp; Environmental Engineering, Imperial College London.
+                        Lead author of the 2026 Project Amazi business case -
+                        four years of fieldwork in Gakenke District, turning
+                        community surveys and pilot deployments into a policy-ready
+                        document for MININFRA.
+                    </p>
+                    <p class="about__contact">
+                        <a href="mailto:riccardo.casonato20@imperial.ac.uk">riccardo.casonato20@imperial.ac.uk</a>
+                    </p>
+                </article>
+                <article>
+                    <p class="eyebrow">2022 &amp; 2024 expedition teams</p>
+                    <h3>Minazi field researchers</h3>
+                    <p>
+                        Student teams that ran the household surveys in Gakenke
+                        District, conducted water-quality tests with the University
+                        of Rwanda, and trialled the first deployable harvester.
+                        Full team lineup confirmed in the coming term.
+                    </p>
+                </article>
+                <article>
+                    <p class="eyebrow">2025&ndash;2026 committee</p>
+                    <h3>Officers + leads</h3>
+                    <p>
+                        President, Outreach, Technical Lead, Expedition Lead,
+                        Treasurer, Projects Lead. Photos and bios land here
+                        as the lineup is confirmed.
+                    </p>
+                </article>
+            </div>
         </section>
 
         <!-- Governance -->
         <section class="about__section">
-            <header class="about__section-head">
+            <header class="about__section-head" data-reveal>
                 <p class="eyebrow">Governance</p>
                 <h2 class="display">How we stay accountable.</h2>
             </header>
-            <div class="about__columns">
+            <div class="about__columns" data-reveal data-stagger>
                 <article>
                     <h3>Imperial College oversight</h3>
                     <p>
@@ -141,7 +182,7 @@
         </section>
 
         <!-- Join CTA -->
-        <section class="about__cta">
+        <section class="about__cta" data-reveal>
             <p class="eyebrow">Apply to join</p>
             <h2 class="display">Think you&rsquo;d fit?</h2>
             <p>
@@ -156,7 +197,8 @@
         <p class="eyebrow">e.quinox · Imperial College London</p>
         <nav class="site-footer__nav" aria-label="Footer">
             <a href="/">Home</a>
-            <a href="/projects.html">Projects</a>
+            <a href="/amazi.html">Project Amazi</a>
+            <a href="/projects.html">Archives</a>
             <a href="/about.html">About</a>
             <a href="/connect.html">Connect</a>
         </nav>
@@ -165,5 +207,7 @@
     <!-- JS -->
     <script src="static/js/include.js"></script>
     <script src="static/js/togglemenu.js"></script>
+    <script src="static/js/scroll.js" defer></script>
+    <script src="static/js/secondary.js" defer></script>
 </body>
 </html>

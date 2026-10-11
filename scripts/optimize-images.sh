@@ -22,7 +22,8 @@ command -v magick >/dev/null || { echo "magick missing — run: brew install ima
 
 process() {
   local src="$1"
-  local base ext stem
+  local dir base ext stem
+  dir=$(dirname "$src")
   base=$(basename "$src")
   ext="${base##*.}"
   stem="${base%.*}"
@@ -34,7 +35,7 @@ process() {
   src_w=$(magick identify -format "%w" "$src")
 
   # Pick which widths actually apply. Always include the source width
-  # (floored to nearest 100) so small images still get a WebP derivative.
+  # so small images still get a WebP derivative.
   local widths_to_emit=()
   for w in "${WIDTHS[@]}"; do
     (( w <= src_w )) && widths_to_emit+=("$w")
@@ -44,25 +45,28 @@ process() {
   fi
 
   for w in "${widths_to_emit[@]}"; do
-    local webp_out="$IMG_DIR/${stem}-${w}w.webp"
-    local jpg_out="$IMG_DIR/${stem}-${w}w.jpg"
+    # Derivatives sit alongside the source so subfolders stay self-contained.
+    local webp_out="${dir}/${stem}-${w}w.webp"
+    local jpg_out="${dir}/${stem}-${w}w.jpg"
 
     if [[ ! -f "$webp_out" || "$src" -nt "$webp_out" ]]; then
       magick "$src" -resize "${w}x" -strip -quality "$JPEG_QUALITY" "$jpg_out"
       cwebp -quiet -q "$WEBP_QUALITY" -m 6 "$jpg_out" -o "$webp_out"
       printf "  %s  →  %s (%s)\n" \
-        "$(basename "$src")" "$(basename "$webp_out")" \
+        "${dir#$IMG_DIR/}/$(basename "$src")" \
+        "$(basename "$webp_out")" \
         "$(du -h "$webp_out" | cut -f1)"
     fi
   done
 }
 
 if [[ $# -gt 0 ]]; then
-  process "$IMG_DIR/$1"
+  process "$1"
 else
-  # All top-level photos (skip subdirs like Logo/, slideshow/)
+  # All photos in IMG_DIR and one level of subdirectories
   shopt -s nullglob
-  for f in "$IMG_DIR"/*.jpg "$IMG_DIR"/*.jpeg "$IMG_DIR"/*.png; do
+  for f in "$IMG_DIR"/*.jpg "$IMG_DIR"/*.jpeg "$IMG_DIR"/*.png \
+           "$IMG_DIR"/*/*.jpg "$IMG_DIR"/*/*.jpeg "$IMG_DIR"/*/*.png; do
     process "$f"
   done
 fi

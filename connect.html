@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect with e.quinox</title>
-    <meta name="description" content="Get in touch with e.quinox — partnership enquiries, Imperial student involvement, 2026 expedition applications, and support.">
+    <meta name="description" content="Get in touch with e.quinox - partnership enquiries, Imperial student involvement, 2026 expedition applications, and support.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,54 +27,83 @@
     <header data-include-html="static/auxhtml/header.html"></header>
 
     <main class="connect">
-        <div class="connect__narrative">
-            <p class="eyebrow">Connect</p>
-            <h1 class="display">Let&rsquo;s make the next project together.</h1>
+        <div class="connect__narrative" data-reveal>
+            <p class="eyebrow">Partner with e.quinox</p>
+            <h1 class="display">A rainwater-harvesting solution for sustainable futures in Rwanda.</h1>
             <p class="connect__lede">
-                Whether you&rsquo;re an Imperial student, an NGO partner, or a donor
-                — the committee reads every message.
+                We are e.quinox - a platform from Imperial College London
+                dedicated to co-creating sustainable, community-driven solutions
+                in off-grid regions of Rwanda and beyond.
+            </p>
+            <p class="connect__lede">
+                In 2010, an e.quinox project in Rwanda helped launch what became
+                <strong>Bboxx</strong>, now delivering clean energy to over
+                <strong>25%</strong> of the country. We&rsquo;re returning.
+                Not with energy, but with water.
             </p>
 
-            <figure class="connect__image">
+            <figure class="connect__image" data-reveal>
                 <picture>
                     <source type="image/webp"
                             srcset="static/images/solarpanel-800w.webp 800w, static/images/solarpanel-1600w.webp 1600w"
                             sizes="(max-width: 900px) 100vw, 50vw">
                     <img src="static/images/solarpanel-1600w.jpg"
-                         alt="Solar panel installation in rural Rwanda"
+                         alt="e.quinox field installation in rural Rwanda"
                          loading="lazy" decoding="async">
                 </picture>
-                <figcaption class="caption">Rwanda · field installation</figcaption>
+                <figcaption class="caption">Rwanda &middot; field installation</figcaption>
             </figure>
 
             <section class="connect__block">
-                <h2 class="eyebrow">What happens next</h2>
+                <h2 class="eyebrow">The ask</h2>
                 <p>
-                    A committee member replies within seven days, usually from the
-                    President or Outreach lead. For partnership and press enquiries
-                    we loop in the relevant team member before responding.
+                    During visits in 2022 and 2024, we met with over
+                    <strong>100 families and local leaders</strong> in off-grid
+                    communities in Rwanda&rsquo;s hills. Their message was clear:
+                    <em>&ldquo;we need a local, reliable water source.&rdquo;</em>
+                </p>
+                <p>
+                    Help us empower these communities. Your support directly
+                    improves the lives of families working towards a brighter future.
                 </p>
             </section>
 
             <section class="connect__block">
-                <h2 class="eyebrow">What to ask about</h2>
+                <h2 class="eyebrow">What to reach out about</h2>
                 <ul class="connect__list">
-                    <li>Partnerships &mdash; NGOs, manufacturers, research labs.</li>
-                    <li>Imperial student involvement &mdash; joining the chapter.</li>
-                    <li>2026 expedition applications.</li>
-                    <li>Speaking invitations, press, and media.</li>
-                    <li>Donations and support &mdash; individuals and institutions.</li>
+                    <li>Partnership - NGOs, manufacturers, research labs, funders.</li>
+                    <li>Imperial student involvement - joining the 2026 chapter.</li>
+                    <li>2026 expedition applications and field-trial volunteers.</li>
+                    <li>Donations - individual, institutional, and climate-fund channels.</li>
+                    <li>Speaking invitations, press, and media enquiries.</li>
                 </ul>
             </section>
 
+            <section class="connect__block">
+                <h2 class="eyebrow">Project timeline</h2>
+                <ul class="connect__list">
+                    <li><strong>2022 to 2025</strong>: surveys in Gakenke, feasibility study, and design of the 700&nbsp;L modular system.</li>
+                    <li><strong>Spring 2026</strong>: first system installed in Minazi Sector; business case presented in April.</li>
+                    <li><strong>Next</strong>: a multi-household pilot, then scale across districts.</li>
+                </ul>
+            </section>
+
+            <section class="connect__block">
+                <h2 class="eyebrow">Direct contact</h2>
+                <p class="connect__contacts">
+                    <a href="mailto:equinox@imperial.ac.uk">equinox@imperial.ac.uk</a><br>
+                    <a href="tel:+447897476428">+44 7897 476 428</a>
+                </p>
+            </section>
+
             <blockquote class="connect__quote">
-                <p>&ldquo;Every expedition starts with an email. Tell us what you&rsquo;re
-                working on &mdash; the rest takes care of itself.&rdquo;</p>
-                <footer>&mdash; Past committee member</footer>
+                <p>&ldquo;Every expedition starts with an email. Tell us what
+                you&rsquo;re working on - the rest takes care of itself.&rdquo;</p>
+                <footer>- Past committee member</footer>
             </blockquote>
         </div>
 
-        <div class="connect__form-col">
+        <div class="connect__form-col" data-reveal>
             <form class="connect__form" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
                 <input type="hidden" name="accessKey" value="3be223fa-aa8e-42dc-82ba-1f130932580a">
 
@@ -116,7 +145,8 @@
         <p class="eyebrow">e.quinox · Imperial College London</p>
         <nav class="site-footer__nav" aria-label="Footer">
             <a href="/">Home</a>
-            <a href="/projects.html">Projects</a>
+            <a href="/amazi.html">Project Amazi</a>
+            <a href="/projects.html">Archives</a>
             <a href="/about.html">About</a>
             <a href="/connect.html">Connect</a>
         </nav>
@@ -125,5 +155,7 @@
     <!-- JS -->
     <script src="static/js/include.js"></script>
     <script src="static/js/togglemenu.js"></script>
+    <script src="static/js/scroll.js" defer></script>
+    <script src="static/js/secondary.js" defer></script>
 </body>
 </html>

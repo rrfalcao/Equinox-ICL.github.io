@@ -2,6 +2,24 @@
    Header — brand / nav / socials, filament-warm interactions
    ================================================================ */
 
+/* Scroll-progress bar (top of viewport, all pages) */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--rust), var(--yellow));
+    transform: scaleX(var(--p, 0));
+    transform-origin: left center;
+    z-index: 60;
+    pointer-events: none;
+    will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+    .scroll-progress { display: none; }
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -14,11 +32,41 @@
     align-items: center;
     gap: var(--space-2);
     box-sizing: border-box;
+    background: transparent;
+    isolation: isolate;
+}
+
+/* Soft, gradient-faded blur backdrop. The ::before extends past the
+   header's bottom edge and is masked with a vertical gradient so the
+   blur + tint dissolve smoothly into the page below — no hard line. */
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200%;
     background: linear-gradient(180deg,
-                rgba(11, 38, 0, 0.72) 0%,
-                rgba(11, 38, 0, 0) 100%);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+                rgba(11, 38, 0, 0.78) 0%,
+                rgba(11, 38, 0, 0.55) 35%,
+                rgba(11, 38, 0, 0.18) 70%,
+                rgba(11, 38, 0, 0)    100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-mask-image: linear-gradient(180deg,
+                #000 0%,
+                #000 38%,
+                rgba(0,0,0,0.55) 65%,
+                rgba(0,0,0,0.18) 85%,
+                rgba(0,0,0,0)    100%);
+    mask-image: linear-gradient(180deg,
+                #000 0%,
+                #000 38%,
+                rgba(0,0,0,0.55) 65%,
+                rgba(0,0,0,0.18) 85%,
+                rgba(0,0,0,0)    100%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Brand */
@@ -91,6 +139,7 @@
 .nav-buttons a:nth-child(2) { animation-delay: 0.1s; }
 .nav-buttons a:nth-child(3) { animation-delay: 0.15s; }
 .nav-buttons a:nth-child(4) { animation-delay: 0.2s; }
+.nav-buttons a:nth-child(5) { animation-delay: 0.25s; }
 @keyframes slideIn {
     to { opacity: 1; transform: translateX(0); }
 }
@@ -129,20 +178,75 @@
     box-shadow: 0 0 16px -4px rgba(255, 207, 109, 0.5);
 }
 
-/* Underline bar at the bottom of the header */
-.bar {
-    display: none;   /* not used in the new header layout */
+/* Mobile menu button (hidden on desktop) */
+.header__menu {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
 }
+.header__menu span {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--yellow);
+    transition: transform var(--dur-warm) var(--ease-warm), top var(--dur-warm) var(--ease-warm);
+}
+.header__menu span:nth-child(1) { top: 17px; }
+.header__menu span:nth-child(2) { top: 25px; }
+.header.is-open .header__menu span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.header.is-open .header__menu span:nth-child(2) { top: 21px; transform: rotate(-45deg); }
 
 /* Responsive */
-@media (max-width: 700px) {
+@media (max-width: 760px) {
     .header {
-        padding: 10px 12px;
-        grid-template-columns: auto 1fr auto;
+        padding: 8px 12px;
+        grid-template-columns: 1fr auto auto;
+        gap: 4px;
     }
-    .nav-buttons a { padding: 8px 10px; font-size: 14px; }
-    .header__mark { height: 22px; }
+    .header__mark { height: 24px; }
     .header__social { width: 40px; height: 40px; }
+    .header__menu { display: block; }
+    .nav-buttons {
+        position: absolute;
+        top: 100%;
+        left: 12px;
+        right: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        border-radius: var(--radius-lg);
+        background: rgba(11, 38, 0, 0.94);
+        border: 1px solid rgba(255, 207, 109, 0.14);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity var(--dur-warm) var(--ease-warm), transform var(--dur-warm) var(--ease-warm), visibility 0s linear var(--dur-warm);
+    }
+    .header.is-open .nav-buttons {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition-delay: 0s;
+    }
+    .nav-buttons a {
+        font-size: 18px;
+        padding: 12px 16px;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    .nav-buttons a[aria-current="page"]::after { left: 16px; right: auto; width: 24px; bottom: 8px; }
 }
 
 /* Hide scrollbars */

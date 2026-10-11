@@ -161,3 +161,118 @@ body {
     color: var(--rust);
     text-align: center;
 }
+
+/* ================================================================
+   Archive section — past prototypes filed for the record.
+   Visually separated by a top border + subdued sepia treatment.
+   ================================================================ */
+
+.projects-archive {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(198, 82, 0, 0.35);
+}
+.projects-archive__head {
+    max-width: 800px;
+    margin: 0 auto var(--space-4);
+    text-align: center;
+}
+.projects-archive__head .eyebrow { color: var(--rust); }
+.projects-archive__head h2 {
+    color: var(--yellow);
+    font-size: clamp(32px, 4vw, 48px);
+    margin: var(--space-1) 0 var(--space-2);
+}
+.projects-archive__copy {
+    color: var(--yellow);
+    opacity: 0.8;
+    line-height: var(--leading-body);
+    max-width: var(--measure);
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+/* Sepia-ish wash on archived chapters so they read as "older" */
+.chapter[data-archived="true"] .chapter__image img {
+    filter: sepia(0.22) saturate(0.85) brightness(0.95);
+    transition: filter var(--dur-slow) var(--ease-warm);
+}
+.chapter[data-archived="true"]:hover .chapter__image img {
+    filter: sepia(0) saturate(1) brightness(1);
+}
+.chapter[data-archived="true"] .chapter__year {
+    opacity: 0.78;
+}
+
+/* ================================================================
+   ANIMATION CHOREOGRAPHY — projects page
+   ================================================================ */
+
+/* Intro */
+.projects-intro[data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease-warm), transform 800ms var(--ease-spring); }
+.projects-intro[data-reveal].is-lit { opacity: 1; transform: none; }
+
+/* Chapter slide-in: image and meta enter from opposite sides for rhythm.
+   Standard chapters: image from left, meta from right.
+   --flip chapters: image from right, meta from left. */
+.chapter .chapter__image,
+.chapter .chapter__meta {
+    opacity: 0;
+    transition: opacity 800ms var(--ease-warm), transform 900ms var(--ease-spring);
+}
+.chapter .chapter__image { transform: translateX(-32px); }
+.chapter .chapter__meta  { transform: translateX(32px); }
+.chapter--flip .chapter__image { transform: translateX(32px); }
+.chapter--flip .chapter__meta  { transform: translateX(-32px); }
+.chapter.is-lit .chapter__image,
+.chapter.is-lit .chapter__meta,
+.chapter[data-reveal].is-lit .chapter__image,
+.chapter[data-reveal].is-lit .chapter__meta {
+    opacity: 1; transform: none;
+}
+.chapter[data-reveal].is-lit .chapter__meta { transition-delay: 120ms; }
+
+/* Year tile pops with spring */
+.chapter__year { display: inline-block; transition: transform 600ms var(--ease-spring); }
+.chapter[data-reveal].is-lit .chapter__year { animation: yearKick 600ms var(--ease-spring) 240ms; }
+@keyframes yearKick {
+    0%   { transform: scale(0.85); }
+    60%  { transform: scale(1.04); }
+    100% { transform: scale(1);    }
+}
+
+/* Outcomes list cascade */
+.chapter__outcomes li {
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity 500ms var(--ease-warm), transform 500ms var(--ease-spring);
+}
+.chapter[data-reveal].is-lit .chapter__outcomes li { opacity: 1; transform: none; }
+.chapter[data-reveal].is-lit .chapter__outcomes li:nth-child(1) { transition-delay: 320ms; }
+.chapter[data-reveal].is-lit .chapter__outcomes li:nth-child(2) { transition-delay: 400ms; }
+.chapter[data-reveal].is-lit .chapter__outcomes li:nth-child(3) { transition-delay: 480ms; }
+.chapter[data-reveal].is-lit .chapter__outcomes li:nth-child(4) { transition-delay: 560ms; }
+.chapter[data-reveal].is-lit .chapter__outcomes li:nth-child(5) { transition-delay: 640ms; }
+
+/* Archive header fade */
+.projects-archive__head[data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 800ms var(--ease-warm), transform 800ms var(--ease-spring); }
+.projects-archive__head[data-reveal].is-lit { opacity: 1; transform: none; }
+
+/* Archive chapter entrance: warm to sepia after entering */
+.projects-archive .chapter[data-archived="true"] .chapter__image img {
+    filter: sepia(0) saturate(1) brightness(1);
+    transition: filter 1100ms var(--ease-warm) 400ms;
+}
+.projects-archive .chapter[data-archived="true"][data-reveal].is-lit .chapter__image img {
+    filter: sepia(0.22) saturate(0.85) brightness(0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chapter .chapter__image,
+    .chapter .chapter__meta,
+    .chapter__outcomes li,
+    .projects-intro[data-reveal],
+    .projects-archive__head[data-reveal] { opacity: 1 !important; transform: none !important; }
+    .chapter[data-reveal].is-lit .chapter__year { animation: none; }
+}
+

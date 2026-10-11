@@ -97,7 +97,20 @@ body {
     font-size: 16px;
     line-height: var(--leading-body);
     color: var(--yellow);
-    margin: 0;
+    margin: 0 0 var(--space-1);
+}
+.connect__contacts {
+    line-height: 1.8;
+}
+.connect__contacts a {
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: color var(--dur-warm) var(--ease-warm);
+}
+.connect__contacts a:hover,
+.connect__contacts a:focus-visible {
+    color: var(--yellow);
 }
 .connect__list {
     list-style: none;
@@ -301,3 +314,111 @@ body {
 .site-footer__nav a:focus-visible {
     color: var(--yellow);
 }
+
+/* ================================================================
+   ANIMATION CHOREOGRAPHY — connect page
+   ================================================================ */
+
+/* Narrative blocks cascade in */
+.connect__narrative[data-reveal] > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 600ms var(--ease-warm), transform 600ms var(--ease-spring);
+}
+.connect__narrative[data-reveal].is-lit > * { opacity: 1; transform: none; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(1) { transition-delay: 60ms;  }
+.connect__narrative[data-reveal].is-lit > *:nth-child(2) { transition-delay: 160ms; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(3) { transition-delay: 260ms; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(4) { transition-delay: 360ms; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(5) { transition-delay: 460ms; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(6) { transition-delay: 560ms; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(7) { transition-delay: 660ms; }
+.connect__narrative[data-reveal].is-lit > *:nth-child(8) { transition-delay: 760ms; }
+
+/* Form column slide-in from the right */
+.connect__form-col[data-reveal] {
+    opacity: 0;
+    transform: translateX(28px);
+    transition: opacity 800ms var(--ease-warm), transform 800ms var(--ease-spring);
+}
+.connect__form-col[data-reveal].is-lit { opacity: 1; transform: none; }
+
+/* Image clip-swipe from left */
+.connect__image[data-reveal] {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    transition: clip-path 900ms cubic-bezier(.2, .8, .2, 1), opacity 900ms var(--ease-warm);
+}
+.connect__image[data-reveal].is-lit { clip-path: inset(0 0 0 0); opacity: 1; }
+
+/* List items slide-in cascade */
+.connect__list li {
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity 500ms var(--ease-warm), transform 500ms var(--ease-spring);
+}
+.connect__block[data-reveal].is-lit .connect__list li { opacity: 1; transform: none; }
+.connect__list li:nth-child(1) { transition-delay: 80ms;  }
+.connect__list li:nth-child(2) { transition-delay: 160ms; }
+.connect__list li:nth-child(3) { transition-delay: 240ms; }
+.connect__list li:nth-child(4) { transition-delay: 320ms; }
+.connect__list li:nth-child(5) { transition-delay: 400ms; }
+
+/* Contact link micro-bounce on hover */
+.connect__contacts a {
+    position: relative;
+    display: inline-block;
+    transition: color var(--dur-warm) var(--ease-warm), transform 220ms var(--ease-snap);
+}
+.connect__contacts a:hover,
+.connect__contacts a:focus-visible {
+    transform: translateY(-2px);
+    color: var(--yellow);
+}
+
+/* Form-row stagger inside the card */
+.connect__form .form-group,
+.connect__form .submit-btn {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms var(--ease-warm), transform 500ms var(--ease-spring);
+}
+.connect__form-col[data-reveal].is-lit .form-group:nth-child(2) { transition-delay: 240ms; opacity: 1; transform: none; }
+.connect__form-col[data-reveal].is-lit .form-group:nth-child(3) { transition-delay: 320ms; opacity: 1; transform: none; }
+.connect__form-col[data-reveal].is-lit .form-group:nth-child(4) { transition-delay: 400ms; opacity: 1; transform: none; }
+.connect__form-col[data-reveal].is-lit .form-group:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: none; }
+.connect__form-col[data-reveal].is-lit .submit-btn               { transition-delay: 600ms; opacity: 1; transform: none; }
+
+/* Submit success: animate label fade + checkmark draw + bg colour shift */
+.submit-btn { transition:
+    background-color 600ms var(--ease-warm),
+    color var(--dur-warm) var(--ease-warm),
+    box-shadow var(--dur-warm) var(--ease-warm),
+    transform var(--dur-warm) var(--ease-warm);
+}
+.submit-btn.is-sent {
+    background-color: var(--yellow);
+    color: var(--green);
+    transform: scale(1.02);
+}
+.submit-btn__label {
+    transition: opacity 320ms var(--ease-warm);
+}
+.submit-btn__check path {
+    stroke-dasharray: 32;
+    stroke-dashoffset: 32;
+    transition: stroke-dashoffset 600ms cubic-bezier(.2, .8, .2, 1) 200ms;
+    stroke: var(--green);
+}
+.submit-btn.is-sent .submit-btn__check path { stroke-dashoffset: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+    .connect__narrative[data-reveal] > *,
+    .connect__form-col[data-reveal],
+    .connect__image[data-reveal],
+    .connect__list li,
+    .connect__form .form-group,
+    .connect__form .submit-btn { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+    .submit-btn__check path { stroke-dashoffset: 0; }
+}
+

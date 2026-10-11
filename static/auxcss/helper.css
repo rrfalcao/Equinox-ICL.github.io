@@ -42,8 +42,47 @@
 
     /* Motion */
     --ease-warm: cubic-bezier(.2, .7, .2, 1);
+    --ease-snap: cubic-bezier(.2, .8, .2, 1);
+    --ease-spring: cubic-bezier(.18, 1.15, .3, 1);
+    --dur-fast: 280ms;
     --dur-warm: 240ms;
+    --dur-mid: 600ms;
     --dur-slow: 480ms;
+    --dur-reveal: 900ms;
+}
+
+/* ================================================================
+   Stagger primitive — children of [data-stagger] inherit a delay
+   indexed via --i (set by JS in scroll.js when parent enters view).
+   ================================================================ */
+[data-stagger] > * {
+    transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* ================================================================
+   Reveal-on-scroll primitive — observed by scroll.js, which adds
+   .is-lit when the element enters the viewport. Lives in helper.css
+   so every page (about/projects/connect/index/amazi) gets it without
+   needing to import index.css.
+   ================================================================ */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity var(--dur-reveal) var(--ease-warm),
+        transform var(--dur-reveal) var(--ease-warm),
+        clip-path var(--dur-reveal) var(--ease-snap),
+        filter var(--dur-reveal) var(--ease-warm);
+}
+[data-reveal="left"]  { transform: translateX(-32px); opacity: 0; }
+[data-reveal="right"] { transform: translateX(32px);  opacity: 0; }
+[data-reveal="up"]    { transform: translateY(36px);  opacity: 0; }
+[data-reveal="zoom"]  { transform: scale(0.94);       opacity: 0; }
+[data-reveal="clip"]  { clip-path: inset(0 100% 0 0); opacity: 1; transform: none; }
+[data-reveal].is-lit {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 0 0);
 }
 
 /* ================================================================
@@ -163,4 +202,5 @@ a:hover { color: var(--yellow); }
         transition-duration: 0.001ms !important;
         scroll-behavior: auto !important;
     }
+    [data-reveal] { opacity: 1; transform: none; clip-path: none; }
 }
