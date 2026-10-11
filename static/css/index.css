@@ -437,6 +437,7 @@ strong { font-weight: 600; }
     gap: clamp(14px, 1.6vw, 20px);
 }
 .problem .photo { grid-row: span 2; min-height: 420px; }
+.problem .photo img { object-position: 0% 25%; }
 .problem .card { display: flex; flex-direction: column; }
 @media (max-width: 960px) {
     .problem { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
