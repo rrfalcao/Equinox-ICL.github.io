@@ -15,9 +15,6 @@ body {
     margin: 0;
     background-color: var(--green);
     color: var(--yellow);
-    overflow-y: scroll;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
 }
 
 #contentDiv {
