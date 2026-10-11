@@ -1,16 +1,14 @@
 /* ================================================================
-   Equinox ICL — scroll-driven behaviour
+   Equinox ICL: scroll-driven behaviour
    - Reveal-on-scroll (`[data-reveal]` fades to .is-lit when visible)
    - Stats counter (`[data-count-to]` counts up once in view; supports
      `data-count-prefix`, `data-count-suffix`, `data-count-decimals`,
      and emits `count:tick` events on each frame)
    - [data-stagger] index assignment (each child gets --i = its index
      so children can cascade with the helper.css transition-delay rule)
-   - Hero scroll parallax (logo rises, copy drifts, bg parallaxes)
-   - SVG draw helper ([data-svg-draw]) — sets stroke-dasharray and
+   - SVG draw helper ([data-svg-draw]): sets stroke-dasharray and
      dashoffset to total length, removes offset on .is-lit
-   - Scroll-progress bar (writes --p on body during scroll)
-   - Spotlight cursor on [data-spotlight]
+   - Scroll-progress bar (writes --p on .scroll-progress during scroll)
    ================================================================ */
 
 (() => {
@@ -19,15 +17,19 @@
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---------- Scroll-progress bar ----------
-       Body-level CSS var --p tracks scroll progress 0..1. The bar at
-       the top of the header reads this and scales horizontally. */
+       --p tracks scroll progress 0..1 on the bar itself (not body, so a
+       scroll frame never restyles the whole page). The bar is injected
+       with the header, so it is looked up lazily. */
     {
         let ticking = false;
+        let bar = null;
         const writeProgress = () => {
+            ticking = false;
+            bar = bar || document.querySelector('.scroll-progress');
+            if (!bar) return;
             const max = document.documentElement.scrollHeight - window.innerHeight;
             const p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
-            document.body.style.setProperty('--p', p.toFixed(4));
-            ticking = false;
+            bar.style.setProperty('--p', p.toFixed(4));
         };
         const onScroll = () => {
             if (!ticking) { requestAnimationFrame(writeProgress); ticking = true; }
@@ -35,7 +37,7 @@
         if (!prefersReducedMotion) {
             window.addEventListener('scroll', onScroll, { passive: true });
             window.addEventListener('resize', onScroll, { passive: true });
-            writeProgress();
+            document.addEventListener('includes:loaded', writeProgress);
         }
     }
 
@@ -160,98 +162,5 @@
             });
         }, { threshold: 0.5 });
         counters.forEach(el => io.observe(el));
-    }
-
-    /* ---------- Hero scroll animation ----------
-       Logo rises, scales down, and fades as the user scrolls past the
-       hero. The headline/eyebrow drift up slightly slower, and the
-       background image runs a gentle parallax. Load animations (see
-       index.css) play for the first ~1.7s; the scroll handler holds off
-       until then so it never fights the entrance. */
-    const heroEl = document.querySelector('.hero');
-    const heroLogo = document.querySelector('.hero__logo');
-    const heroCopy = document.querySelector('.hero__copy');
-    const heroBgImg = document.querySelector('.hero__bg img');
-    const heroScrollCue = document.querySelector('.hero__scroll-cue');
-
-    if (heroEl && !prefersReducedMotion) {
-        const startHeroParallax = () => {
-            let ticking = false;
-            const apply = () => {
-                const rect = heroEl.getBoundingClientRect();
-                const progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
-
-                if (heroLogo) {
-                    const y = -progress * 80;                     // rises
-                    const scale = 1 - progress * 0.35;            // shrinks
-                    const op = Math.max(0, 1 - progress * 1.35);  // fades
-                    heroLogo.style.transform = `translateY(${y}px) scale(${scale})`;
-                    heroLogo.style.opacity = String(op);
-                }
-                if (heroCopy) {
-                    const y = -progress * 50;
-                    const op = Math.max(0, 1 - progress * 1.6);
-                    heroCopy.style.transform = `translateY(${y}px)`;
-                    heroCopy.style.opacity = String(op);
-                }
-                if (heroBgImg) {
-                    const y = progress * 40;                      // parallax
-                    const scale = 1 + progress * 0.05;            // slight zoom
-                    heroBgImg.style.transform = `translateY(${y}px) scale(${scale})`;
-                }
-                if (heroScrollCue) {
-                    heroScrollCue.style.opacity = String(Math.max(0, 1 - progress * 3));
-                }
-                ticking = false;
-            };
-            const onScroll = () => {
-                if (!ticking) {
-                    requestAnimationFrame(apply);
-                    ticking = true;
-                }
-            };
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onScroll, { passive: true });
-            apply();
-        };
-
-        // Delay until the CSS load animations finish so JS transforms
-        // don't override them mid-flight.
-        setTimeout(startHeroParallax, 1700);
-    }
-
-    /* ---------- Spotlight cursor ----------
-       Scoped to [data-spotlight] sections.
-       - Desktop with fine pointer: follow the cursor.
-       - Touch / coarse pointer: CSS runs a slow diagonal drift (fallback).
-       - Reduced motion: disabled entirely via CSS. */
-    const spotlights = document.querySelectorAll('[data-spotlight]');
-    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (spotlights.length && canHover && !prefersReducedMotion) {
-        spotlights.forEach((el) => {
-            let ticking = false;
-            let lastX = 0, lastY = 0;
-            const apply = () => {
-                el.style.setProperty('--mx', lastX + 'px');
-                el.style.setProperty('--my', lastY + 'px');
-                ticking = false;
-            };
-            el.addEventListener('pointerenter', (e) => {
-                const rect = el.getBoundingClientRect();
-                lastX = e.clientX - rect.left;
-                lastY = e.clientY - rect.top;
-                apply();
-                el.classList.add('is-lit');
-            });
-            el.addEventListener('pointermove', (e) => {
-                const rect = el.getBoundingClientRect();
-                lastX = e.clientX - rect.left;
-                lastY = e.clientY - rect.top;
-                if (!ticking) { requestAnimationFrame(apply); ticking = true; }
-            });
-            el.addEventListener('pointerleave', () => {
-                el.classList.remove('is-lit');
-            });
-        });
     }
 })();

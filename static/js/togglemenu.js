@@ -1,13 +1,11 @@
 function highlightMenu() {
     const menu = document.getElementById('headerList');
     if (!menu) return;
-    const path = window.location.pathname;
+    // "/", "/index.html" -> home; "/amazi" or "/amazi.html" -> amazi
+    const page = (window.location.pathname.split('/').pop() || 'index').replace(/\.html$/, '');
+    const current = page === 'index' ? 'home' : page;
     for (const child of menu.children) {
-        const name = child.getAttribute('name');
-        if (!name) continue;
-        const isHome = path === '/' && name === 'home';
-        const isMatch = name !== 'home' && path.includes(name);
-        if (isHome || isMatch) {
+        if (child.getAttribute('name') === current) {
             child.classList.remove('rust');
             child.classList.add('darkrust');
             child.setAttribute('aria-current', 'page');

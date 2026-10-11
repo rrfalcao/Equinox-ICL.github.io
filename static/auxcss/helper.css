@@ -10,6 +10,7 @@
     --yellow-hover: #cca64c;
     --rust: #c65200;
     --darkrust: #963200;
+    --rust-text: #e8742a;   /* rust lifted to pass AA on green for small text */
 
     /* Semantic aliases */
     --bg: var(--green);
@@ -49,14 +50,6 @@
     --dur-mid: 600ms;
     --dur-slow: 480ms;
     --dur-reveal: 900ms;
-}
-
-/* ================================================================
-   Stagger primitive — children of [data-stagger] inherit a delay
-   indexed via --i (set by JS in scroll.js when parent enters view).
-   ================================================================ */
-[data-stagger] > * {
-    transition-delay: calc(var(--i, 0) * 80ms);
 }
 
 /* ================================================================
@@ -148,7 +141,7 @@ img {
     font-size: 12px;
     letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--rust-text);
 }
 
 /* Spinoff project name — used in about.html’s impact cards */

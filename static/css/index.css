@@ -19,7 +19,8 @@
     --logo-tile: #fffaf0;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html:has(.chapters) { scroll-padding-top: 150px; }
 
 body {
     background-color: var(--green);
@@ -254,7 +255,6 @@ strong { font-weight: 600; }
     height: 100%;
     object-fit: cover;
     object-position: center 60%;
-    will-change: transform;
 }
 .hero__vignette {
     position: absolute;
@@ -279,7 +279,6 @@ strong { font-weight: 600; }
     opacity: 0;
     transform: translateY(32px) scale(0.9);
     animation: logoLand 1.5s var(--ease-spring) 0.15s forwards;
-    will-change: transform, opacity;
 }
 @keyframes logoLand { to { opacity: 1; transform: none; } }
 
@@ -303,7 +302,7 @@ strong { font-weight: 600; }
 
 .hero__copy .eyebrow {
     margin-top: var(--space-3);
-    color: var(--rust);
+    color: var(--rust-text);
     text-shadow: 0 1px 12px rgba(11, 38, 0, 0.6);
     opacity: 0;
     transform: translateY(12px);
@@ -430,7 +429,7 @@ strong { font-weight: 600; }
     border-radius: 10px;
 }
 .spinout__logo--light img { background: var(--yellow); padding: 8px; }
-.spinout__tag { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
+.spinout__tag { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust-text); font-weight: 500; }
 .spinout__big { font-family: var(--font-display); font-weight: 300; font-variation-settings: 'SOFT' 50, 'opsz' 144; letter-spacing: var(--tracking-tight); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; color: var(--yellow); margin: var(--space-2) 0 0; }
 @media (max-width: 760px) {
     .spinouts { grid-template-columns: minmax(0, 1fr); }
@@ -557,7 +556,7 @@ strong { font-weight: 600; }
 .site-footer p { margin: 0; }
 .site-footer__nav { display: flex; gap: var(--space-2); flex-wrap: wrap; justify-content: center; }
 .site-footer__nav a {
-    color: var(--rust);
+    color: var(--rust-text);
     font-weight: 500;
     padding: 6px 10px;
     transition: color var(--dur-warm) var(--ease-warm);
@@ -869,7 +868,7 @@ strong { font-weight: 600; }
 .cost-table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
 .cost-table th, .cost-table td { padding: 9px 8px; text-align: right; border-top: 1px solid var(--line); }
 .cost-table th:first-child, .cost-table td:first-child { text-align: left; padding-left: 0; }
-.cost-table thead th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: var(--rust); border-top: 0; }
+.cost-table thead th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: var(--rust-text); border-top: 0; }
 .cost-table tbody td { color: var(--ink-soft); }
 .cost-table tfoot td { color: var(--yellow); font-weight: 600; border-top: 1px solid var(--line-strong); }
 .cost-table .up { color: var(--rust); }
@@ -915,7 +914,7 @@ strong { font-weight: 600; }
 .prov-table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
 .prov-table th, .prov-table td { padding: 10px 8px; text-align: right; border-top: 1px solid var(--line); }
 .prov-table th:first-child, .prov-table td:first-child { text-align: left; padding-left: 0; }
-.prov-table thead th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--rust); border-top: 0; vertical-align: bottom; }
+.prov-table thead th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--rust-text); border-top: 0; vertical-align: bottom; }
 .prov-table tbody tr { cursor: pointer; transition: background-color var(--dur-warm) var(--ease-warm); }
 .prov-table tbody tr:hover, .prov-table tbody tr.is-focus { background: var(--panel-hi); }
 .prov-table td:first-child { color: var(--yellow); white-space: nowrap; }
@@ -929,7 +928,7 @@ strong { font-weight: 600; }
 .quality { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; min-width: 640px; }
 .quality th, .quality td { padding: 12px 10px; text-align: right; border-top: 1px solid var(--line); }
 .quality th:first-child, .quality td:first-child { text-align: left; padding-left: 0; }
-.quality thead th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--rust); border-top: 0; vertical-align: bottom; line-height: 1.4; }
+.quality thead th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--rust-text); border-top: 0; vertical-align: bottom; line-height: 1.4; }
 .quality thead th.hl { color: var(--water); }
 .quality tbody th { font-weight: 500; color: var(--yellow); }
 .quality tbody th small { display: block; font-weight: 400; font-size: 12px; color: var(--ink-faint); }
@@ -1072,8 +1071,12 @@ strong { font-weight: 600; }
 [data-reveal][data-stagger] > * {
     opacity: 0;
     transform: translateY(22px);
-    transition: opacity 800ms var(--ease-warm), transform 800ms var(--ease-warm), border-color var(--dur-warm) var(--ease-warm);
-    transition-delay: calc(var(--i, 0) * 90ms);
+    /* Only the entrance is staggered; hover changes stay instant. */
+    transition:
+        opacity 800ms var(--ease-warm) calc(var(--i, 0) * 90ms),
+        transform 800ms var(--ease-warm) calc(var(--i, 0) * 90ms),
+        border-color var(--dur-warm) var(--ease-warm),
+        background-color var(--dur-warm) var(--ease-warm);
 }
 [data-reveal][data-stagger].is-lit > * { opacity: 1; transform: none; }
 
