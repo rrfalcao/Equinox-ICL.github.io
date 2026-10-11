@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e.quinox projects</title>
+    <title>Archives · e.quinox</title>
+    <meta name="description" content="Every e.quinox project since 2009, from the first Energy Kiosk and home lighting to Project Amazi, our household rainwater harvester for rural Rwanda.">
+    <meta property="og:title" content="e.quinox archives: projects since 2009">
+    <meta property="og:image" content="https://equinoxicl.com/static/images/2009-1600w.jpg">
+    <meta property="og:url" content="https://equinoxicl.com/projects.html">
+    <meta property="og:type" content="website">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +18,7 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="static/auxcss/helper.css">
     <link rel="stylesheet" href="static/auxcss/header.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/projects.css">
 
     <!-- Icons -->
@@ -21,16 +27,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="static/favicon_io/site.webmanifest">
 </head>
-<body class="yellow greenbg">
-    <div data-include-html="static/auxhtml/header.html"></div>
-    <div id="contentDiv">
-        <!-- Content is generated here by GenerateProjects.js -->
-    </div>
+<body class="greenbg">
+    <header data-include-html="static/auxhtml/header.html"></header>
+    <main id="contentDiv">
+        <!-- Content is generated here by generateProjects.js -->
+    </main>
+
+    <footer class="site-footer">
+        <p class="eyebrow">e.quinox · Imperial College London</p>
+        <nav class="site-footer__nav" aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/amazi.html">Project Amazi</a>
+            <a href="/projects.html">Archives</a>
+            <a href="/about.html">About</a>
+            <a href="/connect.html">Connect</a>
+        </nav>
+    </footer>
     <!-- JS Files -->
     <script src="static/js/include.js"></script>
     <script src="static/js/togglemenu.js"></script>
     <script src="static/js/scroll.js"></script>
     <script src="static/js/generateProjects.js"></script>
-    <script src="static/js/secondary.js" defer></script>
 </body>
 </html>

@@ -152,6 +152,7 @@
 }
 
 /* Socials */
+.header__socials[hidden] { display: flex; visibility: hidden; } /* keeps the nav centred */
 .header__socials {
     display: flex;
     gap: 4px;

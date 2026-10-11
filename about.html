@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About e.quinox - the Imperial student chapter</title>
-    <meta name="description" content="e.quinox is run by Imperial College London students. Meet the committee, learn how we organise, and find out how to join.">
+    <title>About · e.quinox</title>
+    <meta name="description" content="e.quinox is a student society at Imperial College London that has worked with Rwandan communities since 2009. How we work, our track record, and how to join.">
+    <meta property="og:title" content="About e.quinox">
+    <meta property="og:description" content="A student society at Imperial College London, working with Rwandan communities since 2009.">
+    <meta property="og:image" content="https://equinoxicl.com/static/images/about-1600w.jpg">
+    <meta property="og:url" content="https://equinoxicl.com/about.html">
+    <meta property="og:type" content="website">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +19,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="static/auxcss/helper.css">
     <link rel="stylesheet" href="static/auxcss/header.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/about.css">
 
     <!-- Icons -->
@@ -26,170 +32,178 @@
 <body class="greenbg">
     <header data-include-html="static/auxhtml/header.html"></header>
 
-    <main class="about">
+    <main>
         <!-- Intro -->
-        <section class="about__intro">
-            <div class="about__intro-copy" data-reveal>
-                <p class="eyebrow">About</p>
-                <h1 class="display">The student chapter behind every expedition.</h1>
-                <p class="lede">
-                    e.quinox is a student-led humanitarian society based at
-                    Imperial College London. Every project begins here - designed
-                    and built by engineers on the committee, then delivered
-                    on expedition in partnership with Rwandan communities.
-                </p>
+        <section class="section page-top" aria-labelledby="about-h">
+            <div class="wrap page-split">
+                <div data-reveal>
+                    <p class="eyebrow">About</p>
+                    <h1 class="display page-title" id="about-h">The student society behind every expedition.</h1>
+                    <p class="head__lede">
+                        e.quinox is a student society at Imperial College London. Since 2009
+                        we have worked with the University of Rwanda and rural Rwandan
+                        communities to design, build and hand over engineering that lasts.
+                    </p>
+                    <p class="head__lede">
+                        Our mission has stayed the same as our focus has moved from energy
+                        to water: give rural communities the tools to uplift themselves.
+                    </p>
+                </div>
+                <figure class="photo about__photo" data-reveal>
+                    <picture>
+                        <source type="image/webp"
+                                srcset="static/images/about-800w.webp 800w, static/images/about-1600w.webp 1600w"
+                                sizes="(max-width: 900px) 100vw, 45vw">
+                        <img src="static/images/about-1600w.jpg"
+                             alt="e.quinox students and Rwandan partners outside an Energy Kiosk"
+                             decoding="async">
+                    </picture>
+                    <figcaption>The e.quinox team with partners in Rwanda</figcaption>
+                </figure>
             </div>
-            <figure class="about__intro-image" data-reveal>
-                <picture>
-                    <source type="image/webp"
-                            srcset="static/images/about-800w.webp 800w, static/images/about-1600w.webp 1600w"
-                            sizes="(max-width: 900px) 100vw, 50vw">
-                    <img src="static/images/about-1600w.jpg"
-                         alt="e.quinox team on the ground in rural Rwanda"
-                         loading="lazy" decoding="async">
-                </picture>
-                <figcaption class="caption">e.quinox team &middot; Rwanda</figcaption>
-            </figure>
         </section>
 
         <!-- How we work -->
-        <section class="about__section">
-            <header class="about__section-head" data-reveal>
-                <p class="eyebrow">How we work</p>
-                <h2 class="display">Designed at Imperial. Built in Rwanda.</h2>
-            </header>
-            <div class="about__columns" data-reveal data-stagger>
-                <article>
-                    <h3>Engineering at Imperial</h3>
-                    <p>
-                        The committee prototypes each project throughout the
-                        academic year at Imperial - solar, electronics, water
-                        systems, embedded monitoring. Students get hands-on
-                        experience solving problems whose answers will be used.
-                    </p>
-                </article>
-                <article>
-                    <h3>Field-tested on expedition</h3>
-                    <p>
-                        Every summer a team takes the design to Rwanda for
-                        pilot installation and field feedback. Real sites,
-                        real partners, real constraints - the only way to
-                        ship engineering that lasts.
-                    </p>
-                </article>
-                <article>
-                    <h3>Handed over, not owned</h3>
-                    <p>
-                        Once a project is working, it&rsquo;s handed over to
-                        Rwandan partners who run and maintain it. e.quinox
-                        exists to kick-start solutions, not to extract value.
-                    </p>
-                </article>
+        <section class="section section--tight" aria-labelledby="work-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">How we work</p>
+                    <h2 class="display" id="work-h">Designed at Imperial. Built in Rwanda.</h2>
+                </header>
+                <div class="grid grid--3" data-reveal data-stagger>
+                    <article class="card">
+                        <p class="eyebrow">01</p>
+                        <h4>Designed at Imperial</h4>
+                        <p>The committee designs and prototypes each project through the academic
+                            year, giving students hands-on work on problems that real communities
+                            depend on.</p>
+                    </article>
+                    <article class="card">
+                        <p class="eyebrow">02</p>
+                        <h4>Tested in Rwanda</h4>
+                        <p>Teams take the design to Rwanda and test it on site with the families
+                            who will use it. Real sites, real partners and real constraints are the
+                            only way to build something that lasts.</p>
+                    </article>
+                    <article class="card">
+                        <p class="eyebrow">03</p>
+                        <h4>Handed over, not owned</h4>
+                        <p>Once a project works, it is handed to Rwandan partners who run and
+                            maintain it. Our early projects grew into Bboxx and MeshPower.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- Committee / team -->
-        <section class="about__section">
-            <header class="about__section-head" data-reveal>
-                <p class="eyebrow">The committee</p>
-                <h2 class="display">Students who ship.</h2>
-                <p class="about__sub">
-                    The committee turns over yearly. Current roles include
-                    President, Outreach, Technical Lead, Expedition Lead,
-                    Treasurer, and Projects Lead. Want to apply?
-                    <a href="/connect.html">Get in touch</a>.
-                </p>
-            </header>
-
-            <div class="about__columns" data-reveal data-stagger>
-                <article class="team-card">
-                    <figure class="team-photo">
-                        <picture>
-                            <source type="image/webp"
-                                    srcset="static/images/team/riccardo-casonato-800w.webp">
-                            <img src="static/images/team/riccardo-casonato.jpg"
-                                 alt="Riccardo Casonato delivering a lecture on Project Amazi"
-                                 loading="lazy" decoding="async">
-                        </picture>
-                    </figure>
-                    <p class="eyebrow">Project Amazi &middot; research lead</p>
-                    <h3>Riccardo Casonato</h3>
-                    <p>
-                        Civil &amp; Environmental Engineering, Imperial College London.
-                        Lead author of the 2026 Project Amazi business case -
-                        four years of fieldwork in Gakenke District, turning
-                        community surveys and pilot deployments into a policy-ready
-                        document for MININFRA.
-                    </p>
-                    <p class="about__contact">
-                        <a href="mailto:riccardo.casonato20@imperial.ac.uk">riccardo.casonato20@imperial.ac.uk</a>
-                    </p>
-                </article>
-                <article>
-                    <p class="eyebrow">2022 &amp; 2024 expedition teams</p>
-                    <h3>Minazi field researchers</h3>
-                    <p>
-                        Student teams that ran the household surveys in Gakenke
-                        District, conducted water-quality tests with the University
-                        of Rwanda, and trialled the first deployable harvester.
-                        Full team lineup confirmed in the coming term.
-                    </p>
-                </article>
-                <article>
-                    <p class="eyebrow">2025&ndash;2026 committee</p>
-                    <h3>Officers + leads</h3>
-                    <p>
-                        President, Outreach, Technical Lead, Expedition Lead,
-                        Treasurer, Projects Lead. Photos and bios land here
-                        as the lineup is confirmed.
-                    </p>
-                </article>
+        <!-- Track record -->
+        <section class="section" aria-labelledby="record-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">Track record</p>
+                    <h2 class="display" id="record-h">Seventeen years of work that lasts.</h2>
+                </header>
+                <div class="record" data-reveal data-stagger aria-label="Track record">
+                    <div>
+                        <p class="num">2009</p>
+                        <p class="num-label">working with Rwandan communities since</p>
+                    </div>
+                    <div>
+                        <p class="num" data-count-to="6">6</p>
+                        <p class="num-label">Rwandan villages electrified</p>
+                    </div>
+                    <div>
+                        <p class="num" data-count-to="2500" data-count-suffix="+">2,500+</p>
+                        <p class="num-label">households reached</p>
+                    </div>
+                    <div>
+                        <p class="num">25%+</p>
+                        <p class="num-label">of Rwanda reached by Bboxx, launched from our 2010 project</p>
+                    </div>
+                </div>
+                <div class="grid grid--2 about__recognition" data-reveal data-stagger>
+                    <article class="card">
+                        <p class="eyebrow">Award</p>
+                        <h3 class="display">IEEE President&rsquo;s &ldquo;Change the World&rdquo; award</h3>
+                        <p>Awarded for the global impact of our work. Past deployments include a
+                            hydropower plant and off-grid renewable energy systems.</p>
+                    </article>
+                    <article class="card">
+                        <p class="eyebrow">Recognised by</p>
+                        <ul class="chips">
+                            <li>Imperial College London</li>
+                            <li>University of Rwanda</li>
+                            <li>Ministry of Infrastructure</li>
+                            <li>Belgian Development Agency</li>
+                            <li>JP Morgan</li>
+                            <li>Institute of Technology and Engineering</li>
+                            <li>Leviat</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- Governance -->
-        <section class="about__section">
-            <header class="about__section-head" data-reveal>
-                <p class="eyebrow">Governance</p>
-                <h2 class="display">How we stay accountable.</h2>
-            </header>
-            <div class="about__columns" data-reveal data-stagger>
-                <article>
-                    <h3>Imperial College oversight</h3>
-                    <p>
-                        e.quinox is registered with Imperial College Union and
-                        reports annually on finances, safeguarding, and
-                        expedition risk assessment.
+        <!-- People -->
+        <section class="section section--tight" aria-labelledby="team-h">
+            <div class="wrap">
+                <header class="head" data-reveal>
+                    <p class="eyebrow">The team</p>
+                    <h2 class="display" id="team-h">Students who see it through.</h2>
+                    <p class="head__lede">
+                        The committee changes every year. Its roles include President, Outreach,
+                        Technical Lead, Expedition Lead, Treasurer and Projects Lead.
                     </p>
-                </article>
-                <article>
-                    <h3>Rwandan partners</h3>
-                    <p>
-                        Projects are co-designed with local partners including
-                        the Ministry of Infrastructure and the University of
-                        Rwanda, ensuring cultural fit and regulatory alignment.
-                    </p>
-                </article>
-                <article>
-                    <h3>Alumni network</h3>
-                    <p>
-                        Past committee members form an advisory network that
-                        helps current students with technical reviews,
-                        industry connections, and continuity between years.
-                    </p>
-                </article>
+                </header>
+                <div class="grid grid--2" data-reveal data-stagger>
+                    <article class="card person">
+                        <figure class="photo person__photo">
+                            <picture>
+                                <source type="image/webp" srcset="static/images/team/riccardo-casonato-800w.webp">
+                                <img src="static/images/team/riccardo-casonato-800w.jpg"
+                                     alt="Riccardo Casonato presenting Project Amazi to an audience"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                        <p class="eyebrow">Project Amazi · business case author</p>
+                        <h3 class="display">Riccardo Casonato</h3>
+                        <p>Civil and Environmental Engineering, Imperial College London. Author of
+                            the 2026 Project Amazi business case, built on household surveys and
+                            fieldwork in Gakenke District.</p>
+                        <a class="link-arrow" href="mailto:riccardo.casonato20@imperial.ac.uk">riccardo.casonato20@imperial.ac.uk</a>
+                    </article>
+                    <div class="person__side">
+                        <article class="card">
+                            <p class="eyebrow">Expedition teams</p>
+                            <h4>Surveys, testing and a first system</h4>
+                            <p>Student teams visited Gakenke District in 2022 and 2024, meeting over
+                                100 families and local leaders. In 2026 a team installed the first
+                                Amazi system in Minazi Sector.</p>
+                        </article>
+                        <article class="card">
+                            <p class="eyebrow">Open to everyone</p>
+                            <h4>Any department, any year</h4>
+                            <p>Engineers, scientists, researchers and organisers all have a place.
+                                What matters is wanting to build something that gets used.</p>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Join CTA -->
-        <section class="about__cta" data-reveal>
-            <p class="eyebrow">Apply to join</p>
-            <h2 class="display">Think you&rsquo;d fit?</h2>
-            <p>
-                We recruit committee each Spring and expedition teams each
-                Winter. Imperial students of any department are welcome.
-            </p>
-            <a class="button-warm" href="/connect.html">Get in touch</a>
+        <section class="section" aria-labelledby="join-h">
+            <div class="wrap">
+                <div class="card about__cta" data-reveal>
+                    <p class="eyebrow">Join us</p>
+                    <h2 class="display" id="join-h">Think you&rsquo;d fit?</h2>
+                    <p>The committee recruits every year, and Imperial students from any
+                        department are welcome on expeditions.</p>
+                    <div class="actions">
+                        <a class="button-warm" href="/connect.html">Get in touch</a>
+                        <a class="button-warm button-warm--ghost" href="/amazi.html">See Project Amazi</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -208,6 +222,5 @@
     <script src="static/js/include.js"></script>
     <script src="static/js/togglemenu.js"></script>
     <script src="static/js/scroll.js" defer></script>
-    <script src="static/js/secondary.js" defer></script>
 </body>
 </html>

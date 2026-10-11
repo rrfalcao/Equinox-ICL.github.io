@@ -37,9 +37,9 @@
             <p class="eyebrow">The archive</p>
             <h1 class="display">Projects since 2009.</h1>
             <p class="projects-intro__copy">
-              Every e.quinox expedition is engineered at Imperial, tested by
+              Every e.quinox project is designed at Imperial, tested by
               students in the field, and handed over to Rwandan partners who
-              run it for the long haul. Below: each chapter of that work.
+              run it for the long haul. Here is each chapter of that work.
             </p>
         `;
         frag.appendChild(intro);
@@ -59,8 +59,8 @@
                     <p class="eyebrow">Archive</p>
                     <h2 class="display">Earlier work.</h2>
                     <p class="projects-archive__copy">
-                      Past prototypes from previous committees - shipped, learned
-                      from, then handed back. Filed here for the record.
+                      Prototypes and research from previous committees. Each one
+                      was built, tested and learned from, and is filed here for the record.
                     </p>
                 </header>
             `;

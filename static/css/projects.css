@@ -4,23 +4,11 @@
    scrolling meta. Alternating chapters flip image ↔ meta for rhythm.
    ================================================================ */
 
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    margin: 0;
-    background-color: var(--green);
-    color: var(--yellow);
-}
-
 #contentDiv {
-    max-width: 1280px;
+    max-width: var(--wrap);
     margin: 0 auto;
-    padding: calc(var(--space-5) + 48px) var(--space-3) var(--space-5);
+    padding: calc(var(--section-y) + 64px) var(--gutter) var(--section-y);
+    box-sizing: border-box;
 }
 
 /* Intro header */
@@ -28,7 +16,7 @@ body {
     display: grid;
     gap: var(--space-2);
     padding: 0 0 var(--space-5);
-    border-bottom: 1px solid rgba(198, 82, 0, 0.25);
+    border-bottom: 1px solid var(--line);
     max-width: 800px;
 }
 .projects-intro .eyebrow { color: var(--rust); }
@@ -38,9 +26,9 @@ body {
     margin: 0;
 }
 .projects-intro__copy {
-    font-size: 18px;
+    font-size: clamp(17px, 1.5vw, 19px);
     line-height: var(--leading-body);
-    color: var(--yellow);
+    color: var(--ink-soft);
     max-width: var(--measure);
     margin: 0;
 }
@@ -52,7 +40,7 @@ body {
     grid-template-columns: 1fr;
     gap: var(--space-3);
     padding: var(--space-5) 0;
-    border-bottom: 1px solid rgba(198, 82, 0, 0.15);
+    border-bottom: 1px solid var(--line);
 }
 
 @media (min-width: 900px) {
@@ -79,26 +67,23 @@ body {
         top: 12vh;
     }
 }
-.chapter__image figure {
-    margin: 0;
+.chapter__image figure { margin: 0; }
+.chapter__image picture {
+    display: block;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
 }
 .chapter__image img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    transition: transform var(--dur-slow) var(--ease-warm);
+    transition: transform 1.2s var(--ease-warm);
 }
-.chapter__image:hover img {
-    transform: scale(1.01);
-}
+.chapter__image:hover img { transform: scale(1.02); }
 .chapter__image figcaption {
-    padding: var(--space-2) var(--space-3);
-    background-color: rgba(11, 38, 0, 0.95);
-    color: var(--rust);
+    padding: var(--space-1) 2px 0;
+    font-size: 13px;
+    color: var(--ink-faint);
 }
 
 .chapter__meta {
@@ -121,6 +106,7 @@ body {
 .chapter__copy {
     font-size: 17px;
     line-height: var(--leading-body);
+    color: var(--ink-soft);
     margin: 0;
 }
 .chapter__outcomes-head {
@@ -167,7 +153,7 @@ body {
 .projects-archive {
     margin-top: var(--space-5);
     padding-top: var(--space-5);
-    border-top: 1px solid rgba(198, 82, 0, 0.35);
+    border-top: 1px solid var(--line-strong);
 }
 .projects-archive__head {
     max-width: 800px;

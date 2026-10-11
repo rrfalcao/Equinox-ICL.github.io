@@ -2,14 +2,17 @@
   {
     "title": "Energy Kiosk",
     "year": 2009,
-    "tag": "First expedition",
+    "tag": "Early expedition",
     "imageStem": "static/images/2009",
-    "imageWidths": [800, 1600],
-    "imageAlt": "e.quinox Energy Kiosk - Rwanda, 2009",
-    "description": "In 2009, e.quinox launched its first pilot Energy Kiosk in Rwanda, marking the organisation's very first expedition on the ground. The trip was an opportunity to test a new technical solution and explore how a sustainable business model could bring reliable electricity to rural communities.",
-    "description2": "The kiosk was monitored remotely through a custom data-logging system and maintained by Rwandan partners, ensuring it could keep running long after the team returned to London. This pioneering project gave e.quinox its first real-world proof of concept and a platform to grow future initiatives.",
+    "imageWidths": [
+      800,
+      1600
+    ],
+    "imageAlt": "e.quinox Energy Kiosk in Rwanda, 2009",
+    "description": "In 2009, e.quinox opened a pilot Energy Kiosk in Rwanda, one of the organisation's first projects on the ground. The trip tested a new technical solution and explored how a sustainable business model could bring reliable electricity to rural communities.",
+    "description2": "The kiosk was monitored remotely through a custom data-logging system and maintained by Rwandan partners, ensuring it could keep running long after the team returned to London. The project gave e.quinox an early real-world proof of concept and a platform for future work.",
     "outcomes": [
-      "First e.quinox installation on the ground",
+      "Early e.quinox installation on the ground",
       "Remote monitoring via a custom data-logging system",
       "Community ownership and maintenance model established"
     ]
@@ -19,10 +22,12 @@
     "year": 2013,
     "tag": "Power to the home",
     "imageStem": "static/images/2013",
-    "imageWidths": [700],
-    "imageAlt": "Portable battery boxes distributed in Rwandan homes - 2013",
-    "description": "In 2013, e.quinox returned to Rwanda to expand their work through a new home lighting initiative. The team worked with local communities to deliver portable battery boxes, giving households access to reliable light and power for the first time.",
-    "description2": "Alongside this, they trained and collaborated with local entrepreneurs to manufacture and distribute the systems. The expedition strengthened e.quinox's approach of combining engineering solutions with community-led development, creating a foundation for future projects.",
+    "imageWidths": [
+      700
+    ],
+    "imageAlt": "Portable battery boxes distributed in Rwandan homes, 2013",
+    "description": "In 2013, e.quinox returned to Rwanda to expand its work through a new home lighting initiative. The team worked with local communities to deliver portable battery boxes, giving households access to reliable light and power for the first time.",
+    "description2": "Alongside this, the team trained and collaborated with local entrepreneurs to manufacture and distribute the systems. The expedition strengthened e.quinox's approach of combining engineering with community-led development, laying a foundation for future projects.",
     "outcomes": [
       "Portable battery boxes deployed to homes",
       "Local entrepreneurs trained to manufacture and distribute",
@@ -34,32 +39,37 @@
     "year": 2024,
     "tag": "From electricity to water",
     "imageStem": "static/images/2024",
-    "imageWidths": [800, 1600],
-    "imageAlt": "2024 expedition installing rainwater harvesting at a rural home in Rwanda",
-    "description": "In 2024, a team went to Rwanda to introduce an initiative aiming to improve the quality and quantity of water access. This project brought rainwater harvesting to homes - offering a scalable, accessible and transportable solution to improve water access across rural Rwanda.",
-    "description2": "They received guidance from Rwanda's Ministry of Infrastructure, as well as the opportunity to collaborate with the Dean of Engineering at the University of Rwanda. This allowed e.quinox to receive invaluable feedback that will influence their design and engineering choices going forward.",
+    "imageWidths": [
+      800,
+      1600
+    ],
+    "imageAlt": "The 2024 e.quinox team in discussion with partners in Rwanda",
+    "description": "In 2024, a team returned to Rwanda to study how to improve both the quality and quantity of water access. The work focused on household rainwater harvesting as a scalable, accessible and transportable way to bring water to rural homes.",
+    "description2": "The team received guidance from Rwanda's Ministry of Infrastructure and worked with the Dean of Engineering at the University of Rwanda. Their feedback shaped the design and engineering choices behind Project Amazi.",
     "outcomes": [
-      "First water-access project for e.quinox",
-      "Partnership with Rwanda's Ministry of Infrastructure",
+      "Household surveys and costings in Gakenke District",
+      "Guidance from Rwanda's Ministry of Infrastructure",
       "Collaboration with the University of Rwanda"
     ]
   },
   {
     "title": "Project Amazi",
     "year": 2026,
-    "tag": "Deployable · modular · Made in Rwanda",
-    "imageStem": "static/images/2024",
-    "imageWidths": [800, 1600],
-    "imageAlt": "Project Amazi - modular 700 L rainwater harvester deployed at a home in Minazi, Gakenke District, Rwanda.",
-    "description": "Project Amazi is e.quinox's 2026 initiative: a deployable, modular rainwater harvester for rural Rwandan households. Each unit is 700 L and connects in parallel with the next - families scale the system as their savings, or their rainfall, allow. Four years of research in Gakenke District, led by Riccardo Casonato (Imperial College London), have produced a business case that is now in pilot in Minazi Sector.",
-    "description2": "At 3.2× cheaper to install and 3.8× cheaper to run than a WASAC communal pumped tap, Amazi meets more than 40% of intermediate water-access demand for nine months of every year in all five Rwandan provinces - even at a conservative 50% rain-capture rate. The system is entirely hand-carryable (motos + public transport), cutting delivery costs by more than 90%, and is built from components manufactured or imported into Rwanda. The first version has just been deployed in Minazi, and MININFRA has agreed to evaluate the business case for national policy alignment.",
+    "tag": "Deployable · modular · sourced in Rwanda",
+    "imageStem": "static/images/amazi/tanks-in-place",
+    "imageWidths": [
+      800,
+      1600
+    ],
+    "imageAlt": "The first Project Amazi system: tanks on a raised stand beside a home in Minazi Sector, Gakenke District",
+    "description": "Project Amazi is e.quinox's deployable, modular rainwater harvester for rural Rwandan households. Each 700 L system links several tanks in parallel, so families can add capacity as their needs and means allow. The first system was installed in Minazi Sector in spring 2026 to test deployability, supply chain and yield.",
+    "description2": "The 2026 business case, written by Riccardo Casonato (Imperial College London), finds Amazi 3.2× cheaper to install and 3.8× cheaper to run than a communal pumped tap from WASAC. It meets over 40% of household water needs nine months a year in every province, even when capturing only half the rain. Every part can be carried by hand, by moto and on public transport, which cuts delivery costs by 90%.",
     "outcomes": [
-      "First 700 L modular harvester deployed in Minazi Sector",
-      "Water-quality testing confirms fitness for all non-potable uses",
-      "3.2× cheaper install, 3.8× cheaper OPEX vs WASAC communal tap",
-      ">40% of intermediate water-access demand met, 9 months/year, all provinces",
-      "Business case delivered to MININFRA for policy review",
-      "Hand-carryable supply chain - 90%+ reduction in delivery cost"
+      "First 700 L modular harvester installed in Minazi Sector",
+      "Water quality tested with the University of Rwanda",
+      "3.2× cheaper to install and 3.8× cheaper to run than a pumped tap",
+      "Over 40% of water needs met nine months a year, in every province",
+      "Business case developed for stakeholders, after talks with MININFRA"
     ]
   },
   {
@@ -67,15 +77,16 @@
     "year": 2018,
     "tag": "Earlier work · prototype",
     "imageStem": "static/images/archive/truckle-01",
-    "imageWidths": [768],
-    "imageAlt": "Truckle prototype build - earlier e.quinox project, archived.",
+    "imageWidths": [
+      768
+    ],
+    "imageAlt": "Truckle prototype build, an earlier e.quinox project",
     "archived": true,
-    "description": "Truckle was an earlier prototyping effort by an e.quinox committee, exploring portable engineered solutions for off-grid Rwandan households. The build process, captured here, laid groundwork for many of the deployable-design instincts that resurface in Project Amazi.",
-    "description2": "Like every e.quinox project, Truckle was prototyped at Imperial, taken on expedition for field-testing, and ultimately handed over to its Rwandan stewards. Filed in the archive as part of the chapter that runs from 2009 to today.",
+    "description": "Truckle was an earlier prototyping project by an e.quinox committee, exploring portable engineered solutions for off-grid Rwandan households. Its focus on parts that travel easily resurfaces in Project Amazi.",
+    "description2": "Like every e.quinox project, Truckle was prototyped at Imperial by a student team and taken to Rwanda for field testing.",
     "outcomes": [
       "Prototype designed, built and field-tested by an Imperial student team",
-      "Lessons folded into later expeditions",
-      "Documented for future committees"
+      "Lessons carried into later expeditions"
     ]
   },
   {
@@ -83,15 +94,16 @@
     "year": 2019,
     "tag": "Earlier work · research",
     "imageStem": "static/images/archive/mushroom-farming",
-    "imageWidths": [768],
-    "imageAlt": "Mushroom farming research - earlier e.quinox project, archived.",
+    "imageWidths": [
+      768
+    ],
+    "imageAlt": "Mushroom farming research in Rwanda, an earlier e.quinox project",
     "archived": true,
-    "description": "An earlier e.quinox research strand investigating mushroom farming as a complement to the energy and water work in rural Rwanda - looking at protein, income generation, and nutrient cycling potential at the household scale.",
-    "description2": "The research informed the committee's broader thinking on how engineered infrastructure dovetails with agricultural opportunity. Filed in the archive as part of the wider mission to deliver tools communities use to uplift themselves.",
+    "description": "An earlier e.quinox research project investigating mushroom farming alongside the energy work in rural Rwanda, looking at protein, income and nutrient cycling at the household scale.",
+    "description2": "The research informed the committee's thinking on how engineered infrastructure can open up agricultural opportunity.",
     "outcomes": [
-      "Field study and feasibility assessment completed",
-      "Insights on income and nutrition pathways recorded",
-      "Documented for future committees and partners"
+      "Field study and feasibility assessment",
+      "Insights on income and nutrition recorded"
     ]
   }
 ]

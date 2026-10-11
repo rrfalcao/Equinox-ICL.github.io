@@ -1,249 +1,77 @@
 /* ================================================================
-   Connect — narrative + form split
+   Connect page. Builds on index.css (wrap, section, card, grid,
+   photo, list-dash); this file holds the story/form split and the
+   contact form.
    ================================================================ */
-
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    margin: 0;
-    background-color: var(--green);
-    color: var(--yellow);
-}
-
-/* ---- Layout ---- */
 
 .connect {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: calc(var(--space-5) + 48px) var(--space-3) var(--space-5);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: start;
 }
+@media (max-width: 900px) { .connect { grid-template-columns: minmax(0, 1fr); } }
 
-@media (min-width: 900px) {
-    .connect {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: var(--space-5);
-        padding: calc(var(--space-5) + 48px) var(--space-4) var(--space-5);
-        align-items: start;
-    }
-}
+.connect__story { display: grid; gap: clamp(28px, 3.4vw, 44px); }
+.connect__photo { min-height: 0; aspect-ratio: 16 / 10; }
+.connect__ask p:not(.eyebrow) { color: var(--ink-soft); font-size: clamp(16px, 1.3vw, 18px); }
+.connect__ask strong, .connect__ask em { color: var(--yellow); }
 
-/* ---- Narrative column ---- */
+.connect__form-col { position: sticky; top: 110px; }
+@media (max-width: 900px) { .connect__form-col { position: static; } }
 
-.connect__narrative {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-@media (min-width: 900px) {
-    .connect__narrative {
-        position: sticky;
-        top: 12vh;
-    }
-}
+/* ---- Form ---- */
 
-.connect__narrative .eyebrow { color: var(--rust); }
-.connect__narrative h1 {
-    color: var(--yellow);
-    font-size: clamp(36px, 5vw, 60px);
-    margin: 0;
-}
-.connect__lede {
-    color: var(--yellow);
-    font-size: 18px;
-    line-height: var(--leading-body);
-    margin: 0;
-    max-width: 52ch;
-}
+.connect__form { display: grid; gap: var(--space-3); }
+.connect__form .eyebrow { margin: 0; }
 
-.connect__image {
-    margin: 0;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
-}
-.connect__image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-.connect__image figcaption {
-    padding: var(--space-2) var(--space-3);
-    background-color: rgba(11, 38, 0, 0.95);
-    color: var(--rust);
-}
-
-.connect__block {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-}
-.connect__block h2 {
-    margin: 0;
-}
-.connect__block p,
-.connect__list {
-    font-size: 16px;
-    line-height: var(--leading-body);
-    color: var(--yellow);
-    margin: 0 0 var(--space-1);
-}
-.connect__contacts {
-    line-height: 1.8;
-}
-.connect__contacts a {
-    color: var(--rust);
-    text-decoration: none;
-    border-bottom: 1px solid currentColor;
-    transition: color var(--dur-warm) var(--ease-warm);
-}
-.connect__contacts a:hover,
-.connect__contacts a:focus-visible {
-    color: var(--yellow);
-}
-.connect__list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: var(--space-1);
-}
-.connect__list li {
-    padding-left: 28px;
-    position: relative;
-}
-.connect__list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.7em;
-    width: 18px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--rust), var(--yellow));
-    border-radius: 2px;
-}
-
-.connect__quote {
-    margin: 0;
-    padding: var(--space-3);
-    border-left: 2px solid var(--rust);
-    color: var(--yellow);
-    font-family: var(--font-display);
-    font-style: italic;
-    line-height: var(--leading-body);
-}
-.connect__quote p { margin: 0 0 var(--space-1); font-size: 18px; }
-.connect__quote footer {
-    font-family: var(--font-body);
-    font-style: normal;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--rust);
-}
-
-/* ---- Form column ---- */
-
-.connect__form-col {
-    min-width: 0;
-}
-
-.connect__form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-4);
-    border: 2px solid var(--rust);
-    border-radius: var(--radius-lg);
-    background-color: rgba(255, 207, 109, 0.03);
-    transition: border-color var(--dur-warm) var(--ease-warm);
-}
-.connect__form:focus-within {
-    border-color: var(--yellow);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-.form-group label {
-    font-weight: 500;
-    color: var(--yellow);
-    font-size: 14px;
-    letter-spacing: 0.02em;
-}
-.form-group .optional {
-    color: var(--rust);
-    font-weight: 400;
-    font-size: 12px;
-    margin-left: 6px;
-}
+.form-group { display: grid; gap: 6px; }
+.form-group label { font-weight: 500; font-size: 14px; letter-spacing: 0.02em; color: var(--yellow); }
+.form-group .optional { color: var(--ink-faint); font-weight: 400; font-size: 12px; margin-left: 6px; }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid var(--rust);
+    border: 1px solid var(--line-strong);
     border-radius: var(--radius-sm);
-    background-color: rgba(11, 38, 0, 0.3);
+    background-color: rgba(11, 38, 0, 0.45);
     color: var(--yellow);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.5;
+    font: 16px/1.5 var(--font-body);
     box-sizing: border-box;
     transition:
         border-color var(--dur-warm) var(--ease-warm),
         box-shadow var(--dur-warm) var(--ease-warm),
         background-color var(--dur-warm) var(--ease-warm);
 }
-
 .form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(255, 207, 109, 0.45);
-}
-
+.form-group textarea::placeholder { color: var(--ink-faint); }
 .form-group input:hover,
-.form-group textarea:hover {
-    border-color: var(--yellow);
-}
-
+.form-group textarea:hover { border-color: rgba(255, 207, 109, 0.5); }
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--yellow);
-    box-shadow: 0 0 0 4px rgba(255, 207, 109, 0.18);
-    background-color: rgba(11, 38, 0, 0.55);
+    box-shadow: 0 0 0 4px rgba(255, 207, 109, 0.14);
+    background-color: rgba(11, 38, 0, 0.7);
 }
+.form-group textarea { resize: vertical; min-height: 140px; }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 140px;
-}
+.connect__honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; }
 
-/* Submit button — filament warm-up with a checkmark that will morph
-   on successful submission (JS hook for Phase 3 / later). */
-
+/* Submit: same pill language as .button-warm, with a check that
+   draws in on submit (see secondary.js). */
 .submit-btn {
     position: relative;
-    padding: 16px 28px;
+    min-height: 54px;
+    padding: 14px 28px;
     border: none;
+    border-radius: 999px;
     background-color: var(--rust);
     color: var(--yellow);
-    border-radius: var(--radius);
-    cursor: pointer;
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 18px;
+    font: 600 16px var(--font-body);
     letter-spacing: 0.01em;
-    min-height: 56px;
+    cursor: pointer;
     overflow: hidden;
     transition:
         background-color var(--dur-warm) var(--ease-warm),
@@ -255,167 +83,60 @@ body {
 .submit-btn:focus-visible {
     background-color: var(--yellow);
     color: var(--green);
-    box-shadow:
-        0 0 0 1px var(--yellow) inset,
-        0 8px 32px -8px rgba(255, 207, 109, 0.6);
+    box-shadow: 0 10px 30px -10px rgba(255, 207, 109, 0.6);
     transform: translateY(-2px);
 }
-.submit-btn:active { transform: translateY(0); }
-
+.submit-btn:active { transform: none; }
+.submit-btn__label { transition: opacity 320ms var(--ease-warm); }
 .submit-btn__check {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     transform: translate(-50%, -50%) scale(0.6);
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--dur-warm) var(--ease-warm),
-                transform var(--dur-warm) var(--ease-warm);
-}
-.submit-btn.is-sent .submit-btn__label {
-    opacity: 0;
-}
-.submit-btn.is-sent .submit-btn__check {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* ---- Footer (shared with index) ---- */
-
-.site-footer {
-    padding: var(--space-4) var(--space-3);
-    background-color: var(--green);
-    border-top: 1px solid rgba(198, 82, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    align-items: center;
-    text-align: center;
-}
-.site-footer__nav {
-    display: flex;
-    gap: var(--space-3);
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.site-footer__nav a {
-    color: var(--rust);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 6px 10px;
-    transition: color var(--dur-warm) var(--ease-warm);
-}
-.site-footer__nav a:hover,
-.site-footer__nav a:focus-visible {
-    color: var(--yellow);
-}
-
-/* ================================================================
-   ANIMATION CHOREOGRAPHY — connect page
-   ================================================================ */
-
-/* Narrative blocks cascade in */
-.connect__narrative[data-reveal] > * {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 600ms var(--ease-warm), transform 600ms var(--ease-spring);
-}
-.connect__narrative[data-reveal].is-lit > * { opacity: 1; transform: none; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(1) { transition-delay: 60ms;  }
-.connect__narrative[data-reveal].is-lit > *:nth-child(2) { transition-delay: 160ms; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(3) { transition-delay: 260ms; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(4) { transition-delay: 360ms; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(5) { transition-delay: 460ms; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(6) { transition-delay: 560ms; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(7) { transition-delay: 660ms; }
-.connect__narrative[data-reveal].is-lit > *:nth-child(8) { transition-delay: 760ms; }
-
-/* Form column slide-in from the right */
-.connect__form-col[data-reveal] {
-    opacity: 0;
-    transform: translateX(28px);
-    transition: opacity 800ms var(--ease-warm), transform 800ms var(--ease-spring);
-}
-.connect__form-col[data-reveal].is-lit { opacity: 1; transform: none; }
-
-/* Image clip-swipe from left */
-.connect__image[data-reveal] {
-    clip-path: inset(0 100% 0 0);
-    opacity: 0;
-    transition: clip-path 900ms cubic-bezier(.2, .8, .2, 1), opacity 900ms var(--ease-warm);
-}
-.connect__image[data-reveal].is-lit { clip-path: inset(0 0 0 0); opacity: 1; }
-
-/* List items slide-in cascade */
-.connect__list li {
-    opacity: 0;
-    transform: translateX(-12px);
-    transition: opacity 500ms var(--ease-warm), transform 500ms var(--ease-spring);
-}
-.connect__block[data-reveal].is-lit .connect__list li { opacity: 1; transform: none; }
-.connect__list li:nth-child(1) { transition-delay: 80ms;  }
-.connect__list li:nth-child(2) { transition-delay: 160ms; }
-.connect__list li:nth-child(3) { transition-delay: 240ms; }
-.connect__list li:nth-child(4) { transition-delay: 320ms; }
-.connect__list li:nth-child(5) { transition-delay: 400ms; }
-
-/* Contact link micro-bounce on hover */
-.connect__contacts a {
-    position: relative;
-    display: inline-block;
-    transition: color var(--dur-warm) var(--ease-warm), transform 220ms var(--ease-snap);
-}
-.connect__contacts a:hover,
-.connect__contacts a:focus-visible {
-    transform: translateY(-2px);
-    color: var(--yellow);
-}
-
-/* Form-row stagger inside the card */
-.connect__form .form-group,
-.connect__form .submit-btn {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 500ms var(--ease-warm), transform 500ms var(--ease-spring);
-}
-.connect__form-col[data-reveal].is-lit .form-group:nth-child(2) { transition-delay: 240ms; opacity: 1; transform: none; }
-.connect__form-col[data-reveal].is-lit .form-group:nth-child(3) { transition-delay: 320ms; opacity: 1; transform: none; }
-.connect__form-col[data-reveal].is-lit .form-group:nth-child(4) { transition-delay: 400ms; opacity: 1; transform: none; }
-.connect__form-col[data-reveal].is-lit .form-group:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: none; }
-.connect__form-col[data-reveal].is-lit .submit-btn               { transition-delay: 600ms; opacity: 1; transform: none; }
-
-/* Submit success: animate label fade + checkmark draw + bg colour shift */
-.submit-btn { transition:
-    background-color 600ms var(--ease-warm),
-    color var(--dur-warm) var(--ease-warm),
-    box-shadow var(--dur-warm) var(--ease-warm),
-    transform var(--dur-warm) var(--ease-warm);
-}
-.submit-btn.is-sent {
-    background-color: var(--yellow);
-    color: var(--green);
-    transform: scale(1.02);
-}
-.submit-btn__label {
-    transition: opacity 320ms var(--ease-warm);
+    transition: opacity var(--dur-warm) var(--ease-warm), transform var(--dur-warm) var(--ease-warm);
 }
 .submit-btn__check path {
+    stroke: var(--green);
     stroke-dasharray: 32;
     stroke-dashoffset: 32;
-    transition: stroke-dashoffset 600ms cubic-bezier(.2, .8, .2, 1) 200ms;
-    stroke: var(--green);
+    transition: stroke-dashoffset 600ms var(--ease-snap) 200ms;
 }
+.submit-btn.is-sent { background-color: var(--yellow); color: var(--green); }
+.submit-btn.is-sent .submit-btn__label { opacity: 0; }
+.submit-btn.is-sent .submit-btn__check { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .submit-btn.is-sent .submit-btn__check path { stroke-dashoffset: 0; }
 
+/* Shown after staticforms redirects back with ?sent=1 */
+.connect__sent {
+    margin-bottom: clamp(14px, 1.6vw, 20px);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(159, 203, 224, 0.4);
+    background: rgba(159, 203, 224, 0.08);
+}
+.connect__sent .eyebrow { color: var(--water); margin: 0 0 6px; }
+.connect__sent p:last-child { margin: 0; color: var(--yellow); }
+
+/* Form rows rise in one after another once the column reveals */
+.connect__form > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms var(--ease-warm), transform 600ms var(--ease-spring);
+}
+.connect__form-col.is-lit .connect__form > * { opacity: 1; transform: none; }
+.connect__form-col.is-lit .connect__form > :nth-child(4) { transition-delay: 80ms; }
+.connect__form-col.is-lit .connect__form > :nth-child(5) { transition-delay: 160ms; }
+.connect__form-col.is-lit .connect__form > :nth-child(6) { transition-delay: 240ms; }
+.connect__form-col.is-lit .connect__form > :nth-child(7) { transition-delay: 320ms; }
+.connect__form-col.is-lit .connect__form > :nth-child(9) { transition-delay: 420ms; }
+
+.connect__direct { display: grid; justify-items: start; gap: 10px; margin-bottom: var(--space-3); }
+
 @media (prefers-reduced-motion: reduce) {
-    .connect__narrative[data-reveal] > *,
-    .connect__form-col[data-reveal],
-    .connect__image[data-reveal],
-    .connect__list li,
-    .connect__form .form-group,
-    .connect__form .submit-btn { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+    .connect__form > * { opacity: 1; transform: none; }
     .submit-btn__check path { stroke-dashoffset: 0; }
 }
-

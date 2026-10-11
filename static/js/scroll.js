@@ -105,7 +105,7 @@
                         revealObserver.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+            }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
         }
         targets.forEach(el => {
             el.dataset.revealed = '1';
